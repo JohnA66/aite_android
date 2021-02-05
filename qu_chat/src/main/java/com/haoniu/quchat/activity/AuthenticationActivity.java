@@ -490,7 +490,9 @@ public class AuthenticationActivity extends BaseActivity {
         });
     }
 
-    @OnClick({R.id.switch_login,R.id.img_register_graph_code,R.id.switch_register,R.id.login_get_code,R.id.submit_login,R.id.login_status,R.id.forget,R.id.freeze,R.id.thaw,R.id.submit_register,R.id.tv_register_agreement,R.id.tv_register_code})
+    @OnClick({R.id.switch_login,R.id.img_register_graph_code,R.id.switch_register,R.id.login_get_code,
+            R.id.submit_login,R.id.login_status,R.id.forget,R.id.freeze,R.id.thaw,R.id.submit_register,
+            R.id.tv_register_agreement,R.id.tv_user_agreement,R.id.tv_register_code})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.switch_login:
@@ -540,6 +542,9 @@ public class AuthenticationActivity extends BaseActivity {
                 } else {
                     toast("请先勾选注册协议!");
                 }
+                break;
+            case R.id.tv_user_agreement:
+                startActivity(new Intent(this, WebViewActivity.class).putExtra("title", "lan").putExtra("url", AppConfig.user_agree));
                 break;
             case R.id.tv_register_agreement:
                 startActivity(new Intent(this, WebViewActivity.class).putExtra("title", "lan").putExtra("url", AppConfig.register_agree));

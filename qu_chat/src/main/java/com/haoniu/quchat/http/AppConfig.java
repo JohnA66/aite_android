@@ -985,7 +985,8 @@ public class AppConfig {
     public static String downloadUrl = "https://fir.im/flyingfish";
 
 
-    public static String register_agree = mainUrl + "xieyi/web/register_agree.html";
+    public static String register_agree = mainUrl + "xieyi/web/register_agree.html";//隐私政策
+    public static String user_agree = mainUrl + "xieyi/web/user_agree.html";//用户协议
 
     /**
      * 设置好友昵称

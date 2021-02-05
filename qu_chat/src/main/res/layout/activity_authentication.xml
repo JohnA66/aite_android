@@ -211,7 +211,7 @@
                 android:paddingLeft="@dimen/dp_20"
                 android:paddingTop="@dimen/dp_50"
                 android:paddingRight="@dimen/dp_20"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:orientation="vertical">
                 <EditText
                     android:drawableLeft="@mipmap/ic_phone"
@@ -382,11 +382,26 @@
                         android:textSize="@dimen/sp_12" />
 
                     <TextView
-                        android:id="@+id/tv_register_agreement"
+                        android:id="@+id/tv_user_agreement"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_5"
-                        android:text="《注册服务协议》"
+                        android:text="《用户协议》"
+                        android:textColor="@color/blue5"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="和"
+                        android:textColor="@color/grey_2"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:id="@+id/tv_register_agreement"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="《隐私政策》"
                         android:textColor="@color/blue5"
                         android:textSize="@dimen/sp_12" />
                 </LinearLayout>

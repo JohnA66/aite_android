@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -12,8 +13,12 @@ import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.base.MyHelper;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.global.UserComm;
+import com.haoniu.quchat.view.CommonConfirmDialog;
+import com.haoniu.quchat.view.UserProtocolDialog;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
+import com.zds.base.global.BaseConstant;
+import com.zds.base.util.Preference;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,7 +33,7 @@ import butterknife.ButterKnife;
  */
 public class SplashActivity extends BaseActivity {
 
-    private static final int sleepTime = 2000;
+    private static final int sleepTime = 1500;
     @BindView(R.id.img_logo)
     ImageView mImgLogo;
     @BindView(R.id.splash_root)
@@ -80,7 +85,15 @@ public class SplashActivity extends BaseActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        toApp();
+        //1.用户协议弹窗
+        if(Preference.getBoolPreferences(SplashActivity.this, BaseConstant.SP.KEY_IS_AGREE_USER_PROTOCOL,false)){
+            //已同意
+            toApp();
+        }else {
+            //未同意
+            showUserProtocolDialog();
+        }
+
     }
 
 
@@ -152,6 +165,62 @@ public class SplashActivity extends BaseActivity {
             finish();
         }
     };
+
+
+    private UserProtocolDialog mUserProtocolDialog;
+    private void showUserProtocolDialog(){
+        if(mUserProtocolDialog == null){
+            mUserProtocolDialog = new UserProtocolDialog(this);
+
+            mUserProtocolDialog.setOnAgreeClickListener(new UserProtocolDialog.OnAgreeClickListener() {
+                @Override
+                public void onAgreeClick() {
+                    Preference.saveBoolPreferences(SplashActivity.this, BaseConstant.SP.KEY_IS_AGREE_USER_PROTOCOL,true);
+                    toApp();
+                }
+            });
+
+            mUserProtocolDialog.setOnNotAgreeClickListener(new UserProtocolDialog.OnNotAgreeClickListener() {
+                @Override
+                public void onNotAgreeClick() {
+                    //弹出再次提醒弹窗
+                    showCommonConfirmDialog();
+                }
+            });
+        }
+        mUserProtocolDialog.show();
+    }
+
+    private CommonConfirmDialog mCommonConfirmDialog;
+    private void showCommonConfirmDialog() {
+        if(mCommonConfirmDialog == null){
+            mCommonConfirmDialog = new CommonConfirmDialog(this);
+
+            mCommonConfirmDialog.setOnConfirmClickListener(new CommonConfirmDialog.OnConfirmClickListener() {
+                @Override
+                public void onConfirmClick(View view) {
+                    showUserProtocolDialog();
+                }
+            });
+            mCommonConfirmDialog.setOnCancelClickListener(new CommonConfirmDialog.OnCancelClickListener() {
+                @Override
+                public void onCancelClick(View view) {
+                    //退出App
+                    //MobclickAgent.onKillProcess(activity);
+                    finish();
+                }
+            });
+        }
+        mCommonConfirmDialog.show();
+
+        mCommonConfirmDialog.setCancelable(false);
+        mCommonConfirmDialog.setCanceledOnTouchOutside(false);
+
+        mCommonConfirmDialog.setTitle("您需要同意本隐私协议才能继续使用艾特");
+        mCommonConfirmDialog.setContent("若您不同意本隐私协议，很遗憾我们将无法为您提供服务");
+        mCommonConfirmDialog.setButtonText("仍不同意","查看协议");
+    }
+
 
     @Override
     protected void onDestroy() {
