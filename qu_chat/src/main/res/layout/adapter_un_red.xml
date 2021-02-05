@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/dp_12"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/img_head"
+        android:layout_width="@dimen/dp_31"
+        android:layout_height="@dimen/dp_31"
+        android:layout_marginLeft="@dimen/dp_14"
+        android:layout_marginTop="@dimen/dp_9"
+        android:src="@mipmap/img_default_avatar" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/img_head"
+        android:layout_marginLeft="@dimen/dp_14"
+        android:layout_toRightOf="@+id/img_head"
+        android:textColor="@color/grey_2"
+        android:textSize="@dimen/sp_12"
+        tools:text="程吉吉" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_14"
+        android:layout_toRightOf="@+id/img_head"
+        android:textColor="@color/black_text"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_below="@+id/tv_name"
+        android:textSize="@dimen/sp_15"
+        android:text="[红包]" />
+
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/img_head"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/grey_2"
+        android:layout_marginRight="@dimen/dp_9"
+        android:textSize="@dimen/sp_11"
+        tools:text="2019-07-04" />
+
+</RelativeLayout>

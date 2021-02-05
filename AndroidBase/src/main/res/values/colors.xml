@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#EF2420</color>
+    <color name="colorPrimaryDark">#EF2420</color>
+    <color name="colorAccent">#EF2420</color>
+    <color name="cal_title_background">#FFFFFFFF</color>
+    <color name="cal_title_text">#FF2D2D2D</color>
+    <color name="gray">#ffbbbbbb</color>
+    <color name="main_tab_color">#7b7b7b</color>
+    <color name="cal_arrow_enable">#ffc0c0c0</color>
+    <color name="cal_arrow_unable">#ffeaeaea</color>
+    <color name="transparent">#00000000</color>
+    <color name="cal_divider">#FFEDEDED</color>
+    <color name="my_divider">#8a99ac</color>
+
+    <color name="cal_weekdays_background">#FFFFFFFF</color>
+    <color name="cal_weekdays_text">#FF2D2D2D</color>
+
+    <color name="cal_pager_background">#FFFFFFFF</color>
+
+    <color name="cal_signed_border">#ffb5e6f1</color>
+    <color name="cal_signed_background">#fff7fcfe</color>
+    <color name="cal_signed_day">#ff0babd1</color>
+    <color name="cal_signed_text">#ff0babd1</color>
+
+    <color name="cal_unsigned_day">#ff2d2d2d</color>
+    <color name="cal_unsigned_text">#ffb6b6b6</color>
+
+    <color name="cal_today_background">#ff0babd1</color>
+    <color name="cal_today_day">#ffffffff</color>
+    <color name="cal_today_text">#ffffffff</color>
+
+    <color name="cal_unreach_day">#ffb6b6b6</color>
+    <color name="cal_unreach_text">#ffb6b6b6</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="my_gray">#9A9A9A</color>
+    <color name="gray_text_color">#848484</color>
+
+    <!-- QRCode scanner color begin -->
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="result_view">#B0000000</color>
+    <color name="viewfinder_frame">#90FFFFFF</color>
+    <color name="result_point_color">#C0FFFF00</color>
+    <color name="laser_color">#0F0</color>
+    <color name="corner_color">#00FF00</color>
+    <color name="selectclor">#FD9727</color>
+    <color name="bg_color">#AAAAAA</color>
+
+</resources>

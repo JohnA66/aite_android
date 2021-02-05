@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="BaseApp">
+        <attr name="pressedColor" format="color"/>
+        <attr name="pressedBackground" format="reference"/>
+        <attr name="pressedBackgroundColor" format="color"/>
+        <attr name="pressedAlpha" format="float"/>
+        <attr name="pressedScale" format="float"/>
+        <attr name="touchDownAnimation" format="reference"/>
+        <attr name="touchUpAnimation" format="reference"/>
+        <attr name="shadowColor" format="color"/>
+        <attr name="shadowRadius_" format="float"/>
+        <attr name="shadowDx_" format="float"/>
+        <attr name="shadowDy_" format="float"/>
+    </declare-styleable>
+    <!--
+            Declare custom theme attributes that allow changing which styles are
+            used for button bars depending on the API level.
+            ?android:attr/buttonBarStyle is new as of API 11 so this is
+            necessary to support previous API levels.
+       -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference"/>
+        <attr name="metaButtonBarButtonStyle" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="LeanTextView">
+        <attr name="degree" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="ShadowLayout">
+        <attr name="sl_shadowed" format="boolean"/>
+        <attr name="sl_shadow_distance" format="dimension"/>
+        <attr name="sl_shadow_distance1" format="dimension"/>
+        <attr name="sl_shadow_distance2" format="dimension"/>
+        <attr name="sl_shadow_distance3" format="dimension"/>
+        <attr name="sl_shadow_distance4" format="dimension"/>
+        <attr name="sl_shadow_angle" format="integer"/>
+        <attr name="sl_shadow_radius" format="dimension"/>
+        <attr name="sl_shadow_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="ViewfinderView">
+        <attr name="corner_color" format="color"/>
+        <attr name="laser_color" format="color"/>
+        <attr name="frame_color" format="color"/>
+        <attr name="mask_color" format="color"/>
+        <attr name="result_point_color" format="color"/>
+        <attr name="result_color" format="color"/>
+        <attr name="label_text_color" format="color"/>
+        <attr name="label_text" format="string"/>
+        <attr name="label_text_size" format="float"/>
+    </declare-styleable>
+</resources>

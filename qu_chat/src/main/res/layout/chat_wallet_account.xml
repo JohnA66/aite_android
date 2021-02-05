@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="15dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:background="@drawable/shape_background_my_dialog_white"
+    >
+
+    <ImageView
+        android:id="@+id/img_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/img_wallet_account"
+        />
+
+    <TextView
+        android:gravity="center_vertical"
+        android:layout_toRightOf="@+id/img_sign"
+        android:layout_alignTop="@+id/img_sign"
+        android:layout_alignBottom="@+id/img_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="账户管家"
+        android:layout_marginLeft="5dp"
+        android:textColor="#ff333333"
+        android:textSize="14sp"
+        />
+    <TextView
+        android:id="@+id/tv_create_time"
+        android:gravity="center_vertical"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/img_sign"
+        android:layout_alignBottom="@+id/img_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2020-11-01  11：59"
+        android:textColor="#ff999999"
+        android:textSize="11sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="支付密码修改成功"
+        android:textColor="#ff000000"
+        android:textSize="16sp"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_content_tip"
+        android:layout_marginTop="8dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="您的支付密码已修改，请妥善保管好您的支付密码！"
+        android:textColor="#ff999999"
+        android:textSize="13sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_check"
+        android:drawableTop="@drawable/shape_login_line"
+        android:gravity="center_vertical"
+        android:layout_below="@+id/tv_content_tip"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:drawableRight="@drawable/jingru"
+        android:text="修改支付密码"
+        android:textColor="#ff333333"
+        android:textSize="13sp"
+        />
+</RelativeLayout>

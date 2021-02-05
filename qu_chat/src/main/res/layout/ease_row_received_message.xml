@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_message"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/dp_13">
+
+    <TextView
+        android:id="@+id/timestamp"
+        style="@style/chat_text_date_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5">
+
+        <com.haoniu.quchat.widget.EaseImageView
+            android:id="@+id/iv_userhead"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:src="@mipmap/img_default_avatar" />
+
+        <RelativeLayout
+            android:id="@+id/bubble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_userid"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_toRightOf="@id/iv_userhead"
+            android:background="@drawable/bqp"
+            >
+
+            <TextView
+                android:id="@+id/tv_chatcontent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:autoLink="web"
+                android:gravity="center|left"
+                android:lineSpacingExtra="@dimen/dp_2"
+                android:maxWidth="225.0dip"
+                tools:text="你也哈有会将爱欧阳锋的身份"
+                android:textColor="#ff000000"
+                android:textSize="@dimen/sp_14"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_userid"
+            style="@style/chat_text_name_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_17"
+            android:layout_toRightOf="@id/iv_userhead"
+            android:textSize="@dimen/sp_13"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+
+</LinearLayout>

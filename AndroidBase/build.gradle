@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api rootProject.ext.dependencies["appcompat-v7"]
+    api rootProject.ext.dependencies["support-v4"]
+    api rootProject.ext.dependencies["design"]
+    api rootProject.ext.dependencies["annotations"]
+    api rootProject.ext.dependencies["recyclerview-v7"]
+    api rootProject.ext.dependencies["fastjson"]
+    api rootProject.ext.dependencies["nineoldandroids"]
+    api rootProject.ext.dependencies["gson"]
+    api rootProject.ext.dependencies["glide"]
+    annotationProcessor rootProject.ext.dependencies["glide-Processor"]
+    api rootProject.ext.dependencies["okhttp"]
+    api rootProject.ext.dependencies["okgo"]
+    api rootProject.ext.dependencies["eventbus"]
+    // compile rootProject.ext.dependencies["PhotoView"]
+    api rootProject.ext.dependencies["CircleImageView"]
+    api rootProject.ext.dependencies["tiny"]
+    api rootProject.ext.dependencies["PictureSelector"]
+    api rootProject.ext.dependencies["glide-transformations"]
+    //bug
+    api 'com.tencent.bugly:crashreport:2.8.6'
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+    api 'com.tencent.bugly:nativecrashreport:3.6.0'
+}

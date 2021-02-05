@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_layout"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/btn_yiji"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_56"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_13"
+            android:layout_marginRight="@dimen/dp_13"
+            android:layout_marginTop="@dimen/dp_32"
+            android:background="@drawable/bg_border_apply_1"
+            android:gravity="center"
+            android:text="一级代理"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_19"
+            />
+
+
+        <Button
+            android:id="@+id/btn_erji"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_56"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_13"
+            android:layout_marginRight="@dimen/dp_13"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/bg_border_apply_2"
+            android:gravity="center"
+            android:text="二级代理"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_19"
+            />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

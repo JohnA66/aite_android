@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_35"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/sp_12"
+            android:layout_weight="1"
+            android:textColor="@color/black_text"
+            android:text="时间"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/tv_nick"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/sp_12"
+            android:layout_weight="1"
+            android:textColor="@color/black_text"
+            android:text="昵称"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/sp_12"
+            android:layout_weight="1"
+            android:textColor="@color/black_text"
+            android:text="金额"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/sp_12"
+            android:layout_weight="1"
+            android:textColor="@color/black_text"
+            android:text="状态"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycle_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

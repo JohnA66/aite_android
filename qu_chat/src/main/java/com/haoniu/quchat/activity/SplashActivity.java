@@ -1,0 +1,160 @@
+package com.haoniu.quchat.activity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+
+import com.aite.chat.R;
+import com.haoniu.quchat.base.BaseActivity;
+import com.haoniu.quchat.base.MyHelper;
+import com.haoniu.quchat.entity.EventCenter;
+import com.haoniu.quchat.global.UserComm;
+import com.hyphenate.EMCallBack;
+import com.hyphenate.chat.EMClient;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+/**
+ * 作   者：赵大帅
+ * 描   述: 启动页
+ * 日   期: 2017/11/13 9:57
+ * 更新日期: 2017/11/13
+ *
+ * @author Administrator
+ */
+public class SplashActivity extends BaseActivity {
+
+    private static final int sleepTime = 2000;
+    @BindView(R.id.img_logo)
+    ImageView mImgLogo;
+    @BindView(R.id.splash_root)
+    RelativeLayout mSplashRoot;
+
+    @Override
+    protected void initContentView(Bundle bundle) {
+        setContentView(R.layout.activity_splash);
+        ButterKnife.bind(this);
+    }
+
+    @Override
+    protected void onCreate(Bundle arg0) {
+        setTheme(R.style.AppTheme);//还原回正常的Theme
+        super.onCreate(arg0);
+    }
+
+    /**
+     * 初始化逻辑
+     */
+    @Override
+    protected void initLogic() {
+        isTransparency(true);
+        MyHelper.getInstance().initHandler(this.getMainLooper());
+    }
+
+    /**
+     * EventBus接收消息
+     *
+     * @param center 获取事件总线信息
+     */
+    @Override
+    protected void onEventComing(EventCenter center) {
+
+    }
+
+    /**
+     * Bundle  传递数据
+     *
+     * @param extras
+     */
+    @Override
+    protected void getBundleExtras(Bundle extras) {
+
+    }
+
+    long start;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        toApp();
+    }
+
+
+    /**
+     * 环信登录
+     */
+    private void HXlogin() {
+        EMClient.getInstance().login("101-youxin", "123456", new EMCallBack() {
+            @Override
+            public void onSuccess() {
+                // ** manually load all local groups and conversation
+                EMClient.getInstance().groupManager().loadAllGroups();
+                EMClient.getInstance().chatManager().loadAllConversations();
+                // update current user's display name for APNs
+//                if (mEdPhone.getText().toString().trim().equals("58000-youxin")) {
+//                    EMClient.getInstance().pushManager().updatePushNickname("梁宏棒");
+//                } else {
+//                    EMClient.getInstance().pushManager().updatePushNickname("复制_梁宏棒");
+//                }
+                // get user's info (this should be get from App's server or 3rd party service)
+
+                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                finish();
+            }
+
+            @Override
+            public void onProgress(int progress, String status) {
+            }
+
+            @Override
+            public void onError(final int code, final String message) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (code == 200) {
+                            EMClient.getInstance().logout(false);
+                        }
+                        toast("登录失败" + message);
+                    }
+                });
+            }
+        });
+    }
+
+
+    private void toApp() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if (MyHelper.getInstance().isLoggedIn() && UserComm.IsOnLine()) {
+                    start = System.currentTimeMillis();
+                    EMClient.getInstance().chatManager().loadAllConversations();
+                    EMClient.getInstance().groupManager().loadAllGroups();
+                    startActivity(MainActivity.class);
+                    finish();
+                } else {
+                    handler.sendEmptyMessageDelayed(0, sleepTime);
+                }
+            }
+        }).start();
+    }
+
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            EMClient.getInstance().logout(true);
+            startActivity(AuthenticationActivity.class);
+            finish();
+        }
+    };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+}

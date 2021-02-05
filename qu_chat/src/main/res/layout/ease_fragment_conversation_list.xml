@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:hyphenate="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <com.haoniu.quchat.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        hyphenate:titleBarTitle="艾特" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:text="艾特"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:padding="@dimen/dp_5"
+            android:src="@drawable/tj" />
+    </RelativeLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/multi_device"
+        android:drawablePadding="@dimen/dp_10"
+        android:paddingLeft="@dimen/dp_20"
+        android:drawableLeft="@mipmap/ic_multi_device"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:text="多设备在线登录"
+        android:textColor="#ff666666"
+        android:background="#fbfbfb"
+        android:textSize="13sp"
+        />
+    <include
+        layout="@layout/ease_search_bar"
+        android:visibility="visible" />
+
+
+    <FrameLayout
+        android:id="@+id/fl_error_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.haoniu.quchat.widget.EaseConversationList
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:cacheColorHint="#00000000"
+        android:divider="@null"
+         />
+
+</LinearLayout>

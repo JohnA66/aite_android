@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if(clientWidth>=750){
+                        docEl.style.fontSize = '100px';
+                    }else{
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                    var html = document.getElementsByTagName('html')[0];
+                    var settedFs = settingFs = parseInt(100 * (clientWidth / 750));
+                    var whileCount = 0;
+                    while(true) {
+                        var realFs = parseInt(window.getComputedStyle(html).fontSize);
+                        var delta = realFs - settedFs;
+                        if (Math.abs(delta) >= 1) {
+                            if (delta > 0)
+                                settingFs--;
+                            else
+                                settingFs++;
+                            html.setAttribute('style', 'font-size:'+settingFs + 'px!important');
+                        } else
+                            break;
+                        if (whileCount++ > 100)
+                            break
+                    }
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <title>微友</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            font-family: "microsoft yahei", "microsoft sans serif", arial;
+        }
+        .cell_head{
+            position: relative;
+            overflow: hidden;
+            width:100%;
+        }
+        .head_img{
+            width:100%;
+            display: block;
+        }
+        .go_back{
+            height:0.85rem;
+            width:0.85rem;
+            background: url('img/left.png') center no-repeat;
+            background-size: 0.35rem 0.35rem;
+            position: absolute;
+            left:0;
+            top:0;
+            z-index: 3;
+        }
+        .wx_box{
+            margin-top:1.6rem;
+            width:calc(100% - 0.6rem);
+            margin-left:0.3rem;
+            border-radius: 0.3rem;
+            box-shadow: 0px 0px 0.35rem rgba(0,0,0,0.2);
+            background: #fff;
+            padding:0.5rem 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .wx_img{
+            height:0.95rem;
+            width:0.95rem;
+            border-radius: 100%;
+            margin-left:0.82rem;
+            margin-right:0.25rem;
+            float:left;
+        }
+        .wx_num{
+            font-size:0.3rem;
+            line-height:0.95rem;
+            font-weight:900;
+            color:#333;
+        }
+    </style>
+</head>
+<body>
+    <div class="cell_head">
+        <img src="img/lianxiwomen@2x.png" class="head_img">
+        <i class="go_back"></i>
+    </div>
+    <div class="wx_box">
+        <img src="img/weix.png" class="wx_img">
+        <div class="wx_num">微信客服：15094838543</div>
+    </div>
+</body>
+</html>

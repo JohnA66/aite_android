@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F7F7F7"
+    >
+
+    <include layout="@layout/toolbar_layout"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_28"
+            android:text="请绑定本人支付宝"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_16"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_38"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/dp_66"
+                android:layout_height="match_parent"
+                android:text="姓名"
+                android:textSize="@dimen/dp_13"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_16"
+                />
+
+            <TextView
+                android:id="@+id/er_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:textSize="@dimen/sp_13"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:hint=""
+                android:gravity="right|center_vertical"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"
+                />
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:background="#dedede"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_38"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/dp_66"
+                android:layout_height="match_parent"
+                android:text="账号"
+                android:textSize="@dimen/dp_13"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_16"
+                />
+
+            <EditText
+                android:id="@+id/er_kahao"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:textSize="@dimen/sp_13"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:hint="请输入支付宝账号"
+                android:gravity="right|center_vertical"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"
+                />
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:background="#dedede"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_bangding"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_38"
+            android:text="绑定"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/dp_27"
+            android:layout_marginLeft="@dimen/dp_14"
+            android:layout_marginRight="@dimen/dp_14"
+            android:background="@drawable/bor_btn_bangding"
+            android:gravity="center"
+            android:textSize="@dimen/sp_13"/>
+    </LinearLayout>
+
+</LinearLayout>

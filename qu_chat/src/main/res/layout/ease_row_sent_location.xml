@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/dp_13">
+
+    <TextView
+        android:id="@+id/timestamp"
+        style="@style/chat_text_date_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5">
+
+        <com.haoniu.quchat.widget.EaseImageView
+            android:id="@+id/iv_userhead"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_5"
+            android:src="@mipmap/img_default_avatar" />
+
+        <LinearLayout
+            android:id="@+id/bubble"
+            android:layout_width="@dimen/dp_192"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_5"
+            android:orientation="vertical"
+            android:layout_toLeftOf="@id/iv_userhead"
+            android:background="@drawable/shape_card_white_radius">
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_11"
+                android:ellipsize="end"
+                android:paddingLeft="@dimen/dp_16"
+                android:singleLine="true"
+                android:layout_marginRight="@dimen/dp_5"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/sp_13"
+                tools:text="安徽省软件行业协会" />
+
+            <TextView
+                android:id="@+id/tv_location_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:ellipsize="end"
+                android:paddingLeft="@dimen/dp_16"
+                android:singleLine="true"
+                android:layout_marginRight="@dimen/dp_5"
+                android:textColor="@color/grey_2"
+                android:textSize="@dimen/sp_10"
+                tools:text="安徽省合肥市软件行业协会蜀山区..." />
+            
+            <com.haoniu.quchat.widget.EaseImageView
+                android:id="@+id/img_location"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dp_10"
+                android:scaleType="centerCrop"
+                android:layout_height="@dimen/dp_96" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/msg_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/bubble"
+            android:clickable="true"
+            android:src="@drawable/ease_msg_state_failed_resend"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_ack"
+            style="@style/chat_text_name_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/bubble"
+            android:text="@string/text_ack_msg"
+            android:textSize="@dimen/sp_12"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tv_delivered"
+            style="@style/chat_text_name_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tv_chatcontent"
+            android:text="@string/text_delivered_msg"
+            android:textSize="@dimen/sp_12"
+            android:visibility="invisible" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/bubble"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+</LinearLayout>

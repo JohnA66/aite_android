@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <com.haoniu.quchat.widget.EaseImageView
+        android:id="@+id/img_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_77"
+        android:src="@mipmap/logo"
+        android:visibility="gone" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_95"
+        android:text="登录"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_27"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/dp_17"
+        android:layout_marginTop="@dimen/dp_75"
+        android:layout_marginRight="@dimen/dp_17"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_49"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/bor_login_4"
+            android:hint="输入手机号"
+            android:maxLength="11"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dp_23"
+            android:paddingRight="@dimen/dp_23"
+            android:singleLine="true"
+            android:textColor="@color/black_text"
+            android:textColorHint="#999999"
+            android:textSize="@dimen/sp_14" />
+
+
+        <EditText
+            android:id="@+id/et_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_49"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/dp_14"
+            android:background="@drawable/bor_login_4"
+            android:hint="输入密码"
+            android:imeOptions="actionNext"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dp_23"
+            android:paddingRight="@dimen/dp_23"
+            android:singleLine="true"
+            android:textColor="@color/black_text"
+            android:textColorHint="#999999"
+            android:textSize="@dimen/sp_14" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/dp_36"
+            android:layout_marginRight="@dimen/dp_36"
+            android:layout_marginBottom="@dimen/dp_70"
+            android:background="@mipmap/weixin"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="login"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_15" />
+    </FrameLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_17"
+        android:layout_marginRight="@dimen/dp_17"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_update_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_40"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp_18"
+            android:text="忘记密码?"
+            android:textColor="@color/blue5"
+
+            />
+    </RelativeLayout>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tvLogin"
+        android:layout_marginTop="@dimen/dp_82"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        android:background="@drawable/login_bg_selector"
+        android:gravity="center"
+        android:text="登录"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16" />
+
+
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/tv_register"
+        android:layout_marginTop="@dimen/dp_26"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_40"
+        android:gravity="center"
+        android:text="立即注册"
+        android:textColor="@color/blue5"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        >
+        <TextView
+            android:id="@+id/freeze"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="冻结账户"
+            android:textColor="#ff333333"
+            android:textSize="13sp"
+            android:layout_marginRight="@dimen/dp_10"
+            />
+        <TextView
+            android:id="@+id/thaw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="解冻账户"
+            android:textColor="#ff333333"
+            android:textSize="13sp"
+            />
+    </LinearLayout>
+</LinearLayout>

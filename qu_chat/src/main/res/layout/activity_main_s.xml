@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:id="@+id/main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bottom_bar_normal_bg"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        tools:ignore="DisableBaselineAlignment">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="#f5f5f5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_49"
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            tools:ignore="DisableBaselineAlignment">
+
+            <RelativeLayout
+                android:id="@+id/btn_container_address_list"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btn_address_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/main_bottom_item_bg"
+                    android:drawableTop="@drawable/tab_main_1_bg"
+                    android:onClick="onTabClicked"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_2"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:scaleType="matrix"
+                    android:text="艾特"
+                    android:textColor="@color/main_botton_text_color"
+                    android:textSize="@dimen/sp_10" />
+
+                <TextView
+                    android:id="@+id/unread_msg_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_16"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginRight="@dimen/dp_18"
+                    android:background="@drawable/shape_unread_bg"
+                    android:gravity="center"
+                    android:minWidth="@dimen/dp_16"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/sp_11"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btn_container_Room"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btn_Room"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/main_bottom_item_bg"
+                    android:drawableTop="@drawable/tab_main_2_bg"
+                    android:onClick="onTabClicked"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_2"
+                    android:scaleType="matrix"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:text="联系人"
+                    android:textColor="@color/main_botton_text_color"
+                    android:textSize="@dimen/sp_10" />
+
+                <TextView
+                    android:id="@+id/unread_address_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_16"
+                    android:minWidth="@dimen/dp_16"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginRight="@dimen/dp_18"
+                    android:background="@drawable/shape_unread_bg"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/sp_11"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btn_container_conversation"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btn_conversation"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/main_bottom_item_bg"
+                    android:drawableTop="@drawable/tab_main_3_bg"
+                    android:onClick="onTabClicked"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_2"
+                    android:scaleType="matrix"
+                    android:text="发现"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:textColor="@color/main_botton_text_color"
+                    android:textSize="@dimen/sp_10" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/btn_container_setting"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btn_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/main_bottom_item_bg"
+                    android:drawableTop="@drawable/tab_main_4_bg"
+                    android:onClick="onTabClicked"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_2"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:scaleType="matrix"
+                    android:text="我的"
+                    android:textColor="@color/main_botton_text_color"
+                    android:textSize="@dimen/sp_10" />
+
+                <TextView
+                    android:id="@+id/unread_apply_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/dp_1"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:background="@drawable/em_unread_count_bg"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/sp_12"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/main_bottom" />
+
+</RelativeLayout>

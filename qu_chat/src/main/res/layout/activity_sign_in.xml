@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/toolbar_layout"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="203dp"
+                android:background="@mipmap/img_qd_bg"
+                >
+
+                <TextView
+                    android:id="@+id/tv_jifen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="100积分"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_17"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_duihuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:background="@drawable/bor_sign_3"
+                    android:padding="@dimen/dp_4"
+                    android:text="积分兑换"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    android:visibility="gone"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="@dimen/dp_128"
+                    android:layout_height="@dimen/dp_128"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/bor_sign"
+                    >
+
+                    <RelativeLayout
+                        android:id="@+id/rel_qiandao"
+                        android:layout_width="@dimen/dp_112"
+                        android:layout_height="@dimen/dp_112"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/bor_sign_2"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            >
+
+                            <TextView
+                                android:id="@+id/sign"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="签到"
+                                android:textColor="#e90089"
+                                android:textSize="@dimen/sp_18"
+                                />
+
+                            <View
+                                android:layout_width="@dimen/dp_82"
+                                android:layout_height="@dimen/dp_1"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:background="#dedede"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_7"
+                                android:text="连续0天"
+                                android:textColor="#e90089"
+                                android:textSize="@dimen/sp_14"
+                                />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:text="今日未签到，签到可获得15积分"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_14"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_10"
+                android:background="@color/common_bg"
+                />
+
+            <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:mcv_showOtherDates="defaults"
+                app:mcv_tileHeight="@dimen/dp_44"
+                app:mcv_tileSize="@dimen/sp_14"
+                app:mcv_tileWidth="@dimen/dp_44"
+                app:mcv_weekDayLabels="@array/xingqi"
+                />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

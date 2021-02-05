@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_layout"/>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/fenx_bg" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+<!--            <View-->
+<!--                android:visibility="gone"-->
+<!--                android:id="@+id/bar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/dp_0" />-->
+
+<!--            <RelativeLayout-->
+<!--                android:visibility="gone"-->
+<!--                android:id="@+id/rl_top"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/dp_45">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:text="分享"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="@dimen/sp_17" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/img_back"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:background="?attr/selectableItemBackground"-->
+<!--                    android:padding="@dimen/dp_10"-->
+<!--                    android:src="@mipmap/fanhui2" />-->
+<!--            </RelativeLayout>-->
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2">
+                <ImageView
+                    android:layout_marginTop="@dimen/dp_40"
+                    android:layout_gravity="center"
+                    android:id="@+id/iv1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/qr_bg"
+                    android:layout_width="@dimen/dp_210"
+                    android:layout_height="@dimen/dp_210"/>
+                <android.support.constraint.ConstraintLayout
+                    android:layout_marginTop="@dimen/dp_27"
+                    android:layout_width="@dimen/dp_130"
+                    android:layout_height="@dimen/dp_130"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dp_4"
+                    android:background="@color/white">
+
+                    <ImageView
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_margin="@dimen/dp_5"
+                        android:id="@+id/img_qr"
+                        android:layout_width="@dimen/dp_120"
+                        android:layout_height="@dimen/dp_120"
+                        android:scaleType="centerCrop" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

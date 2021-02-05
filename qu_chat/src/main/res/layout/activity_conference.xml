@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/holo_black"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="false"
+    >
+
+    <!--通话界面容器-->
+    <RelativeLayout
+        android:id="@+id/layout_surface_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        >
+        <!--多人会议时显示成员画面控件容器-->
+        <com.haoniu.quchat.widget.EaseViewGroup
+            android:id="@+id/surface_view_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            />
+    </RelativeLayout>
+
+    <!--控制按钮层布局-->
+    <RelativeLayout
+        android:id="@+id/layout_call_control"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        >
+
+        <!--头部状态以及最小化操作-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_24"
+            >
+            <!--界面最小化按钮-->
+            <ImageButton
+                android:id="@+id/btn_exit_full_screen"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_48"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:background="@drawable/em_click_circle_transparent"
+                android:src="@drawable/ic_fullscreen_exit_white_24dp"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+
+                <!--通话时间-->
+                <TextView
+                    android:id="@+id/text_call_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="#89212121"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"
+                    android:text="@string/app_name"
+                    android:textColor="#89ffffff"
+                    android:visibility="gone"
+                    />
+            </LinearLayout>
+            <!--邀请加入-->
+            <ImageButton
+                android:id="@+id/btn_invite_join"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_48"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp_16"
+                android:background="@drawable/em_click_circle_transparent"
+                android:src="@drawable/em_add"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_calling"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#61212121"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:orientation="horizontal"
+                >
+
+                <!--麦克风开关-->
+                <ImageButton
+                    android:id="@+id/btn_mic_switch"
+                    android:layout_width="@dimen/dp_48"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_margin="@dimen/dp_8"
+                    android:background="@drawable/em_click_circle_transparent"
+                    android:src="@drawable/ic_mic_off_white_24dp"
+                    />
+
+                <!--扬声器开关-->
+                <ImageButton
+                    android:id="@+id/btn_speaker_switch"
+                    android:layout_width="@dimen/dp_48"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_margin="@dimen/dp_8"
+                    android:background="@drawable/em_click_circle_transparent"
+                    android:src="@drawable/ic_volume_up_white_24dp"
+                    />
+
+                <!--摄像头开关-->
+                <ImageButton
+                    android:id="@+id/btn_camera_switch"
+                    android:layout_width="@dimen/dp_48"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_margin="@dimen/dp_8"
+                    android:background="@drawable/em_click_circle_transparent"
+                    android:src="@drawable/ic_videocam_off_white_24dp"
+                    />
+
+                <!--切换摄像头-->
+                <ImageButton
+                    android:id="@+id/btn_change_camera_switch"
+                    android:layout_width="@dimen/dp_48"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_margin="@dimen/dp_8"
+                    android:background="@drawable/em_click_circle_transparent"
+                    android:src="@drawable/ic_camera_front_white_24dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+
+                <!--拒绝接听-->
+                <ImageButton
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/dp_24"
+                    android:background="@color/holo_red_light"
+                    android:padding="@dimen/dp_16"
+                    android:src="@drawable/ic_call_end_white_24dp"
+                    />
+
+                <!--结束通话-->
+                <ImageButton
+                    android:id="@+id/btn_exit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/dp_24"
+                    android:background="@color/holo_red_light"
+                    android:padding="@dimen/dp_16"
+                    android:src="@drawable/ic_call_end_white_24dp"
+                    />
+
+                <!--接听通话-->
+                <ImageButton
+                    android:id="@+id/btn_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/dp_24"
+                    android:background="@color/holo_green_light"
+                    android:padding="@dimen/dp_16"
+                    android:src="@drawable/ic_call_white_24dp"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

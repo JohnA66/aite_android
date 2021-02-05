@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/dp_10"
+    android:paddingBottom="@dimen/dp_10"
+    android:background="@color/white"
+    android:paddingLeft="@dimen/dp_20"
+    android:paddingRight="@dimen/dp_20"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <View
+        android:background="@drawable/shape_main_search_radius"
+        android:layout_alignRight="@+id/query"
+        android:layout_alignLeft="@+id/query"
+        android:layout_alignTop="@+id/query"
+        android:layout_alignBottom="@+id/query"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:id="@+id/hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawableLeft="@mipmap/ss"
+        android:drawablePadding="@dimen/dp_8"
+        android:gravity="center"
+        android:text="搜索"
+        android:layout_centerInParent="true"
+        android:textColor="#bbbbbb"
+        android:textSize="@dimen/sp_12" />
+
+
+    <EditText
+        android:background="@null"
+        android:id="@+id/query"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:drawablePadding="@dimen/dp_5"
+        android:textSize="@dimen/sp_12"
+        android:singleLine="true"
+        android:imeOptions="actionSearch"/>
+
+    <ImageButton
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_3"
+        android:background="@android:color/transparent"
+        android:padding="@dimen/dp_6"
+        android:src="@drawable/ease_search_clear"
+        android:visibility="invisible" />
+
+</RelativeLayout>

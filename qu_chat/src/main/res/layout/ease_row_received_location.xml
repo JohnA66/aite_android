@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/dp_13">
+
+    <TextView
+        android:id="@+id/timestamp"
+        style="@style/chat_text_date_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5">
+
+        <com.haoniu.quchat.widget.EaseImageView
+            android:id="@+id/iv_userhead"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:src="@mipmap/img_default_avatar" />
+
+        <LinearLayout
+            android:id="@+id/bubble"
+            android:layout_width="@dimen/dp_192"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_userid"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_toRightOf="@id/iv_userhead"
+            android:background="@drawable/shape_card_white_radius"
+            android:gravity="right"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_11"
+                android:ellipsize="end"
+                android:paddingLeft="@dimen/dp_5"
+                android:paddingRight="@dimen/dp_16"
+                android:singleLine="true"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/sp_13"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:gravity="left"
+                tools:text="安徽省软件行业协会" />
+
+
+            <TextView
+                android:id="@+id/tv_location_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:layout_marginRight="@dimen/dp_16"
+                android:ellipsize="end"
+                android:paddingLeft="@dimen/dp_5"
+                android:singleLine="true"
+                android:gravity="left"
+                android:textColor="@color/grey_2"
+                android:textSize="@dimen/sp_10"
+                tools:text="安徽省合肥市软件行业协会蜀山区..." />
+
+            <com.haoniu.quchat.widget.EaseImageView
+                android:id="@+id/img_location"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_96"
+                android:layout_marginTop="@dimen/dp_10"
+                android:scaleType="centerCrop" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_userid"
+            style="@style/chat_text_name_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_17"
+            android:layout_toRightOf="@id/iv_userhead"
+            android:textSize="@dimen/sp_13"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_194"
+    android:layout_marginTop="@dimen/dp_10"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/llay_more"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingTop="@dimen/dp_12"
+        android:paddingRight="@dimen/dp_15"
+        android:paddingBottom="@dimen/dp_12">
+
+        <ImageView
+            android:id="@+id/img_collect"
+            android:layout_width="@dimen/dp_127"
+            android:layout_height="@dimen/dp_127"
+            android:scaleType="centerCrop"
+            tools:src="@mipmap/bg_2" />
+
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:textColor="#9F9F9F"
+            android:textSize="@dimen/sp_12"
+            tools:text="我的昵称 2019/4/3" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/dp_68"
+        android:layout_height="match_parent"
+        android:background="@drawable/shap_red"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_del"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_12" />
+    </LinearLayout>
+</LinearLayout>

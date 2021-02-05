@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!--对话框大小-->
+		<dimen name="dialog_netprogress_bg_width">150dip</dimen>
+		
+	<!-- 进度条大小 -->	
+		<dimen name="dialog_netprogress_width">50dip</dimen>
+		<dimen name="dialog_netprogress_height">50dip</dimen>
+	<!-- 进度条边距 -->	
+		<dimen name="dialog_netprogress_padding_top">10dip</dimen>
+		<dimen name="dialog_netprogress_padding_top_simple">5dip</dimen>
+		<dimen name="dialog_netprogress_padding_bottom">10dip</dimen>
+
+</resources>

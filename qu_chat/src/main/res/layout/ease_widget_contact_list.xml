@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:cacheColorHint="#00000000"
+        android:descendantFocusability="afterDescendants"
+        android:divider="#EBEBEB"
+        android:dividerHeight="1px"
+        android:fastScrollEnabled="false" />
+
+    <com.haoniu.quchat.widget.EaseSidebar
+        android:id="@+id/sidebar"
+        android:layout_width="@dimen/dp_15"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_5"
+        android:background="@android:color/transparent"
+        android:clickable="true" />
+
+    <TextView
+        android:id="@+id/floating_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ease_sidebar_background_pressed"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp_25"
+        android:paddingTop="@dimen/dp_5"
+        android:paddingRight="@dimen/dp_25"
+        android:paddingBottom="@dimen/dp_5"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        android:visibility="invisible"
+        tools:text="M" />
+
+</RelativeLayout>

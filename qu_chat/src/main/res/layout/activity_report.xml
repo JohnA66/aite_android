@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_my_gold"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <EditText
+        android:id="@+id/et_report"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_298"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_19"
+        android:layout_marginRight="@dimen/dp_15"
+        android:background="@drawable/shape_report_white_radius"
+        android:gravity="top"
+        android:hint="请输入举报理由…"
+        android:maxLength="255"
+        android:paddingLeft="@dimen/dp_12"
+        android:paddingTop="@dimen/dp_11"
+        android:textColor="@color/black_text"
+        android:textColorHint="#B3B3B3"
+        android:textSize="@dimen/sp_14" />
+
+
+    <TextView
+        android:id="@+id/tv_report"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_54"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_40"
+        android:layout_marginRight="@dimen/dp_14"
+        android:background="@drawable/report_bg_nor_sel"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15" />
+
+</LinearLayout>

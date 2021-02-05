@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:hyphenate="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:orientation="vertical">
+
+    <com.haoniu.quchat.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        hyphenate:titleBarTitle="@string/address_book" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackground"
+            android:paddingLeft="@dimen/dp_15"
+            android:visibility="visible"
+            android:paddingRight="@dimen/dp_15"
+            android:src="@mipmap/fanhui" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="通讯录"
+            android:textColor="@color/black"
+            android:layout_marginLeft="@dimen/dp_18"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/sp_16"
+             />
+
+        <ImageView
+            android:id="@+id/img_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="@dimen/dp_5"
+            android:src="@drawable/tianjialianxir" />
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/search_bar_view"
+        layout="@layout/ease_search_bar" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_1"
+        android:layout_alignParentBottom="true"
+        android:background="#EAEDF2" />
+
+    <FrameLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.haoniu.quchat.widget.EaseContactList
+            android:id="@+id/contact_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <!-- hyphenate:ctsListInitialLetterBg="#abc" -->
+    </FrameLayout>
+
+</LinearLayout>

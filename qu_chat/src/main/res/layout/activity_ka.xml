@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F7F7F7"
+    >
+
+    <include layout="@layout/toolbar_layout"/>
+    <LinearLayout
+        android:id="@+id/ll_alipay"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="@dimen/dp_96"
+        android:layout_margin="@dimen/dp_19"
+        android:visibility="gone"
+        android:gravity="center_vertical"
+        android:background="@drawable/bor_btn_banl"
+        >
+
+        <TextView
+            android:id="@+id/tv_alipay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp_33"
+            android:layout_gravity="center_vertical"
+            android:paddingRight="@dimen/dp_20"
+            android:textColor="#333333"
+            android:textSize="@dimen/sp_12"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_bank"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="@dimen/dp_96"
+        android:visibility="gone"
+        android:layout_margin="@dimen/dp_19"
+        android:gravity="center_vertical"
+        android:background="@drawable/bor_btn_banl"
+        >
+
+        <TextView
+            android:id="@+id/tv_bank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp_33"
+            android:layout_gravity="center_vertical"
+            android:paddingRight="@dimen/dp_20"
+            android:textColor="#333333"
+            android:textSize="@dimen/sp_12"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

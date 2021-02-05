@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.luck.picture.lib.widget.SquareRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_5"
+            android:scaleType="centerCrop"
+            tools:src="@mipmap/bg_1" />
+
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_sel"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_5"
+            android:background="@color/blue5"
+            android:drawableTop="@mipmap/wanc"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp_5"
+            android:text="" />
+    </com.luck.picture.lib.widget.SquareRelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/dp_13"
+    >
+
+    <TextView
+        android:id="@+id/timestamp"
+        style="@style/chat_text_date_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        >
+
+        <com.haoniu.quchat.widget.EaseImageView
+            android:id="@+id/iv_userhead"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/img_default_avatar"
+            />
+
+        <RelativeLayout
+            android:id="@+id/bubble"
+            android:layout_width="@dimen/dp_240"
+            android:layout_height="@dimen/dp_87"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_toRightOf="@id/iv_userhead"
+            android:background="@mipmap/img_transfer_bg_left"
+            >
+
+            <TextView
+                android:id="@+id/tv_money_greeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_75"
+                android:maxLines="2"
+                android:layout_marginRight="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="已收到对方转账"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sp_16"
+                />
+
+            <TextView
+                android:id="@+id/tv_transfer_received"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_75"
+                android:layout_marginTop="@dimen/dp_40"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sp_16"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/dp_4"
+                android:layout_marginRight="@dimen/dp_7"
+                android:text="艾特转账"
+                android:textSize="@dimen/sp_12"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/dp_13">
+
+    <TextView
+        android:id="@+id/timestamp"
+        style="@style/chat_text_date_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5">
+
+        <com.haoniu.quchat.widget.EaseImageView
+            android:id="@+id/iv_userhead"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/img_default_avatar"/>
+
+        <RelativeLayout
+            android:id="@+id/bubble"
+            android:layout_width="@dimen/dp_240"
+            android:layout_height="@dimen/dp_87"
+            android:layout_below="@+id/tv_userid"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_toRightOf="@id/iv_userhead"
+            android:background="@mipmap/hb2"
+            >
+
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/dp_27"
+                android:layout_marginLeft="@dimen/dp_65"
+                android:layout_marginRight="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_10"
+                android:gravity="center_vertical"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:maxLength="25"
+                tools:text="恭喜发财，大吉大利！恭喜发财，大吉大利！大吉大利大吉大利"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sp_14"/>
+
+            <TextView
+                android:id="@+id/tv_hongbao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_65"
+                android:layout_marginRight="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_40"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="领取红包"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sp_12"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tv_time_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/dp_80"
+                android:paddingBottom="@dimen/dp_5"
+                android:visibility="gone"
+                android:text="5分钟有效"
+                android:textSize="@dimen/dp_11"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:visibility="visible"
+                android:text="艾特红包"
+                android:layout_marginBottom="@dimen/dp_2"
+                android:layout_marginLeft="@dimen/dp_18"
+                android:textSize="@dimen/dp_11"
+                />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/bg_color"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="18dp"
+                android:gravity="center"
+                android:text="12:12:12"
+                android:textSize="10sp"
+                android:paddingTop="3dp"
+                android:paddingBottom="5dp"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_userid"
+            style="@style/chat_text_name_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_17"
+            android:layout_toRightOf="@id/iv_userhead"
+            android:textSize="@dimen/sp_13"
+            tools:text="婉婉"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+</LinearLayout>

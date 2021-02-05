@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_my_gold"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smart"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/llayout_title_1"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.haoniu.quchat.view.SlideRecyclerView
+                android:id="@+id/rv_collect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginRight="@dimen/dp_15" />
+        </RelativeLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+    <TextView
+        android:id="@+id/tv_no_collect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llayout_title_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_141"
+        android:drawableTop="@drawable/zanwusouc"
+        android:drawablePadding="@dimen/dp_21"
+        android:text="暂无收藏"
+        android:textColor="#9F9F9F"
+        android:textSize="@dimen/sp_12"
+        android:visibility="gone" />
+
+</RelativeLayout>

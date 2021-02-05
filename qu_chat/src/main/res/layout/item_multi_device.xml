@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/dp_20"
+    android:paddingRight="@dimen/dp_20"
+    android:paddingTop="@dimen/dp_15"
+    android:paddingBottom="@dimen/dp_15"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/dp_1">
+    <TextView
+        android:id="@+id/mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mobile"
+        android:textColor="#ff000000"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_below="@+id/mobile"
+        android:id="@+id/ip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IP地址："
+        android:textColor="#ff666666"
+        android:textSize="12sp"
+        />
+
+    <TextView
+        android:layout_marginTop="@dimen/dp_5"
+        android:id="@+id/address"
+        android:layout_below="@+id/ip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="登录地点："
+        android:textColor="#ff666666"
+        android:textSize="12sp"
+        />
+
+    <TextView
+        android:layout_marginTop="@dimen/dp_5"
+        android:id="@+id/time"
+        android:layout_below="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="登录时间："
+        android:textColor="#ff666666"
+        android:textSize="12sp"
+        />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/kick_out"
+        android:background="@drawable/comm_affirm_btn"
+        android:layout_width="60dp"
+        android:layout_height="28dp"
+        android:text="登出"
+        android:gravity="center"
+        android:textColor="#ffffffff"
+        android:textSize="12sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/time"
+        android:layout_marginBottom="@dimen/dp_5"
+        />
+</RelativeLayout>

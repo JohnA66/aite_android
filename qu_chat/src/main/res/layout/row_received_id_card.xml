@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/dp_13">
+
+    <TextView
+        android:id="@+id/timestamp"
+        style="@style/chat_text_date_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5">
+
+        <com.haoniu.quchat.widget.EaseImageView
+            android:id="@+id/iv_userhead"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/img_default_avatar" />
+
+        <RelativeLayout
+            android:id="@+id/bubble"
+            android:layout_width="@dimen/dp_192"
+            android:layout_height="@dimen/dp_67"
+            android:layout_below="@+id/tv_userid"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_toRightOf="@+id/iv_userhead"
+            android:background="@drawable/shape_card_white_radius">
+
+            <com.haoniu.quchat.widget.EaseImageView
+                android:id="@+id/img_card_head"
+                android:layout_width="@dimen/dp_31"
+                android:layout_height="@dimen/dp_31"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/img_default_avatar" />
+
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/img_card_head"
+                android:layout_marginLeft="@dimen/dp_14"
+                android:layout_marginRight="@dimen/dp_5"
+                android:layout_toRightOf="@+id/img_card_head"
+                android:gravity="center_vertical"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_13"
+                tools:text="名片" />
+
+
+            <TextView
+                android:id="@+id/tv_youxin_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/img_card_head"
+                android:layout_marginLeft="@dimen/dp_14"
+                android:layout_marginRight="@dimen/dp_5"
+                android:layout_toRightOf="@+id/img_card_head"
+                android:gravity="center_vertical"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:textColor="@color/grey_2"
+                android:textSize="@dimen/sp_10"
+                tools:text="艾特号：3266636" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_below="@+id/img_card_head"
+                android:background="@drawable/shape_login_line"
+                android:layout_marginTop="@dimen/dp_8" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_4"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:textColor="@color/grey_2"
+                android:textSize="@dimen/sp_10"
+                android:text="名片" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_userid"
+            style="@style/chat_text_name_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_17"
+            android:layout_toRightOf="@id/iv_userhead"
+            android:textSize="@dimen/sp_13"
+            android:visibility="gone"
+            tools:text="" />
+    </RelativeLayout>
+
+</LinearLayout>

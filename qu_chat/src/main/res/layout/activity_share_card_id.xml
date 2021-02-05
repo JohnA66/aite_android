@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_layout"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_below="@+id/llayout_title_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/fl_bottom" />
+
+    <FrameLayout
+        android:id="@+id/fl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <com.flyco.tablayout.SegmentTabLayout
+            android:id="@+id/segmenttab"
+            android:layout_width="@dimen/dp_140"
+            android:layout_height="@dimen/dp_28"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_18"
+            android:layout_marginBottom="@dimen/dp_18"
+            app:tl_bar_stroke_color="@color/blue5"
+            app:tl_bar_stroke_width="@dimen/dp_1"
+            app:tl_indicator_color="@color/blue5"
+            app:tl_tab_space_equal="true"
+            app:tl_textSelectColor="@color/white"
+            app:tl_textUnselectColor="@color/blue5"
+            app:tl_textsize="@dimen/sp_14"
+            tl:tl_indicator_anim_enable="true"
+            tl:tl_indicator_corner_radius="1dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:background="@drawable/shape_login_line" />
+    </FrameLayout>
+
+
+</RelativeLayout>

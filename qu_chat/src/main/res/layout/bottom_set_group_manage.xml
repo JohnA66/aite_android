@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_59"
+    android:id="@+id/ll_footerView"
+    android:layout_below="@+id/rv_group_manage"
+    android:background="@color/white"
+    android:foreground="?attr/selectableItemBackground">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:drawableRight="@drawable/more_1x"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_14"
+        android:paddingRight="@dimen/dp_14"
+        android:text="添加群管理员"
+        android:textColor="@color/black_text"
+        android:textSize="@dimen/sp_15" />
+</LinearLayout>
+

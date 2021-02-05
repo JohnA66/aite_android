@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/toolbar_layout"/>
+
+    <LinearLayout
+        android:id="@+id/ll_notices"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="?selectableItemBackground">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="屏蔽群消息"
+                android:textColor="@color/black_deep"
+                android:textSize="@dimen/sp_15"/>
+
+            <com.haoniu.quchat.widget.EaseSwitchButton
+                android:id="@+id/switch_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_20"
+                >
+            </com.haoniu.quchat.widget.EaseSwitchButton>
+
+            <ImageView
+                android:id="@+id/img_to_right_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_20"
+                android:src="@mipmap/img_back_right"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_toLeftOf="@+id/img_to_right_2"
+                android:text="修改"
+                android:textSize="@dimen/sp_16"
+                android:visibility="gone"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

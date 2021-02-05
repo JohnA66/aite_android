@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_61"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/ll_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/dp_15"
+        android:visibility="visible">
+
+        <com.haoniu.quchat.widget.EaseImageView
+            android:id="@+id/img_group"
+            android:layout_width="@dimen/dp_45"
+            android:layout_height="@dimen/dp_45"
+            android:src="@mipmap/img_default_avatar" />
+
+        <TextView
+            android:id="@+id/tv_nick_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginRight="@dimen/dp_5"
+            android:layout_toLeftOf="@+id/tv_apply_agree"
+            android:layout_toRightOf="@+id/img_group"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_13"
+            tools:text="群名称：xx" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/img_group"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginRight="@dimen/dp_5"
+            android:layout_toLeftOf="@+id/tv_apply_agree"
+            android:layout_toRightOf="@+id/img_group"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_13"
+            tools:text="群号：xx" />
+
+
+        <TextView
+            android:id="@+id/tv_apply_agree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tv_apply_no_agree"
+            android:background="@drawable/shap_blue_radius"
+            android:paddingLeft="@dimen/dp_12"
+            android:paddingTop="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_12"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_8"
+            android:text="同 意"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13" />
+
+        <TextView
+            android:id="@+id/tv_apply_no_agree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shap_gray_5"
+            android:paddingLeft="@dimen/dp_12"
+            android:paddingTop="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_12"
+            android:paddingBottom="@dimen/dp_8"
+            android:gravity="center"
+            android:text="拒 绝"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13" />
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_my_gold"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_42"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:gravity="center_vertical"
+            android:text="置顶会话"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/sp_13" />
+
+        <Switch
+            android:id="@+id/switch_top_conversation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_18" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/shape_login_line" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_chat_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_42"
+        android:background="@color/white"
+        android:drawableRight="@drawable/more_1x"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_18"
+        android:text="聊天背景"
+        android:textColor="@color/black_text"
+        android:textSize="@dimen/sp_13" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_42"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:gravity="center_vertical"
+            android:text="加入黑名单"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/sp_13" />
+
+        <Switch
+            android:id="@+id/switch_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_18" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/shape_login_line" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_report"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_42"
+        android:background="@color/white"
+        android:drawableRight="@drawable/more_1x"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_18"
+        android:text="举报"
+        android:textColor="@color/black_text"
+        android:textSize="@dimen/sp_13" />
+
+    <TextView
+        android:id="@+id/tv_clear_history"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_42"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_20"
+        android:text="清空聊天记录"
+        android:textColor="@color/black_text"
+        android:textSize="@dimen/sp_13" />
+
+    <TextView
+        android:id="@+id/tv_del_contact"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_42"
+        android:layout_marginTop="@dimen/dp_38"
+        android:background="@color/white"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:text="删除联系人"
+        android:textColor="#FF3D3D"
+        android:textSize="@dimen/sp_13" />
+
+</LinearLayout>

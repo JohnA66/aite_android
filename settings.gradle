@@ -1,0 +1,1 @@
+include ':AndroidBase', ':qu_chat', ':pay_ui', ':AndroidPaySDK_v1.0.0'

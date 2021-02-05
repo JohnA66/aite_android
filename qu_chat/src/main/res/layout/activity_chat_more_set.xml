@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_my_gold"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_layout"
+        />
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_58"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:gravity="center_vertical"
+            android:text="置顶会话"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_15" />
+
+        <CheckBox
+            android:background="@null"
+            android:button="@drawable/selector_checkbox"
+            android:id="@+id/switch_top_conversation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_20" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginTop="@dimen/dp_1"
+        android:id="@+id/tv_chat_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/white"
+        android:drawableRight="@drawable/more_1x"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_18"
+        android:text="聊天背景"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_15" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10" />
+
+    <TextView
+        android:id="@+id/tv_group_manager"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_58"
+        android:background="@color/white"
+        android:drawableRight="@drawable/more_1x"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_18"
+        android:text="设置管理员"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_15"
+        android:visibility="gone" />
+
+
+    <FrameLayout
+        android:id="@+id/fl_group_jinyan"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_58"
+        android:layout_gravity="center_vertical"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:text="全员禁言"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_15" />
+
+        <CheckBox
+            android:background="@null"
+            android:button="@drawable/selector_checkbox"
+            android:id="@+id/switch_shut_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="@dimen/dp_20"
+            android:checked="false"
+            android:gravity="center_vertical" />
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/tv_report"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/white"
+        android:drawableRight="@mipmap/ic_item_more"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20"
+        android:text="举报"
+        android:textColor="@color/black_text"
+        android:textSize="@dimen/sp_15"
+         />
+
+    <RelativeLayout
+        android:id="@+id/rl_black"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:gravity="center_vertical"
+            android:text="加入黑名单"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/sp_15" />
+
+        <CheckBox
+            android:background="@null"
+            android:button="@drawable/selector_checkbox"
+            android:id="@+id/switch_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_20" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/dp_10"
+        android:id="@+id/tv_del_friend"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@drawable/selector_comm_btn"
+        android:gravity="center"
+        android:text="删除好友"
+        android:textColor="#F55151"
+        android:textSize="@dimen/sp_15" />
+
+
+    <TextView
+        android:id="@+id/tv_clear_history"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_58"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_20"
+        android:text="清空聊天记录"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_15"
+        android:visibility="gone" />
+
+
+</LinearLayout>

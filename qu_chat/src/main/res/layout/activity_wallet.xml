@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBFBFB"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_layout" />
+
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/wodelinq"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:text="我的零钱"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/sp_12" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_30">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="￥"
+                        android:textColor="#2B2929"
+                        android:textSize="@dimen/sp_12"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/sp_20"
+                        android:textStyle="bold"
+                        tools:text="100000" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_36"
+                android:layout_marginLeft="@dimen/dp_60"
+                android:layout_marginRight="@dimen/dp_60"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_recharge"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/dp_25"
+                    android:layout_weight="1"
+                    android:background="@drawable/wallet_tx_bg_sel"
+                    android:gravity="center"
+                    android:text="充值"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_withdraw"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_25"
+                    android:layout_weight="1"
+                    android:background="@drawable/wallet_cz_bg_sel"
+                    android:gravity="center"
+                    android:text="提现"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <View
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_6"
+                android:background="#FBFBFB"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/tv_pay_manage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_45"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawableLeft="@mipmap/ic_wallet_bank"
+                    android:drawableRight="@drawable/jingru"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingRight="@dimen/dp_20"
+                    android:text="银行卡"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/sp_15" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_6"
+                    android:background="#FBFBFB"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_bank_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_45"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawableLeft="@mipmap/ic_wallet_bank"
+                    android:drawableRight="@drawable/jingru"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingRight="@dimen/dp_20"
+                    android:text="我的银行卡"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/sp_15"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:id="@+id/tv_my_redpack_record"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_45"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawableLeft="@mipmap/ic_wallet_redpackage"
+                    android:drawableRight="@drawable/jingru"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingRight="@dimen/dp_20"
+                    android:text="我的红包记录"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/sp_15" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:background="#FBFBFB"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_my_transfer"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_45"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawableLeft="@mipmap/ic_wallet_transfer"
+                    android:drawableRight="@drawable/jingru"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingRight="@dimen/dp_20"
+                    android:text="转账记录"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/sp_15" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_6"
+                    android:background="#FBFBFB"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_wallet_lock"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_45"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawableLeft="@mipmap/ic_wallet_lock"
+                    android:drawableRight="@drawable/jingru"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingRight="@dimen/dp_20"
+                    android:text="零钱锁"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/sp_15" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

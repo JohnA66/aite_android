@@ -1,0 +1,67 @@
+ext {
+    android = [
+            compileSdkVersion: 27,
+            buildToolsVersion: "28.0.3",
+            minSdkVersion    : 19,
+            targetSdkVersion : 27,
+            versionCode      : 20201210,
+            versionName      : '1.1.8.1',
+            VSupportSdk      : '27.1.1',
+            VOkhttp          : "3.4.2",
+    ]
+
+    dependencies = [
+            "appcompat-v7"                 : "com.android.support:appcompat-v7:${android["VSupportSdk"]}",
+            "support-v4"                   : "com.android.support:support-v4:${android["VSupportSdk"]}",
+            "design"                       : "com.android.support:design:${android["VSupportSdk"]}",
+            "annotations"                  : "com.android.support:support-annotations:${android["VSupportSdk"]}",
+            "recyclerview-v7"              : "com.android.support:recyclerview-v7:${android["VSupportSdk"]}",
+            "cardview"                     : "com.android.support:cardview-v7:${android["VSupportSdk"]}",
+            "constraint"                   : "com.android.support.constraint:constraint-layout:1.0.2",
+            "butterknife"                  : "com.jakewharton:butterknife:8.8.1", //注解
+            "butterknife-Processor"        : "com.jakewharton:butterknife-compiler:8.8.1",//注解
+            "eventbus"                     : "org.greenrobot:eventbus:3.0.0",//evenBus 通讯
+            "multidex"                     : "com.android.support:multidex:1.0.1",//分包
+            "fastjson"                     : "com.alibaba:fastjson:1.1.65.android",//fastjson
+            "glide"                        : "com.github.bumptech.glide:glide:4.7.1",
+            "glide-Processor"              : "com.github.bumptech.glide:compiler:4.7.1",
+            "glide-transformations"        : "jp.wasabeef:glide-transformations:3.3.0",
+            "xutils"                       : "org.xutils:xutils:3.5.0",
+            "imagepicker"                  : "com.lzy.widget:imagepicker:0.6.1",
+            "gson"                         : "com.google.code.gson:gson:2.8.2", //gson解析
+            "rxandroid"                    : "io.reactivex.rxjava2:rxandroid:2.0.1",//rxandroid
+            "rxjava"                       : "io.reactivex.rxjava2:rxjava:2.0.1",//rxjava
+            "okhttp"                       : "com.squareup.okhttp3:okhttp:3.8.1",//okhttp
+            "okgo"                         : "com.lzy.net:okgo:3.0.4",//okgo
+            "okrx2"                        : "com.lzy.net:okrx2:2.0.2",//okrx2
+            "agentwebX5"                   : "com.just.agentwebX5:agentwebX5:1.0.0",//webView
+            "BaseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34",//recycleview adapter
+            "banner"                       : "com.youth.banner:banner:1.4.9",//banner
+            "PictureSelector"              : "com.github.LuckSiege.PictureSelector:picture_library:v2.2.3",//图片选择
+            //高德地图
+            "3dmap"                        : "com.amap.api:3dmap:latest.integration",
+            "map2d"                        : "com.amap.api:map2d:latest.integration",
+            "navi-3dmap"                   : "com.amap.api:navi-3dmap:latest.integration",
+            "search"                       : "com.amap.api:search:latest.integration",
+            "location"                     : "com.amap.api:location:latest.integration",
+            "grantor"                      : "com.github.dfqin:grantor:2.4",//权限
+            "PhotoView"                    : "com.github.chrisbanes:PhotoView:2.1.3",//图片缩放
+            "pickView"                     : "com.contrarywind:Android-PickerView:3.2.6",//时间 地区选择器
+            "nineoldandroids"              : "com.nineoldandroids:library:2.4.0",
+            "CircleImageView"              : "de.hdodenhof:circleimageview:2.2.0",
+            "tiny"                         : "com.zxy.android:tiny:0.1.0",//图片压缩
+            "tablayout"                    : "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar",//tab 滑动
+            "SmartRefreshLayout"           : "com.scwang.smartrefresh:SmartRefreshLayout:1.0.3",//下拉刷新
+            "SmartRefreshHeader"           : "com.scwang.smartrefresh:SmartRefreshHeader:1.0.3",
+            "takephoto"                    : "com.jph.takephoto:takephoto_library:4.0.3",
+            "walle"                        : "com.meituan.android.walle:library:1.1.5",//渠道包
+            "magic-viewpager"              : "com.zhy:magic-viewpager:1.0.1",
+            "myTabLayout"                  : 'com.androidkun:XTabLayout:1.1.4',//自定义的TabLayout
+            "popWindow"                    : 'com.github.pinguo-zhouwei:CustomPopwindow:2.1.1',//popWindow
+            "zxing"                        : "com.google.zxing:core:3.3.0",//生产二维码
+            "zxing-core"                   : 'com.google.zxing:android-core:3.3.0',//生产二维码
+            "PictureSelector"              : "com.github.LuckSiege.PictureSelector:picture_library:v2.2.3",//图片选择
+            "swipereveallayout"            : "com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1",
+    ]
+
+}

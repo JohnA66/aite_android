@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_58"
+    android:orientation="horizontal"
+    android:layout_marginBottom="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_58"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_15">
+
+        <ImageView
+            android:id="@+id/img_head"
+            android:layout_width="@dimen/dp_36"
+            android:layout_height="@dimen/dp_36"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/img_default_avatar" />
+
+
+        <TextView
+            android:id="@+id/tv_manage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:background="@drawable/shape_group_manage"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp_9"
+            android:paddingTop="@dimen/dp_1"
+            android:paddingRight="@dimen/dp_9"
+            android:paddingBottom="@dimen/dp_1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13"
+            android:visibility="gone"
+            tools:text="群主" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_11"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_15"
+            tools:text="李辉" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_del"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="match_parent"
+        android:background="@color/holo_red_light"
+        android:gravity="center"
+        android:text="删除"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15" />
+</LinearLayout>

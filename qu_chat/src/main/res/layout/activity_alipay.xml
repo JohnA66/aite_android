@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_47"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="@dimen/dp_95"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:text="支付宝账号:"
+            android:textColor="#2e2e2e"
+            android:textSize="@dimen/sp_14" />
+
+        <EditText
+            android:id="@+id/tv_alipay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输入支付宝账号"
+            android:maxLength="30"
+            android:paddingRight="@dimen/dp_15"
+            android:text=""
+            android:textColor="#2e2e2e"
+            android:textColorHint="#c7c7c7"
+            android:textSize="@dimen/sp_14" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="#f8f8fa" />
+
+    <LinearLayout
+        android:id="@+id/ll_qr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_47"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/dp_95"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:text="确认账号:"
+                android:textColor="#2e2e2e"
+                android:textSize="@dimen/sp_14" />
+
+            <EditText
+                android:id="@+id/tv_alipay2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="请再次输入支付宝账号"
+                android:maxLength="30"
+                android:paddingRight="@dimen/dp_15"
+                android:text=""
+                android:textColor="#2e2e2e"
+                android:textColorHint="#c7c7c7"
+                android:textSize="@dimen/sp_14" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="#f8f8fa" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_47"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="@dimen/dp_95"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:text="真实姓名:"
+            android:textColor="#2e2e2e"
+            android:textSize="@dimen/sp_14" />
+
+        <EditText
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输入姓名（不可更改）"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:paddingRight="@dimen/dp_15"
+            android:singleLine="true"
+            android:textColor="#2e2e2e"
+            android:textColorHint="#c7c7c7"
+            android:textSize="@dimen/sp_14" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="#f8f8fa" />
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_30"
+        android:text="提示:请正确输入支付宝账号，提现时将直接转入此支付宝账号。"
+        android:textColor="@color/black_deep"
+        android:textSize="@dimen/sp_12" />
+
+    <LinearLayout
+        android:id="@+id/ll_submits"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginLeft="@dimen/dp_28"
+        android:layout_marginRight="@dimen/dp_28"
+        android:layout_marginTop="@dimen/dp_40"
+        android:background="@drawable/bg_border_creat_room">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="绑定支付宝"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14" />
+    </LinearLayout>
+
+
+</LinearLayout>

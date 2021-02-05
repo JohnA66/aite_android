@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7F7"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.haoniu.quchat.widget.BannerHeadView
+                android:id="@+id/bannerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_26"
+                android:background="#FDFCEA">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:src="@mipmap/laba" />
+
+                <TextView
+                    android:id="@+id/tv_gonggao"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_9"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center_vertical"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:paddingRight="@dimen/dp_7"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="#FF7500"
+                    android:textSize="@dimen/sp_12" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_86"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_49"
+                        android:layout_height="@dimen/dp_49"
+                        android:scaleType="center"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:text="红包游戏"
+                        android:textColor="#333333"
+                        android:textSize="@dimen/sp_11" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_caipiao"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_52"
+                        android:layout_height="@dimen/dp_52"
+                        android:scaleType="center"
+                        android:src="@mipmap/fycp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:text="微友联盟彩票"
+                        android:textColor="#333333"
+                        android:textSize="@dimen/sp_11" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_qidai1"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_52"
+                        android:layout_height="@dimen/dp_52"
+                        android:scaleType="center"
+                        android:src="@mipmap/jqqd" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:text="敬请期待"
+                        android:textColor="#333333"
+                        android:textSize="@dimen/sp_11" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_qidai2"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_52"
+                        android:layout_height="@dimen/dp_52"
+                        android:scaleType="center"
+                        android:src="@mipmap/jqqd" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:text="敬请期待"
+                        android:textColor="#333333"
+                        android:textSize="@dimen/sp_11" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_saolei"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_130"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@mipmap/hlsl"
+                android:paddingLeft="@dimen/dp_19">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_23"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/dp_21"
+                        android:text="欢乐扫雷"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_21" />
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_saolei_gz"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/dp_8"
+                            android:paddingBottom="@dimen/dp_10"
+                            android:text="查看游戏规则"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_12" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/dp_4"
+                            android:src="@mipmap/xiala1" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_sl"
+                        android:layout_width="@dimen/dp_89"
+                        android:layout_height="@dimen/dp_26"
+                        android:background="@drawable/bor_saolei_2"
+                        android:gravity="center"
+                        android:text="进入游戏"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_83"
+                android:background="#EDEDED" />
+
+            <LinearLayout
+                android:id="@+id/ll_jinqiang"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_130"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@mipmap/hljq"
+                android:paddingLeft="@dimen/dp_19">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_23"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/dp_21"
+                        android:text="欢乐禁抢"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_21" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_jinqiang_gz"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/dp_8"
+                            android:paddingBottom="@dimen/dp_10"
+                            android:text="查看游戏规则"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_12" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/dp_4"
+                            android:src="@mipmap/xiala1" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_jinqiang"
+                        android:layout_width="@dimen/dp_89"
+                        android:layout_height="@dimen/dp_26"
+                        android:background="@drawable/bor_jinqiang_2"
+                        android:gravity="center"
+                        android:text="进入游戏"
+                        android:textColor="#FE4A32"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_83"
+                android:background="#EDEDED" />
+
+            <LinearLayout
+                android:id="@+id/ll_niuniu"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_130"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@mipmap/qznn"
+                android:paddingLeft="@dimen/dp_19">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_23"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/dp_21"
+                        android:text="抢庄牛牛"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_21" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_niuniu_gz"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/dp_8"
+                            android:paddingBottom="@dimen/dp_10"
+                            android:text="查看游戏规则"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_12" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/dp_4"
+                            android:src="@mipmap/xiala1" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_niuniu"
+                        android:layout_width="@dimen/dp_89"
+                        android:layout_height="@dimen/dp_26"
+                        android:background="@drawable/bor_niuniu_2"
+                        android:gravity="center"
+                        android:text="进入游戏"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_83"
+                android:background="#EDEDED" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

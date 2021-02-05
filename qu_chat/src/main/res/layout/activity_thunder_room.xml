@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_layout"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:gravity="center_vertical"
+                android:text="房间名称"
+                android:textColor="#282828"
+                android:textSize="@dimen/sp_13"/>
+
+            <EditText
+                android:id="@+id/et_roomname"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:background="@null"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="请输入房间名称"
+                android:maxLength="30"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/dp_38"
+                android:paddingRight="@dimen/dp_10"
+                android:text=""
+                android:textColor="@color/black_deep"
+                android:textSize="@dimen/sp_13"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_1"
+            android:background="#9b9b9b"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:orientation="horizontal"
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:gravity="center_vertical"
+                android:text="红包个数"
+                android:textColor="#282828"
+                android:textSize="@dimen/sp_13"/>
+
+            <EditText
+                android:id="@+id/et_number"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:background="@null"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="设定红包个数(红包个数4~8)"
+                android:inputType="number"
+                android:maxLength="4"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/dp_38"
+                android:paddingRight="@dimen/dp_10"
+                android:text=""
+                android:textColor="@color/black_deep"
+                android:textSize="@dimen/sp_13"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_1"
+            android:background="#9b9b9b"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:gravity="center_vertical"
+                android:text="红包金额"
+                android:textColor="#282828"
+                android:textSize="@dimen/sp_13"/>
+
+            <EditText
+                android:id="@+id/et_money_min"
+                android:layout_width="@dimen/dp_73"
+                android:layout_height="@dimen/dp_28"
+                android:layout_marginLeft="@dimen/dp_38"
+                android:background="#f4f4f4"
+                android:gravity="center"
+                android:hint="10"
+                android:inputType="number"
+                android:maxLength="8"
+                android:maxLines="1"
+                android:textColor="@color/black_deep"
+                android:textSize="@dimen/sp_13"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_15"
+                android:paddingRight="@dimen/dp_15"
+                android:text="至"
+                android:textColor="#b2b2b2"
+                android:textSize="@dimen/sp_13"
+                />
+
+            <EditText
+                android:id="@+id/et_money_max"
+                android:layout_width="@dimen/dp_73"
+                android:layout_height="@dimen/dp_28"
+                android:background="#f4f4f4"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:hint="20"
+                android:inputType="number"
+                android:maxLength="8"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="@color/black_deep"
+                android:textSize="@dimen/sp_13"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_1"
+            android:background="#9b9b9b"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:gravity="center_vertical"
+                android:text="赔\t\t\t\t率"
+                android:textColor="#282828"
+                android:textSize="@dimen/sp_13"/>
+
+            <EditText
+                android:id="@+id/et_lv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_28"
+                android:background="@null"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="请输入赔率"
+                android:inputType="numberDecimal"
+                android:maxLength="8"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/dp_38"
+                android:text=""
+                android:textColor="@color/black_deep"
+                android:textSize="@dimen/sp_13"
+                />
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_1"
+            android:background="#9b9b9b"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:text="输入密码"
+                    android:textColor="#282828"
+                    android:textSize="@dimen/sp_13"/>
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="@dimen/dp_45"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:hint="请输入房间密码"
+                    android:inputType="textPassword"
+                    android:maxLength="8"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/dp_38"
+                    android:paddingRight="@dimen/dp_10"
+                    android:text=""
+                    android:textColor="@color/black_deep"
+                    android:textSize="@dimen/sp_13"
+                    />
+
+                <ImageView
+                    android:id="@+id/img_show"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_15"
+                    android:src="@mipmap/img_password_hide"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_1"
+                android:background="#9b9b9b"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_creat_room"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_130"
+        android:background="@drawable/bg_border_creat_room"
+        android:gravity="center">
+
+    <TextView
+        android:id="@+id/tv_creat_room"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:text="创建房间"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        />
+    </LinearLayout>
+</LinearLayout>

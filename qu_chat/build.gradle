@@ -1,0 +1,229 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    useLibrary 'org.apache.http.legacy'
+    flavorDimensions "default"
+    defaultConfig {
+        applicationId "com.aite.chat"
+//        applicationId "com.haoniu.quchat"
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        multiDexEnabled true
+        packagingOptions {
+            exclude 'META-INF/rxjava.properties'
+        }
+
+
+        ndk {
+            abiFilters 'armeabi-v7a', "armeabi", 'x86'
+            // 'arm64-v8a', 'x86',,"x86_64"
+        }
+
+    }
+    signingConfigs {
+        release {
+            keyAlias KEY_ALIAS
+            keyPassword KEY_PASSWORD
+            storeFile rootProject.file(KEYSTORE_FILE)
+            storePassword KEYSTORE_PASSWORD
+        }
+    }
+    buildTypes {
+        //调试版本，无混淆
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            applicationVariants.all {
+                variant ->
+                    variant.outputs.all {
+                        def appName
+                        variant.productFlavors.each {
+                            product ->
+                                appName = product.manifestPlaceholders.get("app_name")
+                        }
+                        variant.productFlavors.each {
+                            develop ->
+                                appName = develop.manifestPlaceholders.get("app_name")
+                        }
+                        variant.productFlavors.each {
+                            check ->
+                                appName = check.manifestPlaceholders.get("app_name")
+                        }
+                        outputFileName = appName + '-' + rootProject.ext.android.versionName +'-' + rootProject.ext.android.versionCode + '.apk'
+                    }
+            }
+        }
+        //发布版本，有混淆
+        release {
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationVariants.all { variant ->
+                variant.outputs.all {
+                    def appName
+                    variant.productFlavors.each {
+                        product ->
+                            appName = product.manifestPlaceholders.get("app_name")
+                    }
+                    variant.productFlavors.each {
+                        develop ->
+                            appName = develop.manifestPlaceholders.get("app_name")
+                    }
+                    variant.productFlavors.each {
+                        check ->
+                            appName = check.manifestPlaceholders.get("app_name")
+                    }
+                    outputFileName = appName + '-' + rootProject.ext.android.versionName + '-' + getDate()   + '.apk'
+                }
+            }
+        }
+    }
+    productFlavors {
+        //开发环境
+        develop {
+            buildConfigField "String", "BASEURL", URLDEVELOP
+            resValue "string", "app_name", "艾特（开发）"
+            //是否加密
+            buildConfigField "Boolean", "ISENCRYPTION", "true"
+            manifestPlaceholders = [
+                    app_name      : "艾特（开发）",
+                    EASEMOB_APPKEY: "1101201217046848#xinliao",
+            ]
+        }
+        //测试环境
+        check {
+            buildConfigField "String", "BASEURL", UELCHECK
+            resValue "string", "app_name", "艾特（测试）"
+            //是否加密
+            buildConfigField "Boolean", "ISENCRYPTION", "false"
+            manifestPlaceholders = [
+                    app_name      : "艾特（测试）",
+                    EASEMOB_APPKEY: "1101201217046848#xinliao",
+            ]
+        }
+            //生产环境
+        product {
+            buildConfigField "String", "BASEURL", URLPRODUCTIP
+            resValue "string", "app_name", "艾特"
+            //是否加密
+            buildConfigField "Boolean", "ISENCRYPTION", "true"
+            manifestPlaceholders = [
+                    app_name      : "艾特",
+                    EASEMOB_APPKEY: "1101201217046848#xinliao",
+            ]
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+//    repositories { flatDir { dirs 'libs' } }
+
+
+}
+
+
+
+//获取时间
+def getDate() {
+    return new Date().format("MMddHHmm", TimeZone.getTimeZone("GMT+8:00"));
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation rootProject.ext.dependencies["appcompat-v7"]
+    implementation rootProject.ext.dependencies["support-v4"]
+    implementation rootProject.ext.dependencies["constraint"]
+    implementation rootProject.ext.dependencies["design"]
+    implementation rootProject.ext.dependencies["annotations"]
+    implementation rootProject.ext.dependencies["recyclerview-v7"]
+    implementation rootProject.ext.dependencies["multidex"]
+    implementation rootProject.ext.dependencies["cardview"]
+    implementation rootProject.ext.dependencies["butterknife"]
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    annotationProcessor rootProject.ext.dependencies["butterknife-Processor"]
+    implementation rootProject.ext.dependencies["imagepicker"]
+    implementation rootProject.ext.dependencies["grantor"]
+    implementation rootProject.ext.dependencies["SmartRefreshLayout"]
+    implementation rootProject.ext.dependencies["SmartRefreshHeader"]
+    implementation rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
+    implementation rootProject.ext.dependencies["takephoto"]
+    implementation rootProject.ext.dependencies["PictureSelector"]
+    implementation rootProject.ext.dependencies["popWindow"]
+    implementation rootProject.ext.dependencies["tablayout"]
+    implementation rootProject.ext.dependencies["swipereveallayout"]
+    //地图
+    api rootProject.ext.dependencies["3dmap"]
+    //banner 广告
+    implementation rootProject.ext.dependencies["banner"]
+    //banner
+    implementation rootProject.ext.dependencies["magic-viewpager"]
+    //微信
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+    implementation 'com.google.android.gms:play-services-base:11.4.0'
+    implementation rootProject.ext.dependencies["myTabLayout"]
+    implementation project(':AndroidBase')
+//    implementation project(':pay_ui')
+//    implementation project(':AndroidPaySDK_v1.0.0')
+//    {
+//        exclude group: 'com.github.bumptech.glide'
+//    }
+
+
+    //日历
+    implementation 'com.prolificinteractive:material-calendarview:1.4.3'
+    implementation files('libs/HMSSdkBase_2.5.1.300.jar')
+    implementation files('libs/HMSSdkPush_2.5.1.300.jar')
+    implementation files('libs/MiPush_SDK_Client_2_2_19.jar')
+    implementation files('libs/alipaySdk-20180601.jar')
+    testImplementation 'junit:junit:4.12'
+    implementation 'org.jsoup:jsoup:1.9.2'
+    implementation files('libs/hyphenatechat_3.5.3.jar')
+    implementation files('libs/AMap_Location_V4.4.0_20181122.jar')
+    implementation rootProject.ext.dependencies["zxing"]
+    implementation rootProject.ext.dependencies["zxing-core"]
+    implementation files('libs/AMap2DMap_5.2.0_AMapSearch_6.9.0_20190530.jar')
+    //AOP处理快速点击
+    implementation 'org.aspectj:aspectjrt:1.8.9'
+//    implementation(name: 'AndroidPaySDK_v1.0.0', ext: 'aar')
+
+
+    //repositories { flatDir { dirs 'libs' } } 需要在android{}中加这个
+//    implementation(name: 'AndroidPaySDK_v1.0.0', ext: 'aar') {
+//     transitive = false
+//    }
+
+
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'top.zibin:Luban:1.1.3'
+}
+repositories {
+    mavenCentral()
+}
+

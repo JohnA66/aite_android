@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary">
+
+    <View
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:layout_below="@+id/bar"
+        android:elevation="@dimen/dp_0"
+        app:subtitleTextColor="@color/white">
+        <!--自定义toolbar的title 和subtitle -->
+        <LinearLayout
+            android:id="@+id/ll_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="?selectableItemBackground"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/fanhui2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:gravity="center_vertical"
+                android:text="@string/back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_15" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/toolbar_subtitle"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="?selectableItemBackground"
+            android:gravity="center"
+            android:lines="1"
+            android:padding="@dimen/dp_10"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="@dimen/dp_10"
+            android:padding="@dimen/dp_6"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:ellipsize="end"
+            android:lines="1"
+            android:paddingLeft="@dimen/dp_10"
+            android:scrollHorizontally="true"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_15" />
+    </android.support.v7.widget.Toolbar>
+
+</RelativeLayout>

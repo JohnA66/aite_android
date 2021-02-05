@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_my_gold"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/toolbar_layout"/>
+
+    <EditText
+        android:id="@+id/edit_note"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_margin="@dimen/dp_10"
+        android:background="@drawable/bg_edittext"
+        android:hint="输入手机号或艾特号"
+        android:paddingLeft="@dimen/dp_5"
+        android:singleLine="true"
+        android:textColorHint="#b3b3b3"
+        android:textSize="@dimen/sp_15"/>
+
+    <RelativeLayout
+        android:id="@+id/ll_user"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:background="@drawable/ease_mm_listitem"
+        android:duplicateParentState="true"
+        android:visibility="gone"
+        >
+
+        <com.haoniu.quchat.widget.EaseImageView
+            android:id="@+id/avatar"
+            android:layout_width="@dimen/dp_45"
+            android:layout_height="@dimen/dp_45"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_11"
+            android:src="@mipmap/img_default_avatar"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_18"
+            android:layout_toRightOf="@id/avatar"
+            android:textColor="#0F0F0F"
+            android:textSize="@dimen/sp_16"/>
+
+
+        <Button
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_36"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_11"
+            android:background="@drawable/login_bg_selector"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:text="@string/button_add"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

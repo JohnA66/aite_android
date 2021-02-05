@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_my_gold"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:background="@drawable/shape_wallet_bg_radius"
+        android:paddingBottom="@dimen/dp_18">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_38"
+            android:layout_marginTop="@dimen/dp_38"
+            android:layout_weight="1"
+            android:gravity="left">
+
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_21"
+                android:textStyle="bold"
+                tools:text="300.00" />
+
+            <TextView
+                android:id="@+id/tv_money_s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_money"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_23"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_12"
+                android:text="共收到  (元)" />
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_38"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_redpack_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_21"
+                android:textStyle="bold"
+                tools:text="32" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_redpack_num"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_23"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_12"
+                android:text="红包数" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rv_shouqi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_38"
+            android:layout_marginRight="@dimen/dp_38"
+            android:layout_weight="1"
+            android:gravity="right">
+
+            <TextView
+                android:id="@+id/tv_shouqi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_21"
+                android:textStyle="bold"
+                tools:text="2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_shouqi"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_23"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_12"
+                android:text="手气最佳" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_red"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+</LinearLayout>

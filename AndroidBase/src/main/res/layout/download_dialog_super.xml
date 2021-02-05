@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@mipmap/dialog_update_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_30"
+                android:layout_marginRight="@dimen/dp_30"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:lineSpacingExtra="@dimen/dp_2"
+                android:text="【新增】短视频首页增加今日热门\n【新增】短视频首页增加今日热门\n【新增】短视频首页增加今日热门\n【新增】短视频首页增加今日热门\n【新增】短视频首页增加今日热门\n【新增】短视频首页增加今日热门"
+                android:textColor="#4b4b4b"
+                android:textSize="@dimen/sp_14"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_30"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginRight="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_30"
+            android:background="@drawable/light_orange_button_round"
+            android:gravity="center"
+            android:padding="@dimen/dp_10"
+            android:text="立即更新"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/sp_14"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/dp_10"
+            android:src="@mipmap/update_close_img"/>
+    </LinearLayout>
+
+</LinearLayout>

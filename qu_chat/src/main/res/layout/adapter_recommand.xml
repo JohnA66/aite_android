@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_105"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/img"
+        android:layout_marginRight="@dimen/dp_5"
+        android:layout_toLeftOf="@+id/img"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:gravity="left"
+        android:textColor="@color/black_text"
+        android:textSize="@dimen/sp_16"
+        tools:text="贾跃" />
+
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="@dimen/dp_105"
+        android:layout_height="@dimen/dp_75"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/wodelinq" />
+
+    <TextView
+        android:id="@+id/tv_origion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/img"
+        android:layout_marginRight="@dimen/dp_5"
+        android:layout_toLeftOf="@+id/img"
+        android:ellipsize="end"
+        android:maxLines="2"
+        tools:text="文章来源" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_5"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/shape_login_line" />
+
+</RelativeLayout>

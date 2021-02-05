@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/dp_10"
+    android:paddingBottom="@dimen/dp_10"
+    android:background="@color/white"
+    android:paddingLeft="@dimen/dp_20"
+    android:paddingRight="@dimen/dp_20"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <EditText
+        android:id="@+id/query"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:layout_centerVertical="true"
+        android:background="@drawable/shape_main_search_radius"
+        android:textColorHint="#bbbbbb"
+        android:gravity="center"
+        android:drawablePadding="@dimen/dp_5"
+        android:textSize="@dimen/sp_12"
+        android:hint="搜索联系人"
+        android:singleLine="true"
+        android:imeOptions="actionSearch"/>
+
+    <ImageButton
+        android:id="@+id/search_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_3"
+        android:background="@android:color/transparent"
+        android:padding="@dimen/dp_6"
+        android:src="@drawable/ease_search_clear"
+        android:visibility="invisible" />
+
+</RelativeLayout>

@@ -1,0 +1,15 @@
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.idea
+/.idea
+.idea/instapk.xml
+instapk.log*
+/pay_ui/build/
+/qu_chat/product

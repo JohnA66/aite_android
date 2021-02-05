@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_layout"/>
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:padding="@dimen/dp_20"
+        android:singleLine="true"
+        android:text="更换后个人信息不变，下次登录可以使用新手机号登录"
+        android:textSize="@dimen/sp_12"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_edittext"
+            android:ellipsize="end"
+            android:hint="输入新手机号"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dp_7"
+            android:paddingRight="@dimen/dp_5"
+            android:textSize="@dimen/sp_14"
+            />
+
+        <TextView
+            android:id="@+id/tv_getCode"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_36"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:background="@drawable/shap_red_5"
+            android:gravity="center"
+            android:text="验证"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_yzm"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_15"
+        android:background="@drawable/bg_edittext"
+        android:ellipsize="end"
+        android:hint="输入验证码"
+        android:inputType="number"
+        android:maxLength="25"
+        android:maxLines="1"
+        android:paddingLeft="@dimen/dp_7"
+        android:paddingRight="@dimen/dp_5"
+        android:textSize="@dimen/sp_14"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/bg_border"
+        >
+
+        <TextView
+            android:id="@+id/tv_change_phone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?selectableItemBackground"
+            android:gravity="center"
+            android:text="确认更换"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,23 @@
+/QuChat/gradle.properties   UELCHECK 			测试
+							URLPRODUCTIP		正式
+							URLDEVELOP 	 		开发
+
+							需要填入服务器地址
+
+							KEYSTORE_FILE            
+							KEYSTORE_PASSWORD       
+							KEY_ALIAS                
+							KEY_PASSWORD            
+
+							需要替换签名文件
+							
+/QuChat/qu_chat/build.gradle							
+							EASEMOB_APPKEY
+							需要环信appkeyAESCipher
+
+/qu_chat/src/main/java/com/haoniu/quchat/base/Constant.java
+                            WXAPPID (需要微信appId)
+
+/AndroidBase/src/main/java/com/zds/base/aes/AESCipher.java
+							PASSWORD (网络请求加密的密钥)
+							IV		 (网络请求解密的密钥)
