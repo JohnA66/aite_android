@@ -98,9 +98,10 @@ public class BankNewActivity extends BaseActivity {
                 dto.setIdCard(map.get("idCard").toString());
                 dto.setRealName(map.get("realName").toString());
                 dto.setTokenId(json);
-                Bundle b = new Bundle();
-                b.putSerializable("bean",dto);
-                startActivity(CheakBankActivity.class,b);
+//                Bundle b = new Bundle();
+//                b.putSerializable("bean",dto);
+//                startActivity(CheakBankActivity.class,b);
+                sureBankCard(dto);
             }
 
             @Override
@@ -110,6 +111,30 @@ public class BankNewActivity extends BaseActivity {
         });
     }
 
+    /**
+     * 确认绑定银行卡
+     * @param dto
+     */
+    private void sureBankCard(BankDto dto) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("realName", dto.getRealName());
+        map.put("idCard", dto.getIdCard());
+        map.put("bankCard", dto.getBankCard());
+        map.put("bankName", dto.getBankName());
+        map.put("bankPhone", dto.getBankPhone());
+        ApiClient.requestNetHandle(this, AppConfig.check_bank, "请稍后...", map, new ResultListener() {
+            @Override
+            public void onSuccess(String json, String msg) {
+                finish();
+            }
+
+            @Override
+            public void onFailure(String msg) {
+                toast(msg);
+            }
+        });
+
+    }
     @Override
     protected void initLogic() {
         setTitle("添加储蓄卡");
