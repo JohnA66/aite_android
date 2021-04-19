@@ -1,5 +1,6 @@
 package com.haoniu.quchat.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -17,15 +18,25 @@ import com.haoniu.quchat.base.MyHelper;
 import com.haoniu.quchat.base.MyModel;
 import com.haoniu.quchat.base.Storage;
 import com.haoniu.quchat.entity.EventCenter;
+import com.haoniu.quchat.entity.LoginInfo;
+import com.haoniu.quchat.global.UserComm;
+import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;
+import com.haoniu.quchat.http.ResultListener;
 import com.haoniu.quchat.utils.CretinAutoUpdateUtils;
 import com.haoniu.quchat.utils.EventUtil;
+import com.haoniu.quchat.widget.EaseAlertDialog;
 import com.hyphenate.EMCallBack;
+import com.zds.base.Toast.ToastUtil;
 import com.zds.base.util.DataCleanManager;
 import com.zds.base.util.StringUtil;
 import com.zds.base.util.SystemUtil;
 
 import org.greenrobot.eventbus.EventBus;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -151,7 +162,7 @@ public class SetActivity extends BaseActivity {
         // initUserInfo();
     }
 
-    @OnClick({R.id.tv_black, R.id.ll_chat_bg, R.id.ll_banben, R.id.logout, R.id.ll_clear, R.id.ll_anquan})
+    @OnClick({R.id.tv_black, R.id.ll_chat_bg, R.id.ll_banben, R.id.logout, R.id.ll_clear, R.id.ll_anquan,R.id.tv_logoff,R.id.tv_register_agreement,R.id.tv_user_agreement})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ll_banben:
@@ -182,9 +193,75 @@ public class SetActivity extends BaseActivity {
                 startActivity(BlackListActivity.class);
                 break;
 
-
+            case R.id.tv_logoff:
+                //注销账号
+                new EaseAlertDialog(this, "确定注销帐号？", null, null, new EaseAlertDialog.AlertDialogUser() {
+                    @Override
+                    public void onResult(boolean confirmed, Bundle bundle) {
+                        if (confirmed) {
+                            logoff();
+                        }
+                    }
+                }).show();
+                break;
+            case R.id.tv_user_agreement:
+                startActivity(new Intent(this, WebViewActivity.class).putExtra("title", "lan").putExtra("url", AppConfig.user_agree));
+                break;
+            case R.id.tv_register_agreement:
+                startActivity(new Intent(this, WebViewActivity.class).putExtra("title", "lan").putExtra("url", AppConfig.register_agree));
+                break;
             default:
         }
+    }
+
+    private void logoff() {
+        Map<String,Object> map =new HashMap<>();
+        map.put("userId",UserComm.getUserInfo().getUserId());
+        ApiClient.requestNetHandle(SetActivity.this, AppConfig.toLogoff, "请稍候...", map, new ResultListener() {
+            @Override
+            public void onSuccess(String json, String msg) {
+                //关闭当前所有页面并跳转到登录页面
+                ToastUtil.toast("注销成功");
+                EventBus.getDefault().post(new EventCenter(EventUtil.LOSETOKEN, "关闭"));
+
+                MyHelper.getInstance().logout(false, new EMCallBack() {
+
+                    @Override
+                    public void onSuccess() {
+                        /*runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                SetActivity.this.finish();
+                            }
+                        });*/
+                    }
+
+                    @Override
+                    public void onProgress(int progress, String status) {
+
+                    }
+
+                    @Override
+                    public void onError(int code, String message) {
+                        runOnUiThread(new Runnable() {
+
+                            @Override
+                            public void run() {
+                                // TODO Auto-generated method stub
+                                //dismissLoading();
+                                Toast.makeText(SetActivity.this, "退出环信失败", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                });
+
+            }
+            @Override
+            public void onFailure(String msg) {
+                ToastUtil.toast(msg);
+
+            }
+        });
     }
 
     private void logout() {

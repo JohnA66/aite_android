@@ -10,6 +10,7 @@
 
 
     <LinearLayout
+        android:visibility="visible"
         android:id="@+id/ll_anquan"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_53"
@@ -45,6 +46,7 @@
     </LinearLayout>
 
     <View
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_0_5"
         android:background="#F7F7F7" />
@@ -225,7 +227,21 @@
                 android:layout_marginRight="@dimen/dp_15"
                 android:src="@drawable/jingru" />
         </LinearLayout>
+
     </LinearLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_logoff"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:text="注销账号"
+        android:textColor="@color/black_text"
+        android:textSize="@dimen/sp_16" />
 
     <View
         android:layout_width="match_parent"
@@ -246,4 +262,36 @@
         android:textColor="@color/white"
         android:textSize="@dimen/sp_13"
         android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/dp_20">
+
+        <TextView
+            android:id="@+id/tv_user_agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:text="《用户协议》"
+            android:textColor="@color/blue5"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="和"
+            android:textColor="@color/grey_2"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/tv_register_agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="《隐私政策》"
+            android:textColor="@color/blue5"
+            android:textSize="@dimen/sp_12" />
+    </LinearLayout>
+
 </LinearLayout>

@@ -4,7 +4,7 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:background="@color/white">
 
     <LinearLayout
         android:id="@+id/main_bottom"
@@ -162,10 +162,18 @@
         </LinearLayout>
     </LinearLayout>
 
+    <!--实现沉浸式状态栏的效果-->
+    <!--android:background="@color/white" 不能添加-->
+    <View
+        android:id="@+id/view_status_bar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
     <RelativeLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/view_status_bar_bg"
         android:layout_above="@id/main_bottom" />
 
 </RelativeLayout>

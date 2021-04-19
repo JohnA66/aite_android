@@ -41,6 +41,21 @@
             android:padding="@dimen/dp_5"
             android:src="@drawable/tj"
             android:visibility="gone" />
+        <!--xgp add 2.22-->
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/multi_device"
+            android:drawablePadding="@dimen/dp_10"
+            android:paddingLeft="@dimen/dp_20"
+            android:drawableLeft="@mipmap/ic_multi_device"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:text="多设备在线登录"
+            android:textColor="#ff666666"
+            android:background="#fbfbfb"
+            android:textSize="13sp"
+            />
     </RelativeLayout>
 
 

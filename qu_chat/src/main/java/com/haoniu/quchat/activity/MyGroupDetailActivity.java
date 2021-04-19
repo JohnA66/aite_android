@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -126,6 +127,15 @@ public class MyGroupDetailActivity extends BaseActivity implements MyRoomDeatilA
 
     @BindView(R.id.switch_top_conversation)
     CheckBox mSwitchTopConversation;
+
+    @BindView(R.id.tv_transfer_group)
+    TextView tv_transfer_group;
+
+    @BindView(R.id.tv_group_remark)
+    TextView tv_group_remark;
+
+    @BindView(R.id.rl_container_group_single_member_jinyan)
+    RelativeLayout rl_container_group_single_member_jinyan;
 
 
     /**
@@ -286,6 +296,7 @@ public class MyGroupDetailActivity extends BaseActivity implements MyRoomDeatilA
                 , mGroupImg, R.mipmap.img_default_avatar);
 
         mGroupName.setText(info.getGroupName());
+        tv_group_remark.setText(info.groupNickName);
 
         //用户的群等级 0-普通用户 1-管理员 2-群主
         if (info.getGroupUserRank() == 2) {
@@ -295,10 +306,15 @@ public class MyGroupDetailActivity extends BaseActivity implements MyRoomDeatilA
         } else if (info.getGroupUserRank() == 1 ){
             mTvExit.setText("退出群聊");
             mFlGroupJinyan.setVisibility(View.VISIBLE);
+            tvGroupManager.setVisibility(View.GONE);
         }else if (info.getGroupUserRank() == 0 ) {
             mTvExit.setText("退出群聊");
+            mFlGroupJinyan.setVisibility(View.GONE);
+            tvGroupManager.setVisibility( View.GONE);
         }
         flUserReadDetail.setVisibility(0 == info.getGroupUserRank() ? View.GONE : View.VISIBLE);
+        tv_transfer_group.setVisibility(2 == info.getGroupUserRank() ? View.VISIBLE : View.GONE);
+        //rl_container_group_single_member_jinyan.setVisibility(0 == info.getGroupUserRank() ? View.GONE : View.VISIBLE);
 
         int showSize = 19;
         if (info.getGroupUserDetailVoList().size() > 0) {
@@ -364,7 +380,7 @@ public class MyGroupDetailActivity extends BaseActivity implements MyRoomDeatilA
 
         } else if (center.getEventCode() == EventUtil.REFRESH_MY_GROUP_NAME) {
             mTvMyGroupNickName.setText(center.getData().toString());
-        } else if (center.getEventCode() == EventUtil.INVITE_USER_ADD_GROUP) {
+        } else if (center.getEventCode() == EventUtil.INVITE_USER_ADD_GROUP || center.getEventCode() == EventUtil.TRANSFER_GROUP) {
             queryGroupDetail();
         }else if (center.getEventCode() == EventUtil.DEL_GROUP_MEMBER){
             List<GroupDetailInfo.GroupUserDetailVoListBean> mIdList = (List<GroupDetailInfo.GroupUserDetailVoListBean>) center.getData();
@@ -382,6 +398,12 @@ public class MyGroupDetailActivity extends BaseActivity implements MyRoomDeatilA
             info.setGroupUsers(count);
             mTvTotal.setText("共" + count + "人");
             mRoomDeatilAdapter.notifyDataSetChanged();
+        }else if (center.getEventCode() == 404){
+            //刷新群公告
+            if(!TextUtils.isEmpty(center.getData().toString())){
+                mTvGroupAnnouncement.setText(center.getData().toString());
+            }
+
         }
     }
 
@@ -633,10 +655,10 @@ public class MyGroupDetailActivity extends BaseActivity implements MyRoomDeatilA
     private String headUrl = "";
 
     @OnClick({R.id.fl_group_member, R.id.tv_my_group_nick_name_s,
-            R.id.tv_group_zx, R.id.rl_room_id
-            , R.id.tv_group_notice, R.id.tv_msg_record,
-            R.id.tv_group_manager,
-            R.id.tv_clear_msg, R.id.tv_exit})
+            R.id.tv_group_zx, R.id.rl_room_id,R.id.rl_container_group_remark,
+            R.id.tv_group_notice, R.id.tv_msg_record,
+            R.id.tv_group_manager,R.id.rl_container_group_single_member_jinyan,
+            R.id.tv_clear_msg, R.id.tv_exit,R.id.tv_transfer_group})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.rl_room_id:
@@ -649,6 +671,13 @@ public class MyGroupDetailActivity extends BaseActivity implements MyRoomDeatilA
                             .putExtra("groupId", groupId));
                 }
 
+                break;
+            case R.id.rl_container_group_remark:
+                startActivity(new Intent(this, EditInfoActivity.class)
+                        .putExtra("from", EditInfoActivity.FUNC_TYPE_MODIFY_GROUP_REMARK)
+                        .putExtra("key_intent_group_remark",
+                                tv_group_remark.getText().toString().trim())
+                        .putExtra("groupId", groupId));
                 break;
             case R.id.tv_my_group_nick_name_s:
                 //昵称
@@ -748,6 +777,12 @@ public class MyGroupDetailActivity extends BaseActivity implements MyRoomDeatilA
                 bundle1.putString(Constant.PARAM_GROUP_ID,groupId);
                 bundle1.putString(Constant.PARAM_EM_GROUP_ID,emChatId);
                 startActivity(GroupMemberActivity.class, bundle1);
+                break;
+            case R.id.tv_transfer_group:
+                TransferGroupActivity.start(this,emChatId,groupId);
+                break;
+            case R.id.rl_container_group_single_member_jinyan:
+                GroupSingleMemberMuteActivity.start(this,emChatId,groupId);
                 break;
             default:
                 break;

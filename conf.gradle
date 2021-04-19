@@ -4,8 +4,8 @@ ext {
             buildToolsVersion: "28.0.3",
             minSdkVersion    : 19,
             targetSdkVersion : 27,
-            versionCode      : 20201210,
-            versionName      : '1.1.8.1',
+            versionCode      : 3,
+            versionName      : '1.0.3',
             VSupportSdk      : '27.1.1',
             VOkhttp          : "3.4.2",
     ]

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/shape_bg_radious10dp_white">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_24"
+        android:layout_marginLeft="@dimen/dp_14"
+        android:layout_marginRight="@dimen/dp_14"
+        android:gravity="center_horizontal"
+        android:text="注销账号存在以下风险"
+        android:textColor="#232323"
+        android:textSize="@dimen/sp_18"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginLeft="@dimen/dp_14"
+        android:layout_marginRight="@dimen/dp_14"
+        android:layout_marginBottom="@dimen/dp_50"
+        android:text="艾特平台将会永久清空您的账号信息， 包括但不限于 个人资料、聊天信息、消费信息"
+        android:textColor="#232323"
+        android:textSize="@dimen/sp_14"/>
+
+    <TextView
+        android:id="@+id/tv_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginLeft="@dimen/dp_40"
+        android:layout_marginRight="@dimen/dp_40"
+        android:background="@drawable/shape_bg_radious999_jianbian_blue_b525ff_to_762bff"
+        android:gravity="center"
+        android:text="我已了解，确认注销"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15"/>
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_18"
+        android:layout_marginBottom="@dimen/dp_25"
+        android:text="先不注销，我再考虑一下"
+        android:textColor="#666666"
+        android:textSize="@dimen/sp_15"
+        android:textStyle="bold"/>
+
+</LinearLayout>

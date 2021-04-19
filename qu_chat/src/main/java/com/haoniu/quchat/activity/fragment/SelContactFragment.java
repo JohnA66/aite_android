@@ -129,7 +129,7 @@ public class SelContactFragment extends EaseBaseFragment {
                 //发送名片
                 Intent intent = new Intent();
                 intent.putExtra("username", user.getFriendUserCode());
-                intent.putExtra("nickname", user.getNickname());
+                intent.putExtra("nickname", user.getNickName());
                 intent.putExtra("avatar", user.getAvatar());
                 intent.putExtra("friendUserId", user.getFriendUserId());
                 getActivity().setResult(Activity.RESULT_OK, intent);
@@ -215,6 +215,7 @@ public class SelContactFragment extends EaseBaseFragment {
                     for (ContactListInfo.DataBean bean : mContactList) {
                         EaseUser user = new EaseUser(bean.getFriendUserId() + Constant.ID_REDPROJECT);
                         user.setNickname(bean.getFriendNickName());
+                        user.setNickName(bean.getNickName());
                         user.setAvatar(bean.getFriendUserHead());
                         user.setFriendUserCode(bean.getFriendUserCode());
                         user.setFriendUserId(bean.getFriendUserId());

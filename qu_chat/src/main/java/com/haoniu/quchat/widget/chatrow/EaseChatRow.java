@@ -3,6 +3,7 @@ package com.haoniu.quchat.widget.chatrow;
 import android.app.Activity;
 import android.content.Context;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.BaseAdapter;
@@ -164,13 +165,19 @@ public abstract class EaseChatRow extends LinearLayout {
             ImageUtil.setAvatar((EaseImageView) userAvatarView);
 
         if (message.direct() == Direct.SEND) {
-
             if(!TextUtils.isEmpty(UserComm.getUserInfo().getUserHead()))
                 GlideUtils.loadImageViewLoding(AppConfig.checkimg(UserComm.getUserInfo().getUserHead()), userAvatarView, R.mipmap.img_default_avatar);
             if (usernickView != null)
                 usernickView.setText(UserComm.getUserInfo().getNickName());
+
+            Log.d("chatAdapter","conversationId=" + message.conversationId());
+            Log.d("chatAdapter","from=" + message.getFrom());
         } else {
-            if(!TextUtils.isEmpty(message.getStringAttribute(Constant.AVATARURL)))
+            if(message.conversationId().contains("6a1bec8f64fe11eba89700163e0654c2")){
+                userAvatarView.setImageResource(R.drawable.icon_kefu_avatar);
+            }else if(message.conversationId().contains("0d777a9c8f9311eb844f00163e0654c2")){
+                userAvatarView.setImageResource(R.drawable.icon_exception_handle_kefu_avatar);
+            }else if(!TextUtils.isEmpty(message.getStringAttribute(Constant.AVATARURL)))
                 GlideUtils.loadImageViewLoding(AppConfig.checkimg(message.getStringAttribute(Constant.AVATARURL)), userAvatarView, R.mipmap.img_default_avatar);
 
             if (message.getChatType() == EMMessage.ChatType.Chat) {
@@ -182,6 +189,7 @@ public abstract class EaseChatRow extends LinearLayout {
                     usernickView.setText(userName);
                 }
             }
+
         }
 
         if (EMClient.getInstance().getOptions().getRequireDeliveryAck()) {

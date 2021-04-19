@@ -194,4 +194,14 @@ public class EventUtil {
      */
     public static final int CHECK_MULTI_STATUS = 117;
 
+    /**
+     * 群转让成功
+     */
+    public static final int TRANSFER_GROUP = 118;
+
+    /**
+     * 发送完个人红包，去环信后台拉取消息
+     */
+    public static final int SEND_PERSON_RED_PKG = 119;
+
 }

@@ -15,6 +15,7 @@ import android.provider.MediaStore;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -94,11 +95,18 @@ import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 
 import static android.view.View.VISIBLE;
 import static com.haoniu.quchat.base.Constant.PARAM_FOR_AT_MERBER;
@@ -203,6 +211,8 @@ public class BaseChatFragment extends EaseBaseFragment implements EMMessageListe
 
     protected String nickName;
 
+    private boolean mIsOpenLoop = true;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState, boolean roaming) {
         isRoaming = roaming;
@@ -300,7 +310,11 @@ public class BaseChatFragment extends EaseBaseFragment implements EMMessageListe
                 setTitles(getArguments().getString(Constant.NICKNAME));
                 mInputMenu.setVisibility(View.GONE);
             } else {
-                if (UserOperateManager.getInstance().hasUserName(emChatId)) {
+                if(emChatId.contains("6a1bec8f64fe11eba89700163e0654c2")){
+                    titleBar.setTitle("客服");
+                }else if(emChatId.contains("0d777a9c8f9311eb844f00163e0654c2")){
+                    titleBar.setTitle("异常处理客服");
+                }else if (UserOperateManager.getInstance().hasUserName(emChatId)) {
                     titleBar.setTitle(UserOperateManager.getInstance().getUserName(emChatId));
                 }
                 mInputMenu.setVisibility(VISIBLE);
@@ -491,7 +505,12 @@ public class BaseChatFragment extends EaseBaseFragment implements EMMessageListe
         } else if (center.getEventCode() == EventUtil.REFRESH_MY_GROUP_NAME) {
             //我的群昵称
             groupName = center.getData().toString();
+        }else if (center.getEventCode() == EventUtil.SEND_PERSON_RED_PKG) {//xgp add
+            // TODO: 2021/4/1 私发红包环信不推送红包消息的临时解决方案
+            startTimer();
         }
+
+
     }
 
 
@@ -650,9 +669,22 @@ public class BaseChatFragment extends EaseBaseFragment implements EMMessageListe
     }
 
     public void setGroupData() {
-        groupName = groupDetailInfo.getGroupName();
+        groupName = TextUtils.isEmpty(groupDetailInfo.groupNickName) ? groupDetailInfo.getGroupName() : groupDetailInfo.groupNickName;
         setTitles(groupName + "(" + groupDetailInfo.getGroupUsers() + ")");
-        //禁言
+        //单个禁言
+        /*List<GroupDetailInfo.GroupUserDetailVoListBean> groupUserBeans = groupDetailInfo.getGroupUserDetailVoList();
+        String curUserId = UserComm.getUserInfo().getUserId();
+        for (int i = 0; i < groupUserBeans.size(); i++) {
+            GroupDetailInfo.GroupUserDetailVoListBean groupUserBean = groupUserBeans.get(i);
+            if(curUserId.equals(groupUserBean.getUserId())){
+                //遍历到当前用户，判断是否禁言
+                if("1".equals(groupUserBean.getSayStatus())){
+                    mInputMenu.getPrimaryMenu().executeMute();
+                }
+            }
+
+        }*/
+        //全员禁言
         if (groupDetailInfo.getGroupSayFlag().equals("1") && groupDetailInfo.getGroupUserRank() == 0) {
             mInputMenu.getPrimaryMenu().executeMute();
         }
@@ -681,6 +713,7 @@ public class BaseChatFragment extends EaseBaseFragment implements EMMessageListe
         // the number of messages loaded into conversation is getChatOptions
         // ().getNumberOfMessagesLoaded
         // you can change this number
+        Log.d("interval","onNext====================================0");
 
         if (!isRoaming) {
             final List<EMMessage> msgs = conversation.getAllMessages();
@@ -691,7 +724,9 @@ public class BaseChatFragment extends EaseBaseFragment implements EMMessageListe
                     msgId = msgs.get(0).getMsgId();
                 }
                 conversation.loadMoreMsgFromDB(msgId, pagesize - msgCount);
+                Log.d("interval","onNext====================================1");
             }
+            Log.d("interval","onNext====================================11");
         } else {
             fetchQueue.execute(new Runnable() {
                 @Override
@@ -711,10 +746,13 @@ public class BaseChatFragment extends EaseBaseFragment implements EMMessageListe
                             }
                             conversation.loadMoreMsgFromDB(msgId,
                                     pagesize - msgCount);
+                            Log.d("interval","onNext====================================2");
                         }
                         mMessageList.refreshSelectLast();
+                        Log.d("interval","onNext====================================3");
                     } catch (HyphenateException e) {
                         e.printStackTrace();
+                        Log.d("interval","onNext====================================4");
                     }
                 }
             });
@@ -899,8 +937,6 @@ public class BaseChatFragment extends EaseBaseFragment implements EMMessageListe
         EaseUI.getInstance().pushActivity(getActivity());
         // register the event listener when enter the foreground
         EMClient.getInstance().chatManager().addMessageListener(this);
-
-
     }
 
     @Override
@@ -921,6 +957,9 @@ public class BaseChatFragment extends EaseBaseFragment implements EMMessageListe
         if (groupListener != null) {
             EMClient.getInstance().groupManager().removeGroupChangeListener(groupListener);
         }
+
+        // TODO: 2021/4/1  xgp
+        stopTimer();
 
     }
 
@@ -1800,6 +1839,56 @@ public class BaseChatFragment extends EaseBaseFragment implements EMMessageListe
          * @return
          */
         EaseCustomChatRowProvider onSetCustomChatRowProvider();
+    }
+
+    //===============================私发红包环信不推送红包消息的临时解决方案==========================================//
+    private Disposable mDisposable;
+    private int mCount;
+    private void startTimer() {
+        stopTimer();
+        mCount = 0;
+        Observable.interval(0, 2, TimeUnit.SECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Long>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        mDisposable = d;
+                    }
+
+                    @Override
+                    public void onNext(Long aLong) {
+                        if(mCount < 5){
+                            if (isMessageListInited && mMessageList != null) {
+                                mMessageList.refresh();
+                                Log.d("interval","onNext====================================refresh");
+                            }
+                            Log.d("interval","onNext====================================" + mCount);
+                        }else {
+                            stopTimer();
+                        }
+                        mCount++;
+                        Log.d("interval","onNext====================================");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    private void stopTimer() {
+        if (mDisposable != null) {
+            mDisposable.dispose();
+            mDisposable = null;
+        }
+
     }
 
 }

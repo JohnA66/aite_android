@@ -50,7 +50,7 @@ public class TransferRecordInfo {
     private String fromUser;
     private String transferType;
     private double money;
-    private int afterMoney;
+    private double afterMoney;
     private String remark;
     private Object userHead;
     private String nickName;
@@ -191,11 +191,11 @@ public class TransferRecordInfo {
         this.money = money;
     }
 
-    public int getAfterMoney() {
+    public double getAfterMoney() {
         return afterMoney;
     }
 
-    public void setAfterMoney(int afterMoney) {
+    public void setAfterMoney(double afterMoney) {
         this.afterMoney = afterMoney;
     }
 

@@ -1,5 +1,6 @@
 package com.haoniu.quchat.activity.fragment;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -28,6 +29,9 @@ import com.haoniu.quchat.global.UserComm;
 import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.http.ResultListener;
+import com.haoniu.quchat.pay.OpenWalletActivity;
+import com.haoniu.quchat.pay.StoreShowSwitchBean;
+import com.haoniu.quchat.pay.WalletTransferBean;
 import com.haoniu.quchat.paysdk.TradeSession;
 import com.haoniu.quchat.utils.EventUtil;
 import com.haoniu.quchat.utils.StringUtil;
@@ -37,6 +41,7 @@ import com.haoniu.quchat.widget.EaseImageView;
 import com.zds.base.ImageLoad.GlideUtils;
 import com.zds.base.Toast.ToastUtil;
 import com.zds.base.code.activity.CaptureActivity;
+import com.zds.base.json.FastJsonUtil;
 
 
 import java.util.HashMap;
@@ -69,6 +74,12 @@ public class PersonalFragment extends EaseBaseFragment {
     TextView mTvAmount;
     Unbinder unbinder;
 //    private KFTPaySDKManager router;
+
+    @BindView(R.id.tv_shop)
+    TextView tv_shop;
+
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -113,6 +124,30 @@ public class PersonalFragment extends EaseBaseFragment {
         initUserInfo();
 //        router = KFTPaySDK.getKftPayManager();
 //        getAccessToken();
+
+        getStoreShowSwitch();
+    }
+
+    private void getStoreShowSwitch() {
+        tv_shop.setVisibility(View.GONE);
+        Map<String, Object> map = new HashMap<>();
+        ApiClient.requestNetHandleNoParam(getActivity(), AppConfig.showStore,
+                "", new ResultListener() {
+                    @Override
+                    public void onSuccess(String json, String msg) {
+                        if (json != null && json.length() > 0) {
+                            StoreShowSwitchBean storeShowSwitchBean = FastJsonUtil.getObject(json, StoreShowSwitchBean.class);
+                            if(storeShowSwitchBean.status == 1){
+                                tv_shop.setVisibility(View.VISIBLE);
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+
+                    }
+                });
     }
 
     /**
@@ -177,7 +212,13 @@ public class PersonalFragment extends EaseBaseFragment {
                 break;
             case R.id.rl_wallet:
                 //我的钱包
+                //判断是否开通钱包账户
+                /*if(TextUtils.isEmpty(UserComm.getUserInfo().ncountUserId)){
+                    OpenWalletActivity.start(getActivity());
+                }else {
                     startActivity(WalletActivity.class);
+                }*/
+                startActivity(WalletActivity.class);
                 break;
             case R.id.rel_my_info:
                 //个人信息

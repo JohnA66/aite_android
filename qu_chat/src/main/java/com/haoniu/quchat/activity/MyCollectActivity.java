@@ -107,6 +107,7 @@ public class MyCollectActivity extends BaseActivity {
 
             @Override
             public void collect(String collectId, int position) {
+                // TODO: 2021/3/4 跳转页面
                 String json = FastJsonUtil.toJSONString(dataBean.get(position));
                 setResult(1023,new Intent().putExtra("json",json));
                 finish();

@@ -474,7 +474,7 @@
 \t\t注意:部分银行小额打款时不会发送短信通知,\n\t\t到账情况请以银行流水为准。</string>
 
 
-    <string name = "str_unread_msg">你有%d条未读信息</string>
+    <string name="str_unread_msg">你有%d条未读信息</string>
 
     <string name="str_chat_account">艾特号:%s</string>
 </resources>

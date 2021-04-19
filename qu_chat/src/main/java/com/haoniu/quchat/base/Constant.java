@@ -472,4 +472,9 @@ public class Constant extends EaseConstant {
 
     public static final String AUTHENTICATION_LOGIN_PASSWORD = "1";
     public static final String AUTHENTICATION_LOGIN_SMSCODE = "2";
+
+    /**
+     * 商户编号
+     */
+    public static final String MERCHANT_ID ="897301977";
 }

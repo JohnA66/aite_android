@@ -92,7 +92,7 @@
                     android:layout_weight="1"
                     android:background="@null"
                     android:gravity="bottom"
-                    android:inputType="number"
+                    android:inputType="number|numberDecimal"
                     android:maxLines="1"
                     android:textColor="@color/black"
                     android:textSize="@dimen/sp_27"

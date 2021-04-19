@@ -3,6 +3,7 @@ package com.haoniu.quchat.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.InputType;
@@ -16,8 +17,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.aite.chat.R;
+import com.ehking.sdk.wepay.interfaces.WalletPay;
+import com.ehking.sdk.wepay.net.bean.AuthType;
 import com.haoniu.quchat.aop.SingleClick;
 import com.haoniu.quchat.base.BaseActivity;
+import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.base.MyApplication;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.entity.LoginInfo;
@@ -25,10 +29,19 @@ import com.haoniu.quchat.global.UserComm;
 import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.http.ResultListener;
+import com.haoniu.quchat.pay.TransferNewActivity;
+import com.haoniu.quchat.pay.WalletTransferBean;
+import com.haoniu.quchat.pay.WalletTransferQueryBean;
+import com.haoniu.quchat.utils.EventUtil;
 import com.haoniu.quchat.utils.StringUtil;
 import com.haoniu.quchat.widget.CommonDialog;
 import com.haoniu.quchat.widget.CustomerKeyboard;
 import com.haoniu.quchat.widget.PasswordEditText;
+import com.zds.base.json.FastJsonUtil;
+import com.zds.base.upDated.utils.NetWorkUtils;
+
+import org.greenrobot.eventbus.EventBus;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -54,6 +67,10 @@ public class SendPersonRedPackageActivity extends BaseActivity {
 
     private String toChatUsername;
     private boolean isSelectBalance = true;
+
+    //结果返回最多重新查询次数
+    private int maxCount = 5;
+    private Handler handler = new Handler();
 
     @Override
     protected void initContentView(Bundle bundle) {
@@ -150,6 +167,7 @@ public class SendPersonRedPackageActivity extends BaseActivity {
                 StringUtil.isEmpty(mEtRemark.getText().toString().trim()) ?
                         "恭喜发财，大吉大利！" : mEtRemark.getText().toString().trim();
         map.put("remark", remark);
+
         ApiClient.requestNetHandle(this, AppConfig.CREATE_PERSON_RED_PACKE,
                 "正在发红包.." +
                         ".", map, new ResultListener() {
@@ -177,6 +195,132 @@ public class SendPersonRedPackageActivity extends BaseActivity {
     @OnClick(R.id.tv_send_red)
     public void onViewClicked() {
         PayPassword();
+        //doSendRedPackageClick();
+    }
+
+    private void doSendRedPackageClick() {
+        maxCount = 5;
+        if (mEtRedAmount.getText().length() <= 0 || mEtRedAmount.getText().toString().equals("") || mEtRedAmount.getText().toString().equals("0.") || mEtRedAmount.getText().toString().equals("0.0")
+                || mEtRedAmount.getText().toString().equals("0.00")) {
+            toast("请填写正确的金额");
+            return;
+        }
+
+        double price =
+                Double.parseDouble(mEtRedAmount.getText().toString().trim());
+        if (price > 200) {
+            toast("金额不得超过200元");
+            return;
+        }
+
+        long nowTime = System.currentTimeMillis();
+
+        if (nowTime - mLastClickTime > TIME_INTERVAL) {
+            // do something
+            mLastClickTime = nowTime;
+        }else {
+            return;
+        }
+
+        Map<String, Object> map = new HashMap<>(1);
+        map.put("money", mEtRedAmount.getText().toString().trim());
+        map.put("toUserId", toChatUsername.split("-")[0]);
+        map.put("payPassword", "123456");
+//        map.put("payType", isSelectBalance ? 0 : 1);
+        String remark =
+                StringUtil.isEmpty(mEtRemark.getText().toString().trim()) ?
+                        "恭喜发财，大吉大利！" : mEtRemark.getText().toString().trim();
+        map.put("remark", remark);
+        map.put("ip", NetWorkUtils.getIPAddress(true));
+        ApiClient.requestNetHandle(this, AppConfig.CREATE_PERSON_RED_PACKE,
+                "正在发红包.." +
+                        ".", map, new ResultListener() {
+                    @Override
+                    public void onSuccess(String json, String msg) {
+                        /*Intent intent = new Intent();
+                        intent.putExtra("money",
+                                mEtRedAmount.getText().toString().trim());
+                        intent.putExtra("remark",
+                                remark);
+                        intent.putExtra("redId", json);
+                        setResult(Activity.RESULT_OK, intent);
+                        toast(msg);
+                        finish();*/
+                        if (json != null && json.length() > 0) {
+                            WalletTransferBean walletTransferBean = FastJsonUtil.getObject(json, WalletTransferBean.class);
+
+                            WalletPay walletPay = WalletPay.Companion.getInstance();
+                            walletPay.init(SendPersonRedPackageActivity.this);
+                            walletPay.walletPayCallback = new WalletPay.WalletPayCallback() {
+                                @Override
+                                public void callback(@Nullable String source, @Nullable String status, @Nullable String errorMessage) {
+                                    // TODO: 2021/4/1 通知聊天页面去环信后台拉取红包消息
+                                    EventBus.getDefault().post(new EventCenter(EventUtil.SEND_PERSON_RED_PKG));
+                                    if(status == "SUCCESS" || status == "PROCESS"){
+                                        //queryResult(walletTransferBean.requestId);
+                                    }
+                                    finish();
+                                }
+                            };
+                            //调起SDK的转账
+                            walletPay.evoke(Constant.MERCHANT_ID, UserComm.getUserInfo().ncountUserId,
+                                    walletTransferBean.token, AuthType./*TRANSFER*/APP_PAY.name());
+
+                        }else {
+                            toast("服务器开小差，请稍后重试");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+                        toast(msg);
+                        mLastClickTime = 0;
+                    }
+                });
+    }
+
+    private void queryResult(String requestId) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("requestId", requestId);
+        ApiClient.requestNetHandleByGet(this, AppConfig.walletTransferQuery, "请稍等...",
+                map, new ResultListener() {
+                    @Override
+                    public void onSuccess(String json, String msg) {
+                        if (json != null && json.length() > 0) {
+                            WalletTransferQueryBean walletTransferQueryBean = FastJsonUtil.getObject(json, WalletTransferQueryBean.class);
+                            switch (walletTransferQueryBean.orderStatus){
+                                case "SEND":
+                                    toast("发送红包成功");
+                                    finish();
+                                    break;
+                                case "PROCESS":
+                                    handler.postDelayed(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            maxCount--;
+                                            if (maxCount<=0){
+                                                toast("发送红包处理中");
+                                                finish();
+                                                return;
+                                            }
+                                            queryResult(requestId);
+                                        }
+                                    },2000);
+                                    break;
+                                default:
+                                    toast("发送红包失败");
+                                    break;
+                            }
+
+                        }else {
+                            toast("服务器开小差，请稍后重试");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+                    }
+                });
     }
 
     /**
@@ -191,8 +335,8 @@ public class SendPersonRedPackageActivity extends BaseActivity {
 
         double price =
                 Double.parseDouble(mEtRedAmount.getText().toString().trim());
-        if (price > 10000) {
-            toast("金额不得超过10000元");
+        if (price > 200) {
+            toast("金额不得超过200元");
             return;
         }
 

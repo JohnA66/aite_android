@@ -39,6 +39,8 @@ public class EaseUser extends EMContact {
 
     private String friendNickName;
 
+    private String nickName;
+
     public String getFriendNickName() {
         return friendNickName;
     }
@@ -113,5 +115,11 @@ public class EaseUser extends EMContact {
         return nick == null ? username : nick;
     }
 
+    public String getNickName() {
+        return nickName;
+    }
 
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
 }

@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -18,12 +19,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.aite.chat.R;
+import com.gyf.immersionbar.ImmersionBar;
 import com.haoniu.quchat.activity.fragment.ContactListFragment;
 import com.haoniu.quchat.activity.fragment.ConversationListFragment;
 import com.haoniu.quchat.activity.fragment.FindFragment;
@@ -41,12 +44,14 @@ import com.haoniu.quchat.global.UserComm;
 import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.http.ResultListener;
+import com.haoniu.quchat.login.LoginNewActivity;
 import com.haoniu.quchat.model.EaseAtMessageHelper;
 import com.haoniu.quchat.operate.GroupOperateManager;
 
 import com.haoniu.quchat.receiver.CallReceiver;
 import com.haoniu.quchat.runtimepermissions.PermissionsManager;
 import com.haoniu.quchat.runtimepermissions.PermissionsResultAction;
+import com.haoniu.quchat.utils.BarUtil;
 import com.haoniu.quchat.utils.CretinAutoUpdateUtils;
 import com.haoniu.quchat.utils.EaseCommonUtils;
 import com.haoniu.quchat.utils.EventUtil;
@@ -76,6 +81,8 @@ import butterknife.BindView;
 @SuppressLint("NewApi")
 public class MainActivity extends BaseActivity {
 
+    @BindView(R.id.view_status_bar_bg)
+    View view_status_bar_bg;
     @BindView(R.id.btn_Room)
     Button mBtnRoom;
     @BindView(R.id.btn_container_Room)
@@ -160,12 +167,12 @@ public class MainActivity extends BaseActivity {
                         getIntent().getBooleanExtra(Constant.ACCOUNT_KICKED_BY_OTHER_DEVICE, false))) {
             MyHelper.getInstance().logout(false, null);
             finish();
-            startActivity(new Intent(this, AuthenticationActivity.class));
+            startActivity(new Intent(this, /*AuthenticationActivity.class*/LoginNewActivity.class));
             return;
         } else if (getIntent() != null && getIntent().getBooleanExtra(
                 "isConflict", false)) {
             finish();
-            startActivity(new Intent(this, AuthenticationActivity.class));
+            startActivity(new Intent(this, /*AuthenticationActivity.class*/LoginNewActivity.class));
             return;
         }
 
@@ -189,6 +196,8 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initLogic() {
         isTransparency(false);
+        initImmersionBar(true);
+        ImmersionBar.setStatusBarView(this,view_status_bar_bg);
         mTabs = new Button[4];
         //服务
         mTabs[2] = mBtnConversation;
@@ -248,7 +257,7 @@ public class MainActivity extends BaseActivity {
             finish();
             ActivityStackManager.getInstance().killAllActivity();
             UserComm.clearUserInfo();
-            startActivity(AuthenticationActivity.class);
+            startActivity(/*AuthenticationActivity.class*/LoginNewActivity.class);
             //刷新公告数量
         } else if (center.getEventCode() == EventUtil.UNREADCOUNT) {
 //            mCustomServiceFragment.getUnReadCount();
@@ -329,18 +338,26 @@ public class MainActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.btn_conversation:
                 index = 2;
+                initImmersionBar(true);
+                ImmersionBar.setStatusBarView(this,view_status_bar_bg);
                 break;
             case R.id.btn_Room:
                 index = 1;
                 EventBus.getDefault().post(new EventCenter(EventUtil.FLUSHGROUP));
+                initImmersionBar(true);
+                ImmersionBar.setStatusBarView(this,view_status_bar_bg);
                 break;
             case R.id.btn_address_list:
                 index = 0;
                 EventBus.getDefault().post(new EventCenter(EventUtil.CHECK_MULTI_STATUS));
+                initImmersionBar(true);
+                ImmersionBar.setStatusBarView(this,view_status_bar_bg);
                 break;
             case R.id.btn_setting:
                 index = 3;
                 MyApplication.getInstance().UpUserInfo();
+                initImmersionBar(false);
+                ImmersionBar.setStatusBarView(this,0,view_status_bar_bg);
                 break;
             default:
         }
@@ -375,6 +392,7 @@ public class MainActivity extends BaseActivity {
 //            ApplyNumber();
         }
 
+
     }
 
     private void change(int indexs) {
@@ -400,6 +418,11 @@ public class MainActivity extends BaseActivity {
         } else if (index == 3) {
 //            ApplyNumber();
         }
+    }
+
+    @Override
+    protected void transparencyBar() {
+
     }
 
     /**
@@ -845,7 +868,7 @@ public class MainActivity extends BaseActivity {
                                 isExceptionDialogShow = false;
                                 finish();
                                 Intent intent = new Intent(MainActivity.this,
-                                        AuthenticationActivity.class);
+                                        /*AuthenticationActivity.class*/LoginNewActivity.class);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent);
                             }
@@ -868,7 +891,7 @@ public class MainActivity extends BaseActivity {
         } else if (intent.getBooleanExtra(Constant.ACCOUNT_KICKED_BY_CHANGE_PASSWORD, false) ||
                 intent.getBooleanExtra(Constant.ACCOUNT_KICKED_BY_OTHER_DEVICE, false)) {
             this.finish();
-            startActivity(new Intent(this, AuthenticationActivity.class));
+            startActivity(new Intent(this, /*AuthenticationActivity.class*/LoginNewActivity.class));
         }
     }
 
@@ -913,4 +936,17 @@ public class MainActivity extends BaseActivity {
                     }
                 });
     }
+
+    protected void initImmersionBar(boolean isStatusBarDartFont) {
+        //初始化，默认透明状态栏和黑色导航栏。
+        ImmersionBar.with(this)
+                .keyboardEnable(true)
+                //原理：如果当前设备支持状态栏字体变色，会设置状态栏字体为黑色，如果当前设备不支持状态栏字体变色，会使当前状态栏加上透明度，否则不执行透明度
+                .statusBarDarkFont(isStatusBarDartFont, 0.2f)
+                //.navigationBarColor("#E9E9E9")
+                //采用系统默认导航栏颜色
+                .navigationBarEnable(false)
+                .init();//有时需要直接由子类实现该功能
+    }
+
 }

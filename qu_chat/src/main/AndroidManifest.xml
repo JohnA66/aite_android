@@ -35,7 +35,6 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" /> <!-- 悬浮窗权限 -->
-
     <permission
         android:name="com.aite.chat.permission.MIPUSH_RECEIVE"
         android:protectionLevel="signatureOrSystem" />
@@ -53,24 +52,24 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:label,android:allowBackup">
-        <!-- <uses-library -->
+        <activity android:name="com.haoniu.quchat.pay.TransferNewActivity"></activity>
+        <activity android:name="com.haoniu.quchat.pay.WithdrawNewActivity" />
+        <activity android:name="com.haoniu.quchat.pay.RechargeNewActivity" />
+        <activity android:name="com.haoniu.quchat.pay.OpenWalletActivity" /> <!-- <uses-library -->
         <!-- android:name="org.apache.http.legacy" -->
         <!-- android:required="false" /> -->
         <!-- android:theme="@style/SplashStyle" -->
-
-        <!--<provider-->
-        <!--android:name="android.support.v4.content.FileProvider"-->
-        <!--android:authorities="com.haoniu.quchat.provider"-->
-        <!--android:exported="false"-->
-        <!--android:grantUriPermissions="true"-->
-        <!--tools:replace="android:authorities">-->
-        <!--<meta-data-->
-        <!--android:name="android.support.FILE_PROVIDER_PATHS"-->
-        <!--android:resource="@xml/provider_paths"-->
-        <!--tools:replace="android:resource" />-->
-        <!--</provider>-->
-
-
+        <!-- <provider -->
+        <!-- android:name="android.support.v4.content.FileProvider" -->
+        <!-- android:authorities="com.haoniu.quchat.provider" -->
+        <!-- android:exported="false" -->
+        <!-- android:grantUriPermissions="true" -->
+        <!-- tools:replace="android:authorities"> -->
+        <!-- <meta-data -->
+        <!-- android:name="android.support.FILE_PROVIDER_PATHS" -->
+        <!-- android:resource="@xml/provider_paths" -->
+        <!-- tools:replace="android:resource" /> -->
+        <!-- </provider> -->
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.aite.chat.provider"
@@ -81,14 +80,12 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths"
                 tools:replace="android:resource" />
-        </provider>
-
-
-        <!-- 开屏页 -->
+        </provider> <!-- 开屏页 -->
         <activity
             android:name="com.haoniu.quchat.activity.SplashActivity"
             android:opacity="opaque"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -105,7 +102,15 @@
                     android:pathPrefix="/searchRoom"
                     android:scheme="friendwhat" />
             </intent-filter>
-        </activity> <!-- 建群页面 -->
+        </activity>
+        <activity
+            android:name="com.haoniu.quchat.login.LoginNewActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.haoniu.quchat.login.RegisterNewActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" /> <!-- 建群页面 -->
         <activity
             android:name="com.haoniu.quchat.activity.NewGroupActivity"
             android:launchMode="singleTop"
@@ -126,7 +131,6 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- 选择联系人 -->
-
         <activity
             android:name="com.haoniu.quchat.activity.PayManageActivity"
             android:launchMode="singleTop"
@@ -152,31 +156,26 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- 添加好友 -->
-
         <activity
             android:name="com.haoniu.quchat.activity.BlackListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- 黑名单 -->
-
         <activity
             android:name="com.haoniu.quchat.activity.TransferDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
-
         <activity
             android:name="com.haoniu.quchat.activity.TipActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
-
         <activity
             android:name="com.haoniu.quchat.activity.AuditMsgActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- 申请消息 -->
-
         <activity
             android:name="com.haoniu.quchat.activity.AddUserActivity"
             android:launchMode="singleTop"
@@ -197,111 +196,94 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- 钱包 -->
-
         <activity
             android:name="com.haoniu.quchat.activity.TransferRecordActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- 转账记录 -->
-
-
         <activity
             android:name="com.haoniu.quchat.activity.ReportActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- 举报 -->
-
-
         <activity
             android:name="com.haoniu.quchat.activity.TransferActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- 转账 -->
-
         <activity
             android:name="com.haoniu.quchat.activity.MyRedActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- 我的收藏 -->
-
         <activity
             android:name="com.haoniu.quchat.activity.ShareQrActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- 我的收藏 -->
-
         <activity
             android:name="com.haoniu.quchat.activity.MyCollectActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- 用户详情 -->
-
         <activity
             android:name="com.haoniu.quchat.activity.GroupMemberActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- 群成员 -->
-
         <activity
             android:name="com.haoniu.quchat.activity.FindDetailActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- 发现详情 -->
-
         <activity
             android:name="com.haoniu.quchat.activity.SingleChatDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- 单聊聊天详情 -->
-
         <activity
             android:name="com.haoniu.quchat.activity.UserInfoDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" /> <!-- 新的朋友 -->
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.haoniu.quchat.activity.ModifyFriendRemarkActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" /> <!-- 新的朋友 -->
         <activity
             android:name="com.haoniu.quchat.activity.NewFriendActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- 我的群组 -->
-
         <activity
             android:name="com.haoniu.quchat.activity.GroupManageActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- 群管理 -->
-
-
         <activity
             android:name="com.haoniu.quchat.activity.ChatSetActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- 聊天设置 -->
-
         <activity
             android:name="com.haoniu.quchat.activity.ChatBgActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- 聊天背景 -->
-
         <activity
             android:name="com.haoniu.quchat.activity.HxMapActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- 聊天地图 -->
-
-
         <activity
             android:name="com.haoniu.quchat.activity.SetGroupManageActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- import com.aite.chat.BuildConfig; -->
-
         <activity
             android:name="com.haoniu.quchat.activity.GroupUserListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" /> <!-- import com.aite.chat.BuildConfig;-普通用户列表 -->
-
         <activity
             android:name="com.haoniu.quchat.activity.MyGroupActivity"
             android:launchMode="singleTop"
@@ -326,100 +308,81 @@
         <activity
             android:name="com.haoniu.quchat.activity.ChatCollectActivity"
             android:theme="@style/MyDialogStyle" /> <!-- 显示下载大图页面 -->
-
         <activity
             android:name="com.haoniu.quchat.activity.CustomListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />  <!-- 客服列表 -->
-
+            android:windowSoftInputMode="adjustPan" /> <!-- 客服列表 -->
         <activity
             android:name="com.haoniu.quchat.activity.custom1.Custom1Activity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />  <!-- 客服列表 -->
-
+            android:windowSoftInputMode="adjustPan" /> <!-- 客服列表 -->
         <activity
             android:name="com.haoniu.quchat.activity.ChatRecordActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />  <!-- 聊天记录 -->
-
+            android:windowSoftInputMode="adjustPan" /> <!-- 聊天记录 -->
         <activity
             android:name="com.haoniu.quchat.activity.UnGetRedActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />  <!-- 未领取红包 -->
-
+            android:windowSoftInputMode="adjustPan" /> <!-- 未领取红包 -->
         <activity
             android:name="com.haoniu.quchat.activity.LocalPhoneActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />  <!-- 本地通讯录 -->
-
+            android:windowSoftInputMode="adjustPan" /> <!-- 本地通讯录 -->
         <activity
             android:name="com.haoniu.quchat.activity.ShareMyOrOtherActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />  <!-- 分享自己或者自己其他好友的名片给他人 -->
-
+            android:windowSoftInputMode="adjustPan" /> <!-- 分享自己或者自己其他好友的名片给他人 -->
         <activity
             android:name="com.haoniu.quchat.activity.ChatMoreSetlActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />  <!-- 聊天更多设置 -->
-
-
+            android:windowSoftInputMode="adjustPan" /> <!-- 聊天更多设置 -->
         <activity
             android:name="com.haoniu.quchat.activity.ChatRedRecordActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />  <!-- 聊天红包记录 -->
-
-
+            android:windowSoftInputMode="adjustPan" /> <!-- 聊天红包记录 -->
         <activity
             android:name="com.haoniu.quchat.activity.RedRecordActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />  <!-- 红包记录 -->
-
-
+            android:windowSoftInputMode="adjustPan" /> <!-- 红包记录 -->
         <activity
             android:name="com.haoniu.quchat.activity.AppPayPassActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />  <!-- 支付密码设置 -->
-
+            android:windowSoftInputMode="adjustPan" /> <!-- 支付密码设置 -->
         <activity
             android:name="com.haoniu.quchat.activity.PayPassSureActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />  <!-- 支付密码确认设置 -->
-
+            android:windowSoftInputMode="adjustPan" /> <!-- 支付密码确认设置 -->
         <activity
             android:name="com.haoniu.quchat.activity.RechargeRecordActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />  <!-- 充值记录 -->
-
+            android:windowSoftInputMode="adjustPan" /> <!-- 充值记录 -->
         <activity
             android:name="com.haoniu.quchat.activity.TxRecordActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />  <!-- 提现记录 -->
-
+            android:windowSoftInputMode="adjustPan" /> <!-- 提现记录 -->
         <activity
             android:name="com.haoniu.quchat.activity.MyRedRecordActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />  <!-- 零钱模块-我的红包记录 -->
-
+            android:windowSoftInputMode="adjustPan" /> <!-- 零钱模块-我的红包记录 -->
         <activity
             android:name="com.haoniu.quchat.activity.ShareCardIdActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />  <!-- 分享名片 -->
-
+            android:windowSoftInputMode="adjustPan" /> <!-- 分享名片 -->
         <!-- 老的 -->
         <!-- 首页 -->
         <activity
@@ -449,8 +412,7 @@
             android:name="com.haoniu.quchat.activity.BankNewActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustPan" />
-        <!-- 代理中心收益流水 -->
+            android:windowSoftInputMode="adjustPan" /> <!-- 代理中心收益流水 -->
         <!-- 我的钱包 -->
         <!-- 登录 -->
         <activity
@@ -459,16 +421,13 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" /> <!-- 登录 -->
-
         <!-- 群成员 -->
         <activity
             android:name="com.haoniu.quchat.activity.GroupMemberMoreActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustPan" />
-
-        <!-- 修改密码 -->
+            android:windowSoftInputMode="adjustPan" /> <!-- 修改密码 -->
         <activity
             android:name="com.haoniu.quchat.activity.UpPasswordActivity"
             android:launchMode="singleTop"
@@ -520,22 +479,19 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustPan" />
-        <!-- 充值 -->
+            android:windowSoftInputMode="adjustPan" /> <!-- 充值 -->
         <activity
             android:name="com.haoniu.quchat.activity.RechargeActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustPan" />
-        <!-- 房间公告 -->
+            android:windowSoftInputMode="adjustPan" /> <!-- 房间公告 -->
         <activity
             android:name="com.haoniu.quchat.activity.NoticeActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustPan" />
-        <!-- 申请记录 -->
+            android:windowSoftInputMode="adjustPan" /> <!-- 申请记录 -->
         <activity
             android:name="com.haoniu.quchat.activity.ApplyRecordActivity"
             android:launchMode="singleTop"
@@ -580,7 +536,6 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible" /> <!-- 群组详情 -->
-
         <activity
             android:name="com.haoniu.quchat.activity.ContextMenuActivity"
             android:theme="@style/MyDialogStyle" /> <!-- 显示下载大图页面 -->
@@ -601,13 +556,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateAlwaysHidden" />
-
         <activity
             android:name="com.zds.base.code.activity.CaptureActivity"
             android:screenOrientation="portrait"
             android:theme="@style/ZxTheme"
-            android:windowSoftInputMode="stateAlwaysHidden" />
-        <!-- choose video -->
+            android:windowSoftInputMode="stateAlwaysHidden" /> <!-- choose video -->
         <activity
             android:name="com.haoniu.quchat.activity.ImageGridActivity"
             android:screenOrientation="portrait"
@@ -641,11 +594,17 @@
         <activity android:name="com.haoniu.quchat.activity.AccountManageActivity" />
         <activity
             android:name="com.haoniu.quchat.activity.AuthenticationActivity"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop" />
         <activity android:name="com.haoniu.quchat.activity.WalletLockActivity" />
         <activity android:name="com.haoniu.quchat.activity.ApplyJoinGroupActivity" />
         <activity android:name="com.haoniu.quchat.activity.AuditUserActivity" />
         <activity android:name="com.haoniu.quchat.activity.MultiDeviceActivity" />
+        <activity
+            android:name="com.haoniu.quchat.activity.GroupSingleMemberMuteActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.haoniu.quchat.activity.TransferGroupActivity"
+            android:screenOrientation="portrait" />
 
         <service android:name="com.zds.base.upDated.utils.DownloadService" />
 
@@ -767,9 +726,7 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.USER_PRESENT" />
             </intent-filter>
-        </receiver>
-
-        <!-- 配置APP ID -->
+        </receiver> <!-- 配置APP ID -->
         <meta-data
             android:name="BUGLY_APPID"
             android:value="xxx" />
@@ -782,7 +739,13 @@
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="a6338e20494ab07b14b9f69a60c79e5a" /> <!-- =请检查配置文件是否配置服务，并且manifest中service标签是否配置在application标签内 -->
-        <service android:name="com.amap.api.location.APSService" />
+        <service android:name="com.amap.api.location.APSService" /> <!-- ImmersionBar适配华为（huawei）刘海屏 -->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" /> <!-- ImmersionBar适配小米（xiaomi）刘海屏 -->
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
     </application>
 
 </manifest>

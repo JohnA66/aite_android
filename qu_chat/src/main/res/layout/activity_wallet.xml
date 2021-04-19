@@ -113,6 +113,7 @@
                 >
 
                 <TextView
+                    android:visibility="visible"
                     android:id="@+id/tv_pay_manage"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_45"

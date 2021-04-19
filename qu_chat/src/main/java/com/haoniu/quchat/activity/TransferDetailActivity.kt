@@ -20,6 +20,8 @@ class TransferDetailActivity : BaseActivity() {
     private var status: String? = null
     private var money: String? = null
     private var turnId: String? = null
+    private var serialNumber: String? = null
+    private var requestId: String? = null
     private var isSelf: Boolean? = false
 
     override fun onEventComing(center: EventCenter<*>?) {
@@ -33,6 +35,9 @@ class TransferDetailActivity : BaseActivity() {
         status = extras?.getString("status", "")
         money = extras?.getString("money", "")
         turnId = extras?.getString("turnId", "")
+        serialNumber = extras?.getString("serialNumber", "")
+        requestId = extras?.getString("requestId", "")
+
         isSelf = extras?.getBoolean("isSelf", false)
     }
 
@@ -72,5 +77,24 @@ class TransferDetailActivity : BaseActivity() {
             }
         })
     }
+
+    /*private fun confirmMoney() {
+        val map = mapOf("transferId" to turnId,"serialNumber" to serialNumber,"requestId" to requestId)
+        ApiClient.requestNetHandle(this
+                , AppConfig.walletTransferConfirm
+                , "请稍后..."
+                , map
+                , object : ResultListener() {
+            override fun onSuccess(json: String?, msg: String?) {
+                status = "1"
+
+                viewUI()
+            }
+
+            override fun onFailure(msg: String?) {
+                toast(msg)
+            }
+        })
+    }*/
 
 }

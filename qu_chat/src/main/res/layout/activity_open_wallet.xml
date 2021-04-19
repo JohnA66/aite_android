@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_my_gold"
+    android:orientation="vertical"
+    tools:context="com.haoniu.quchat.pay.OpenWalletActivity">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:paddingLeft="16dp"
+        android:id="@+id/rl_name">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="姓名"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_32" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/et_real_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="100dp"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:imeOptions="actionGo"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:hint="请输入真实姓名"
+            android:textColorHint="@color/grey_2"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_32" />
+        <View
+            android:layout_width="match_parent"
+            android:background="#BBBBBB"
+            android:layout_alignParentBottom="true"
+            android:layout_height="1px"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:paddingLeft="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="身份证号"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_32" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/et_id_card_no"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="100dp"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:imeOptions="actionGo"
+            android:digits="@string/digits_id_card"
+            android:maxLength="18"
+            android:maxLines="1"
+            android:hint="请输入身份证号"
+            android:textColorHint="@color/grey_2"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_32" />
+        <View
+            android:layout_width="match_parent"
+            android:background="#BBBBBB"
+            android:layout_alignParentBottom="true"
+            android:layout_height="1px"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:paddingLeft="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="注册手机号"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_32" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/et_phone_num"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="100dp"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:imeOptions="actionGo"
+            android:digits="@string/number"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:hint="请输入手机号"
+            android:textColorHint="@color/grey_2"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_32" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/comm_affirm_btn">
+
+        <TextView
+            android:id="@+id/tv_open"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="开通"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16" />
+    </FrameLayout>
+
+
+</LinearLayout>

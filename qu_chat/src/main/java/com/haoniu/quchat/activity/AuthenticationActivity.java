@@ -11,6 +11,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +39,7 @@ import com.zds.base.ImageLoad.GlideUtils;
 import com.zds.base.Toast.ToastUtil;
 import com.zds.base.util.StringUtil;
 import com.zds.base.util.SystemUtil;
+import com.zds.base.widget.SwitchButton;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -90,6 +93,14 @@ public class AuthenticationActivity extends BaseActivity {
     EditText registerPassword;
     @BindView(R.id.register_nick_name)
     EditText registerNickName;
+    @BindView(R.id.sb_verify)
+    SwitchButton sb_verify;
+    @BindView(R.id.rg_sex)
+    RadioGroup rg_sex;
+    @BindView(R.id.rb_male)
+    RadioButton rb_male;
+    @BindView(R.id.rb_female)
+    RadioButton rb_female;
     @BindView(R.id.checkbox)
     CheckBox agreeCheck;
 
@@ -466,6 +477,8 @@ public class AuthenticationActivity extends BaseActivity {
         map.put("phone", phone);
         map.put("authCode", code);
         map.put("nickName", registerNickName.getText().toString().trim());
+        map.put("addWay", sb_verify.isChecked() ? 0 : 1);//0-需要 1-不需要 默认为1
+        map.put("sex", rg_sex.getCheckedRadioButtonId() == R.id.rb_male ? 0 : 1);//0-男 1-女 默认为0
 
         ApiClient.requestNetHandle(this, AppConfig.toRegister, "正在注册...", map, new ResultListener() {
             @Override

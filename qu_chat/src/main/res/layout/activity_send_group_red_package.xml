@@ -38,7 +38,7 @@
             android:textSize="@dimen/sp_14" />
 
         <EditText
-            android:inputType="number"
+            android:inputType="numberDecimal|number"
             android:layout_marginLeft="100dp"
             android:id="@+id/et_red_amount"
             android:layout_width="match_parent"

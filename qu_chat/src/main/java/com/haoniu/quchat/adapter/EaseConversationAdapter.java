@@ -1,6 +1,7 @@
 package com.haoniu.quchat.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -29,6 +30,7 @@ import com.haoniu.quchat.utils.EaseSmileUtils;
 import com.haoniu.quchat.utils.EaseUserUtils;
 import com.haoniu.quchat.utils.ImageUtil;
 import com.haoniu.quchat.utils.ProjectUtil;
+import com.haoniu.quchat.utils.RichTextUtils;
 import com.haoniu.quchat.utils.hxSetMessageFree.EaseSharedUtils;
 import com.haoniu.quchat.widget.EaseConversationList.EaseConversationListHelper;
 import com.haoniu.quchat.widget.EaseImageView;
@@ -108,6 +110,7 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
         if (holder == null) {
             holder = new ViewHolder();
             holder.name = (TextView) convertView.findViewById(R.id.name);
+            holder.iv_aite_guanfang = (ImageView) convertView.findViewById(R.id.iv_aite_guanfang);
             holder.unreadLabel = (TextView) convertView.findViewById(R.id.unread_msg_number);
             holder.message = (TextView) convertView.findViewById(R.id.message);
             holder.time = (TextView) convertView.findViewById(R.id.time);
@@ -165,6 +168,8 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
             holder.ImgMsgFree.setVisibility(View.GONE);
         }
 
+        holder.name.setTextColor(Color.parseColor("#333333"));//xgp add
+        holder.iv_aite_guanfang.setVisibility(View.GONE);
 
         if (conversation.getType() == EMConversationType.GroupChat) {
             String groupId = conversationId;
@@ -214,23 +219,46 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
 //            holder.ImgMsgFree.setVisibility(View.GONE);
             if (username.equals(Constant.ADMIN)) {
                 holder.swipeRevealLayout.setLockDrag(true);
-                holder.name.setText("艾特官方");
+                holder.name.setText("艾特");//艾特官方
+                holder.iv_aite_guanfang.setVisibility(View.VISIBLE);
+                /*RichTextUtils.getBuilder("艾特")
+                        .append("官方")
+                        .setForegroundColor(Color.parseColor("#762BFF"))
+                        .setProportion(0.8f)
+                        .setSuperscript()
+                        .into(holder.name);*/
                 GlideUtils.loadImageView(R.mipmap.aite_launcher, holder.avatar);
             }else if (username.equals(Constant.WALLET)) {
                 holder.swipeRevealLayout.setLockDrag(true);
                 holder.name.setText("钱包助手");
+                holder.name.setTextColor(Color.parseColor("#762BFF"));//xgp add
                 GlideUtils.loadImageView(R.mipmap.ic_wallet, holder.avatar);
-            }else {
+            }else {//客服走这里
                 String contactId = conversationId;
                 String headImg = AppConfig.checkimg(UserOperateManager.getInstance().getUserAvatar(contactId));
-                GlideUtils.loadImageViewLoding(headImg, holder.avatar, R.mipmap.img_default_avatar);
+                // TODO: 2021/3/30 xgp 处理客服图像 写死
+                if(contactId.contains("6a1bec8f64fe11eba89700163e0654c2")){
+                    holder.avatar.setImageResource(R.drawable.icon_kefu_avatar);
+                }else if(contactId.contains("0d777a9c8f9311eb844f00163e0654c2")){
+                    holder.avatar.setImageResource(R.drawable.icon_exception_handle_kefu_avatar);
+                }else {
+                    GlideUtils.loadImageViewLoding(headImg, holder.avatar, R.mipmap.img_default_avatar);
+                }
+                //GlideUtils.loadImageViewLoding(headImg, holder.avatar, R.mipmap.img_default_avatar);
                 if (UserOperateManager.getInstance().hasUserName(contactId)) {
                     username = UserOperateManager.getInstance().getUserName(contactId);
                 }else if (!TextUtils.isEmpty(tempNickname)){
                     username = tempNickname;
                 }
 
-                holder.name.setText(username);
+                if(contactId.contains("6a1bec8f64fe11eba89700163e0654c2")){
+                    holder.name.setText("客服");
+                }else if(contactId.contains("0d777a9c8f9311eb844f00163e0654c2")){
+                    holder.name.setText("异常处理客服");
+                }else {
+                    holder.name.setText(username);
+                }
+                //holder.name.setText(username);
             }
 
             holder.motioned.setVisibility(View.GONE);
@@ -502,6 +530,8 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
          */
         SwipeRevealLayout swipeRevealLayout;
         View deleteLayout;
+
+        ImageView iv_aite_guanfang;
     }
 }
 

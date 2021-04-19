@@ -34,6 +34,7 @@ import com.haoniu.quchat.global.UserComm;
 import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.http.ResultListener;
+import com.haoniu.quchat.login.LoginNewActivity;
 import com.haoniu.quchat.utils.CretinAutoUpdateUtils;
 import com.haoniu.quchat.utils.EventUtil;
 import com.haoniu.quchat.widget.CommonDialog;
@@ -201,7 +202,7 @@ public class MyApplication extends SelfAppContext {
      */
     public boolean checkUserToLogin(Context context) {
         if (StringUtil.isEmpty(getUserLoginInfo().getTokenId())) {
-            Intent intent = new Intent(context, AuthenticationActivity.class);
+            Intent intent = new Intent(context, /*AuthenticationActivity.class*/LoginNewActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             return false;

@@ -349,6 +349,56 @@ public class ApiClient {
 
     }
 
+    public static void requestNetHandleNoParam(final Context context, String url, String log, final ResultListener listener) {
+        if (!MyApplication.getInstance().isNetworkConnected()) {
+            //没网络
+            listener.onFailure("网络连接异常,请检查您的网络设置");
+            return;
+        }
+        try {
+            showDialog(log, context);
+            OkGo.<String>post(url)
+                    .tag(context)
+                    .headers("token", UserComm.getToken())
+                    .execute(new StringCallback() {
+                                 /**
+                                  * 对返回数据进行操作的回调， UI线程
+                                  *
+                                  * @param response
+                                  */
+                                 @Override
+                                 public void onSuccess(Response<String> response) {
+                                     if (listener != null)
+                                         fomartDataAES(response, listener);
+                                 }
+
+                                 @Override
+                                 public void onFinish() {
+                                     super.onFinish();
+                                     if (listener != null)
+                                         listener.onFinsh();
+                                     dismiss();
+                                 }
+
+                                 @Override
+                                 public void onError(Response<String> response) {
+                                     try {
+                                         listener.onFailure(response.getException().getMessage());
+                                     } catch (Exception e) {
+                                         XLog.error(e);
+                                     }
+
+                                 }
+                             }
+
+                    );
+
+        } catch (Exception e) {
+            listener.onFailure(e.getMessage());
+        }
+
+    }
+
 
     /**
      * 请求网络数据接口

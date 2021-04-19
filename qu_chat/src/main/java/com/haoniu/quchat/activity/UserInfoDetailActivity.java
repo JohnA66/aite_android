@@ -84,7 +84,7 @@ public class UserInfoDetailActivity extends BaseActivity {
     @BindView(R.id.layout_inviter)
     RelativeLayout layoutInviter;
     @BindView(R.id.et_remark)
-    EditText mEtRemark;
+    TextView mEtRemark;
     @BindView(R.id.llay_remark)
     RelativeLayout mLlayRemark;
     @BindView(R.id.view_bottom)
@@ -186,7 +186,7 @@ public class UserInfoDetailActivity extends BaseActivity {
             }
         });
 
-        mEtRemark.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        /*mEtRemark.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId,
                                           KeyEvent event) {
@@ -195,7 +195,7 @@ public class UserInfoDetailActivity extends BaseActivity {
                 }
                 return false;
             }
-        });
+        });*/
 
 
         EMConversation emConversation =  EMClient.getInstance().chatManager().getConversation(userId + Constant.ID_REDPROJECT);
@@ -246,7 +246,7 @@ public class UserInfoDetailActivity extends BaseActivity {
                     public void onSuccess(String json, String msg) {
                         String name = mEtRemark.getText().toString().trim();
                         UserOperateManager.getInstance().updateUserName(userId,name);
-                        mTvNickName.setText(StringUtil.isEmpty(name) ? info.getNickName() + " " : name);
+                        //mTvNickName.setText(StringUtil.isEmpty(name) ? info.getNickName() + " " : name);
 
                         EventBus.getDefault().post(new EventCenter<>(EventUtil.REFRESH_REMARK));
                         toast("设置成功");
@@ -263,6 +263,8 @@ public class UserInfoDetailActivity extends BaseActivity {
     protected void onEventComing(EventCenter center) {
         if (center.getEventCode() == EventUtil.OPERATE_BLACK || center.getEventCode() == EventUtil.DELETE_CONTACT) {
             finish();
+        }else if (center.getEventCode() == EventUtil.REFRESH_REMARK) {
+            mEtRemark.setText(UserOperateManager.getInstance().getUserName(userId));
         }
     }
 
@@ -403,8 +405,8 @@ public class UserInfoDetailActivity extends BaseActivity {
                                     String remark =
                                             UserOperateManager.getInstance().getUserName(userId);
                                     mEtRemark.setText(info.getFriendNickName());
-                                    mEtRemark.setSelection(StringUtil.isEmpty(remark) ? 0 :
-                                            remark.length());
+                                    /*mEtRemark.setSelection(StringUtil.isEmpty(remark) ? 0 :
+                                            remark.length());*/
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
@@ -469,7 +471,7 @@ public class UserInfoDetailActivity extends BaseActivity {
     }
 
 
-    @OnClick({ R.id.tv_chat_record, R.id.fl_send_msg, R.id.tv_add_friend,R.id.kick_out})
+    @OnClick({ R.id.tv_chat_record, R.id.fl_send_msg, R.id.tv_add_friend,R.id.kick_out,R.id.llay_remark,R.id.et_remark})
     public void onViewClicked(View view) {
         switch (view.getId()) {
 
@@ -515,6 +517,13 @@ public class UserInfoDetailActivity extends BaseActivity {
 //                //举报
 //                startActivity(new Intent(this, ReportActivity.class).putExtra("from", "1").putExtra("userGroupId", userId));
 //                break;
+            case R.id.llay_remark:
+            case R.id.et_remark:
+                if(info == null){
+                    return;
+                }
+                ModifyFriendRemarkActivity.start(this,userId,mEtRemark.getText().toString());
+                break;
             default:
                 break;
         }

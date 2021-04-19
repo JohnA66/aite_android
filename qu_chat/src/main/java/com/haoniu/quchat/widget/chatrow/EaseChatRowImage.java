@@ -132,7 +132,7 @@ public class EaseChatRowImage extends EaseChatRowFile {
                 // to make it compatible with thumbnail received in previous version
                 thumbPath = EaseImageUtils.getThumbnailImagePath(imgBody.getLocalUrl());
             }
-            showImageView(thumbPath, imgBody.getLocalUrl(), message);
+            showImageView(thumbPath, /*imgBody.getLocalUrl()*/"", message);//xgp 解决接收的图片不显示的问题
         }
     }
 

@@ -19,6 +19,7 @@ import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.base.MyApplication;
 import com.haoniu.quchat.base.MyHelper;
 import com.haoniu.quchat.entity.EventCenter;
+import com.haoniu.quchat.login.LoginNewActivity;
 import com.hyphenate.EMCallBack;
 
 import java.util.HashMap;
@@ -143,7 +144,7 @@ public class ChangePasswordActivity extends BaseActivity {
                     MyHelper.getInstance().logout(false, new EMCallBack() {
                         @Override
                         public void onSuccess() {
-                            startActivity(AuthenticationActivity.class);
+                            startActivity(/*AuthenticationActivity.class*/LoginNewActivity.class);
                             finish();
                         }
 

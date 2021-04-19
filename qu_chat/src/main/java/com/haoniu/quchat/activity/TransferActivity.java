@@ -183,6 +183,13 @@ public class TransferActivity extends BaseActivity {
             return;
         }
 
+        double price =
+                Double.parseDouble(mEtMoney.getText().toString().trim());
+        if (price > 10000) {
+            toast("金额不得超过10000元");
+            return;
+        }
+
         LoginInfo userInfo = UserComm.getUserInfo();
         if (userInfo.getPayPwdFlag() == 0) {
             startActivity(new Intent(this,

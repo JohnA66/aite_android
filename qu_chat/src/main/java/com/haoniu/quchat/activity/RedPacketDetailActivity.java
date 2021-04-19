@@ -199,7 +199,8 @@ public class RedPacketDetailActivity extends BaseActivity {
 
                             initHeadView();
                             if (tv_intro != null) {
-                                tv_intro.setText(StringUtil.isEmpty(redPacketInfo.getRemark().toString()) ? "" : redPacketInfo.getRemark().toString());
+                                //tv_intro.setText(StringUtil.isEmpty(redPacketInfo.getRemark().toString()) ? "" : redPacketInfo.getRemark().toString());
+                                tv_intro.setText(redPacketInfo.getRemark() == null ? "恭喜发财，大吉大利！" : redPacketInfo.getRemark().toString());
                             }
                             ll_user_money.setVisibility(View.VISIBLE);
                             if (tv_money != null) {

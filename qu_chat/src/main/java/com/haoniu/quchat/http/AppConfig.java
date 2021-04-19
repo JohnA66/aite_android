@@ -46,12 +46,12 @@ public class AppConfig {
     /**
      * 图片地址
      */
-    public static String ImageMainUrl = BuildConfig.BASEURL + "profile/";
+    public static String ImageMainUrl = BuildConfig.BASEURL + "aiteApi/profile/";//aiteApi/ xgp add 图像不显示问题
 
     /**
      * 商城地址
      */
-    public static final String shopUrl = "http://shopping.tonghua-hn.com/app/index.php?i=1&c=entry&m=ewei_shopv2&do=mobile";
+    public static final String shopUrl = "http://8.135.109.189:82/#/index/";
 
     /**
      * 图片地址
@@ -72,6 +72,16 @@ public class AppConfig {
      * 修改艾特号
      */
     public static String MODIFY_USER_CODE = mainUrl + "app_user/modifyUserCode";
+
+    /**
+     * 更新 添加我时是否需要验证
+     */
+    public static String MODIFY_FRIEND_CONSENT = mainUrl + "app_user/modifyFriendConsent";
+
+    /**
+     * 更新 性别
+     */
+    public static String MODIFY_SEX = mainUrl + "app_user/modifySex";
 
     /**
      * 修改个性签名
@@ -207,6 +217,12 @@ public class AppConfig {
 
 
     /**
+     * 修改群备注
+     */
+    public static String MODIFY_GROUP_REMARK = mainUrl + "app_group/modifyGroupUserGroupNickName";
+
+
+    /**
      * 修改群公告
      */
     public static String MODIFY_GROUP_NOTICE = mainUrl + "app_group/modifyGroupNotice";
@@ -255,6 +271,11 @@ public class AppConfig {
      * 移出群员
      */
     public static String DEL_GROUP_USER = mainUrl + "app_group/delGroupUser";
+
+    /**
+     * 群转让
+     */
+    public static String TRANSFER_GROUP = mainUrl + "app_group/modifyGroupUserRankToOwner";
 
 
     /**
@@ -458,6 +479,12 @@ public class AppConfig {
      * 注册
      */
     public static String toRegister = mainUrl + "app_user/register";
+
+    /**
+     * 注销
+     */
+    public static String toLogoff = mainUrl + "app_user/delUser";
+
     /**
      * 加入房间
      */
@@ -985,8 +1012,8 @@ public class AppConfig {
     public static String downloadUrl = "https://fir.im/flyingfish";
 
 
-    public static String register_agree = mainUrl + "xieyi/web/register_agree.html";//隐私政策
-    public static String user_agree = mainUrl + "xieyi/web/user_agree.html";//用户协议
+    public static String register_agree = mainUrl + "xieyi/web/user_agree.html";//隐私政策
+    public static String user_agree = mainUrl + "xieyi/web/register_agree.html";//用户协议
 
     /**
      * 设置好友昵称
@@ -1030,6 +1057,53 @@ public class AppConfig {
      * 零钱锁关闭
      */
     public static String walletLockClose = mainUrl + "app_user_wallet/delPayLock";
+
+    //============================支付===============================//
+    /**
+     * 开通钱包账户
+     */
+    public static String openWalletAccount = mainUrl + "app_user_wallet/accountOpen";
+
+    /**
+     * 充值预下单
+     */
+    public static String walletRecharge = mainUrl + "app_user_wallet/rechargeCreate";
+
+    /**
+     * 充值查询
+     */
+    public static String walletRechargeQuery = mainUrl + "app_user_wallet/rechargeQuery";
+
+    /**
+     * 提现预下单
+     */
+    public static String walletWithdraw = mainUrl + "app_user_wallet/withdrawCreate";
+
+    /**
+     * 提现查询
+     */
+    public static String walletWithdrawQuery = mainUrl + "app_user_wallet/withdrawQuery";
+
+    /**
+     * 转账
+     */
+    public static String walletTransfer= mainUrl + "app_user_transfer/transferCreate";
+
+    /**
+     * 转账查询
+     */
+    public static String walletTransferQuery= mainUrl + "app_user_transfer/transferQuery";
+
+    /**
+     * 转账确认收款
+     */
+    public static String walletTransferConfirm = mainUrl + "app_user_transfer/transferConfirm";
+
+
+    /**
+     * 商城入口开关
+     */
+    public static String showStore = mainUrl + "common/showStore";
 
     /**
      * 检查版本

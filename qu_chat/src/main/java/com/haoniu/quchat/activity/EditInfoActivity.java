@@ -2,6 +2,7 @@ package com.haoniu.quchat.activity;
 
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputFilter;
 import android.text.InputType;
 import android.text.TextWatcher;
 import android.text.method.DigitsKeyListener;
@@ -37,6 +38,9 @@ import butterknife.OnClick;
  * 编辑用户信息，eg:昵称
  */
 public class EditInfoActivity extends BaseActivity {
+
+    public static final String FUNC_TYPE_MODIFY_GROUP_REMARK = "6";
+
     @BindView(R.id.toolbar_title)
     TextView mToolbarTitle;
     @BindView(R.id.toolbar_subtitle)
@@ -94,6 +98,8 @@ public class EditInfoActivity extends BaseActivity {
                     setGroupNickName();
                 } else if (from.equals("5")) {
                     setMyGroupNickName();
+                }else if (from.equals(FUNC_TYPE_MODIFY_GROUP_REMARK)) {
+                    setGroupRemark();
                 }
             }
         });
@@ -131,6 +137,7 @@ public class EditInfoActivity extends BaseActivity {
             mToolbarTitle.setText("修改昵称");
             mEtNickName.setHint("输入昵称");
             mEtNickName.setText(UserComm.getUserInfo().getNickName());
+            mEtNickName.setFilters(new InputFilter[] {new InputFilter.LengthFilter(20)});
 
         } else if (from.equals("2")) {
             mToolbarTitle.setText("艾特号");
@@ -149,10 +156,16 @@ public class EditInfoActivity extends BaseActivity {
             mEtNickName.setHint("输入群名称");
             mEtNickName.setText(extras.getString("groupName"));
             groupId = extras.getString("groupId");
+            mEtNickName.setFilters(new InputFilter[] {new InputFilter.LengthFilter(20)});
         } else if (from.equals("5")) {
             mToolbarTitle.setText("修改我的群昵称");
             mEtNickName.setHint("输入我的群昵称");
             mEtNickName.setText(extras.getString("myGroupName"));
+            groupId = extras.getString("groupId");
+        }else if (from.equals(FUNC_TYPE_MODIFY_GROUP_REMARK)) {
+            mToolbarTitle.setText("群备注");
+            mEtNickName.setHint("输入群备注");
+            mEtNickName.setText(extras.getString("key_intent_group_remark"));
             groupId = extras.getString("groupId");
         }
     }
@@ -299,6 +312,33 @@ public class EditInfoActivity extends BaseActivity {
         });
     }
 
+    /**
+     * 修改群备注
+     */
+    private void setGroupRemark() {
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("groupNickName", mEtNickName.getText().toString().trim());
+        map.put("groupId", groupId);
+
+
+        ApiClient.requestNetHandle(this, AppConfig.MODIFY_GROUP_REMARK, "正在保存...", map, new ResultListener() {
+            @Override
+            public void onSuccess(String json, String msg) {
+                //修改群备注之后，原先所有显示群昵称的地方都要被群备注替代
+                EventBus.getDefault().post(new EventCenter<>(EventUtil.REFRESH_GROUP_NAME, mEtNickName.getText().toString().trim()));
+                EventBus.getDefault().post(new EventCenter(EventUtil.FLUSHGROUP));
+                toast("保存成功");
+                finish();
+            }
+
+            @Override
+            public void onFailure(String msg) {
+                ToastUtil.toast(msg);
+            }
+        });
+    }
+
 
     @OnClick(R.id.img_del)
     public void onViewClicked() {
@@ -311,4 +351,6 @@ public class EditInfoActivity extends BaseActivity {
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
     }
+
+
 }

@@ -54,6 +54,8 @@ import com.haoniu.quchat.http.ResultListener;
 import com.haoniu.quchat.interfaces.OnClickSuccessResult;
 import com.haoniu.quchat.operate.GroupOperateManager;
 import com.haoniu.quchat.operate.UserOperateManager;
+import com.haoniu.quchat.pay.TransferNewActivity;
+import com.haoniu.quchat.pay.WithdrawNewActivity;
 import com.haoniu.quchat.utils.BitmapUtil;
 import com.haoniu.quchat.utils.DonwloadSaveImg;
 import com.haoniu.quchat.utils.EventUtil;
@@ -460,6 +462,8 @@ public class ChatFragment extends BaseChatFragment implements BaseChatFragment.E
                     String money = data.getStringExtra("money");
                     String remark = data.getStringExtra("remark");
                     String turnId = data.getStringExtra("turnId");
+                    String serialNumber = data.getStringExtra("serialNumber");
+                    String requestId = data.getStringExtra("requestId");
 
                     EMMessage message = EMMessage.createTxtSendMessage("转账",
                             emChatId);
@@ -467,6 +471,8 @@ public class ChatFragment extends BaseChatFragment implements BaseChatFragment.E
                     message.setAttribute("money", money);
                     message.setAttribute("remark", remark);
                     message.setAttribute("turnId", turnId);
+                    message.setAttribute("serialNumber", serialNumber);
+                    message.setAttribute("requestId", requestId);
                     sendMessage(message);
                     break;
                 case REQUEST_CODE_PERSON_BALL:
@@ -717,6 +723,8 @@ public class ChatFragment extends BaseChatFragment implements BaseChatFragment.E
         String userId = message.getFrom();
         String turnId = message.getStringAttribute("turnId", "");
         String money = message.getStringAttribute("money", "");
+        String serialNumber = message.getStringAttribute("serialNumber", "");
+        String requestId = message.getStringAttribute("requestId", "");
         Map<String, Object> map = new LinkedHashMap<>();
         map.put("transferId", turnId);
         ApiClient.requestNetHandle(getContext(), AppConfig.TRANSFER_STATUS
@@ -732,6 +740,8 @@ public class ChatFragment extends BaseChatFragment implements BaseChatFragment.E
                         bundle.putString("status", j);
                         bundle.putString("money", money);
                         bundle.putString("turnId", turnId);
+                        bundle.putString("serialNumber", serialNumber);
+                        bundle.putString("requestId", requestId);
                         bundle.putBoolean("isSelf",
                                 userId.split("-")[0].equals(UserComm.getUserInfo().getUserId()));
                         startActivity(TransferDetailActivity.class, bundle);
@@ -807,6 +817,7 @@ public class ChatFragment extends BaseChatFragment implements BaseChatFragment.E
                     startActivity(new Intent(getActivity(), SendGroupRedPackageActivity.class)
                             .putExtra("groupId", groupId)
                             .putExtra(Constant.PARAM_EM_GROUP_ID, emChatId)
+                            .putExtra("key_intent_group_user_count",groupDetailInfo.getGroupUsers())
                     );
 
                 } else if (chatType == EaseConstant.CHATTYPE_SINGLE) {
@@ -819,7 +830,7 @@ public class ChatFragment extends BaseChatFragment implements BaseChatFragment.E
             case ITEM_TRANSFER:
                 //转账
                 startActivityForResult(new Intent(getActivity(),
-                        TransferActivity.class).putExtra("emChatId",
+                        TransferActivity.class/*TransferNewActivity.class*/).putExtra("emChatId",
                         emChatId), REQUEST_CODE_TRNSFER);
 
                 break;
@@ -843,7 +854,7 @@ public class ChatFragment extends BaseChatFragment implements BaseChatFragment.E
                     showAuthDialog();
                 } else {
                     startActivity(new Intent(getActivity(),
-                            WithdrawActivity.class));
+                            WithdrawActivity.class/*WithdrawNewActivity.class*/));
                 }
 
                 break;

@@ -13,11 +13,13 @@ import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.base.MyHelper;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.global.UserComm;
+import com.haoniu.quchat.login.LoginNewActivity;
 import com.haoniu.quchat.view.CommonConfirmDialog;
 import com.haoniu.quchat.view.UserProtocolDialog;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
 import com.zds.base.global.BaseConstant;
+import com.zds.base.util.BarUtils;
 import com.zds.base.util.Preference;
 
 import butterknife.BindView;
@@ -34,21 +36,26 @@ import butterknife.ButterKnife;
 public class SplashActivity extends BaseActivity {
 
     private static final int sleepTime = 1500;
-    @BindView(R.id.img_logo)
+    /*@BindView(R.id.img_logo)
     ImageView mImgLogo;
     @BindView(R.id.splash_root)
-    RelativeLayout mSplashRoot;
+    RelativeLayout mSplashRoot;*/
 
     @Override
     protected void initContentView(Bundle bundle) {
-        setContentView(R.layout.activity_splash);
-        ButterKnife.bind(this);
+        //setContentView(R.layout.activity_splash);
+        //ButterKnife.bind(this);
     }
 
     @Override
     protected void onCreate(Bundle arg0) {
-        setTheme(R.style.AppTheme);//还原回正常的Theme
+        //setTheme(R.style.AppTheme);//还原回正常的Theme
         super.onCreate(arg0);
+    }
+
+    @Override
+    protected void transparencyBar() {
+
     }
 
     /**
@@ -161,7 +168,7 @@ public class SplashActivity extends BaseActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             EMClient.getInstance().logout(true);
-            startActivity(AuthenticationActivity.class);
+            startActivity(/*AuthenticationActivity.class*/LoginNewActivity.class);
             finish();
         }
     };

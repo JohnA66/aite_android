@@ -2,6 +2,7 @@ package com.haoniu.quchat.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,6 +16,9 @@ import com.haoniu.quchat.global.UserComm;
 import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.http.ResultListener;
+import com.haoniu.quchat.pay.OpenWalletActivity;
+import com.haoniu.quchat.pay.RechargeNewActivity;
+import com.haoniu.quchat.pay.WithdrawNewActivity;
 import com.haoniu.quchat.utils.EventUtil;
 import com.haoniu.quchat.utils.PhoneFormatUtil;
 import com.haoniu.quchat.utils.StringUtil;
@@ -67,7 +71,13 @@ public class WalletActivity extends BaseActivity {
 //                    showAuthDialog();
 //                    return;
 //                }
-                startActivity(RechargeActivity.class);
+                //startActivity(RechargeActivity.class);
+                //判断是否开通钱包账户
+                if(TextUtils.isEmpty(UserComm.getUserInfo().ncountUserId)){
+                    OpenWalletActivity.start(WalletActivity.this);
+                }else {
+                    RechargeNewActivity.start(WalletActivity.this);
+                }
                 break;
             case R.id.tv_withdraw:
                 //提现
@@ -75,7 +85,7 @@ public class WalletActivity extends BaseActivity {
 //                    showAuthDialog();
 //                    return;
 //                }
-                startActivity(WithdrawActivity.class);
+                startActivity(WithdrawActivity.class/*WithdrawNewActivity.class*/);
                 break;
             case R.id.tv_pay_manage:
 //                if (UserComm.getUserInfo().getOpenAccountFlag() == 0) {

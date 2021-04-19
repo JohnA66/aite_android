@@ -244,6 +244,42 @@
 
             </LinearLayout>
 
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rl_container_group_remark"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/selector_comm_btn">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:text="群备注"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_15"
+                    android:typeface="serif" />
+
+                <TextView
+                    android:id="@+id/tv_group_remark"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:drawableRight="@mipmap/ic_item_more"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLength="8"
+                    android:maxLines="1"
+                    android:textColor="@color/my_gray"
+                    android:textSize="@dimen/sp_14"
+                    tools:text="" />
+            </RelativeLayout>
+
             <TextView
                 android:visibility="gone"
                 android:layout_marginBottom="1dp"
@@ -292,6 +328,41 @@
                     />
 
             </FrameLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:layout_marginBottom="1dp"
+                android:id="@+id/rl_container_group_single_member_jinyan"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:background="@drawable/selector_comm_btn">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:text="单个禁言"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_15"
+                    android:typeface="serif" />
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:drawableRight="@mipmap/ic_item_more"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLength="8"
+                    android:maxLines="1"
+                    android:textColor="@color/my_gray"
+                    android:textSize="@dimen/sp_14"
+                    tools:text="" />
+            </RelativeLayout>
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -467,6 +538,23 @@
 
             </FrameLayout>
 
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_transfer_group"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_centerVertical="true"
+                android:background="@color/white"
+                android:drawableRight="@mipmap/ic_item_more"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingRight="@dimen/dp_20"
+                android:text="群转让"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_15"
+                android:typeface="serif" />
 
             <TextView
                 android:layout_marginBottom="30dp"

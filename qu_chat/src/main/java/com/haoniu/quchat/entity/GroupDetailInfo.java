@@ -13,12 +13,18 @@ public class GroupDetailInfo implements Serializable {
     private String groupUserNickName;
     private Long updateGroupNoticeTime;
     private int groupUsers;
+    /**
+     * 0-普通用户 1-管理员 2-群主
+     */
     private int groupUserRank;
     private int seeFriendFlag;
     private String groupSayFlag;
 
     private String sayStatus;
     private int groupVersion;
+
+    //群备注
+    public String groupNickName;
 
     public int getGroupVersion() {
         return groupVersion;

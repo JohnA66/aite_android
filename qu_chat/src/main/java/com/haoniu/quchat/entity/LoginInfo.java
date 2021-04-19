@@ -50,6 +50,12 @@ public class LoginInfo implements Serializable {
     private int openAccountFlag;
     private String myPassword;
 
+    public int addWay;//0-需要 1-不需要 默认为1
+    public int sex;//0-男 1-女 默认为0
+
+    //钱包id
+    public String ncountUserId;
+
     public String getMyPassword() {
         return myPassword;
     }

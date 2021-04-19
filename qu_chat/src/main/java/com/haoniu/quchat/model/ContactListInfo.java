@@ -36,6 +36,7 @@ public class ContactListInfo implements Serializable {
         private String friendNickName;
         private String friendUserHead;
         private String addGroupFlag;
+        private String nickName;
 
         public String getFriendUserCode() {
             return friendUserCode;
@@ -93,6 +94,14 @@ public class ContactListInfo implements Serializable {
 
         public void setFriendNickName(String friendNickName) {
             this.friendNickName = friendNickName;
+        }
+
+        public String getNickName() {
+            return nickName;
+        }
+
+        public void setNickName(String nickName) {
+            this.nickName = nickName;
         }
     }
 }
