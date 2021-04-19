@@ -116,6 +116,7 @@ public class BankNewActivity extends BaseActivity {
      * @param dto
      */
     private void sureBankCard(BankDto dto) {
+
         Map<String, Object> map = new HashMap<>();
         map.put("realName", dto.getRealName());
         map.put("idCard", dto.getIdCard());
