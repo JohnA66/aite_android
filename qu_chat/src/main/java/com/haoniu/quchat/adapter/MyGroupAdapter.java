@@ -47,7 +47,7 @@ public class MyGroupAdapter extends BaseQuickAdapter<GroupInfo, BaseViewHolder> 
             public void onClick(View v) {
                 mContext.startActivity(new Intent(mContext, ChatActivity.class).putExtra(EaseConstant.EXTRA_CHAT_TYPE, EaseConstant.CHATTYPE_GROUP)
                         .putExtra(EaseConstant.EXTRA_USER_ID, item.getHuanxinGroupId())
-                        .putExtra(Constant.ROOMTYPE, ""));
+                        .putExtra(Constant.ROOMTYPE, 0));
             }
         });
     }
