@@ -339,6 +339,7 @@ public class BaseChatFragment extends EaseBaseFragment implements EMMessageListe
                 onMessageListInit();
                 if (roomType <= 0) {
                     if (roomInfo != null) {
+
                         roomType = roomInfo.getType();
                     }
                 }
