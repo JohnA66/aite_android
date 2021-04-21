@@ -10,19 +10,19 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_50"
         android:layout_marginLeft="@dimen/dp_16"
         android:layout_marginTop="@dimen/dp_19"
         android:layout_marginRight="@dimen/dp_16"
         android:background="@drawable/shape_red_package_radius"
         android:paddingLeft="@dimen/dp_14"
-        android:paddingTop="@dimen/dp_18"
-        android:paddingRight="@dimen/dp_14"
-        android:paddingBottom="@dimen/dp_18">
+        android:paddingRight="@dimen/dp_14">
 
         <TextView
+            android:id="@+id/tv_left_yuan"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
             android:text="总金额"
             android:textColor="@color/black_text"
             android:textSize="@dimen/sp_14" />
@@ -30,25 +30,25 @@
         <TextView
             android:id="@+id/tv_yuan"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
             android:text="元"
             android:textColor="@color/black_text"
             android:textSize="@dimen/sp_14" />
 
         <EditText
-            android:inputType="numberDecimal|number"
-            android:layout_marginLeft="100dp"
             android:id="@+id/et_red_amount"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
+            android:layout_height="match_parent"
             android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/tv_left_yuan"
             android:layout_toLeftOf="@+id/tv_yuan"
             android:background="@null"
             android:gravity="right|center_vertical"
             android:hint="0.00"
+            android:inputType="numberDecimal|number"
             android:maxLength="11"
             android:textColor="@color/black_text"
             android:textColorHint="@color/grey_2"
@@ -57,46 +57,48 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_50"
         android:layout_marginLeft="@dimen/dp_16"
         android:layout_marginTop="@dimen/dp_38"
         android:layout_marginRight="@dimen/dp_16"
         android:background="@drawable/shape_red_package_radius"
         android:paddingLeft="@dimen/dp_14"
-        android:paddingTop="@dimen/dp_18"
-        android:paddingRight="@dimen/dp_14"
-        android:paddingBottom="@dimen/dp_18">
+        android:paddingRight="@dimen/dp_14">
 
         <TextView
+            android:id="@+id/tv_unit_left"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="红包个数"
+            android:gravity="center_vertical"
             android:textColor="@color/black_text"
             android:textSize="@dimen/sp_14" />
 
         <TextView
             android:id="@+id/tv_unit"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
             android:layout_centerVertical="true"
             android:text="个"
             android:textColor="@color/black_text"
             android:textSize="@dimen/sp_14" />
 
         <EditText
-            android:layout_marginLeft="100dp"
             android:id="@+id/et_red_num"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
             android:layout_marginRight="@dimen/dp_10"
+            android:layout_toRightOf="@+id/tv_unit_left"
             android:layout_toLeftOf="@+id/tv_unit"
             android:background="@null"
             android:gravity="right|center_vertical"
             android:hint="填写个数"
-            android:maxLength="8"
             android:inputType="number"
+            android:maxLength="8"
             android:textColor="@color/black_text"
             android:textColorHint="@color/grey_2"
             android:textSize="@dimen/sp_14" />
