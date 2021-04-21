@@ -126,6 +126,7 @@ public class RechargeNewActivity extends BaseActivity {
                         public void callback(@Nullable String source, @Nullable String status, @Nullable String errorMessage) {
                             if(status == "SUCCESS" || status == "PROCESS"){
                                 //queryResult(walletRechargeBean.requestId);
+                                toast("充值成功");
                             }
                             finish();
                         }
