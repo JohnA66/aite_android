@@ -115,7 +115,6 @@ public class RechargeNewActivity extends BaseActivity {
             @Override
             public void onSuccess(String json, String msg) {
 //                startActivity(new Intent(RechargeActivity.this, WebViewActivity.class).putExtra("url", json).putExtra("title", "充值"));
-
                 if (json != null && json.length() > 0) {
                     WalletRechargeBean walletRechargeBean = FastJsonUtil.getObject(json, WalletRechargeBean.class);
 
