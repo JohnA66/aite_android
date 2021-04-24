@@ -141,14 +141,16 @@ public class MyRoomDeatilAdapter extends BaseQuickAdapter<GroupDetailInfo.GroupU
                 helper.setGone(R.id.tv_room_mine, true);
                 helper.setText(R.id.tv_room_mine, "管理员");
             }
+            if (item.getUserRank().equals("2")) {
+                helper.setGone(R.id.tv_room_mine, true);
+                helper.setText(R.id.tv_room_mine, "群主");
+            }
 
             if (helper.getPosition() == 0) {
                 helper.setGone(R.id.badge_delete, false);
                 if (StringUtil.isEmpty(userInfo.getNickname())) {
                     helper.setText(R.id.tv_name, userInfo.getUsername());
                 }
-                helper.setGone(R.id.tv_room_mine, true);
-                helper.setText(R.id.tv_room_mine, "群主");
             }
 
             helper.itemView.setOnClickListener(new View.OnClickListener() {
