@@ -48,12 +48,23 @@ public class MyGroupActivity extends BaseActivity {
 
     private List<GroupInfo> mGroupInfoList;
     private MyGroupAdapter mMyGroupAdapter;
-    private int page = 1;
+    private int page = 0;
+    private boolean isFirstStart = true;
 
 
     @Override
     protected void initContentView(Bundle bundle) {
         setContentView(R.layout.activity_my_group);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (isFirstStart) {
+            isFirstStart = false;
+        } else {
+            groupList();
+        }
     }
 
     @Override
