@@ -192,7 +192,7 @@ public class MyGroupDetailActivity extends BaseActivity implements MyRoomDeatilA
         mRecycleView.setNestedScrollingEnabled(false);
         mRecycleView.setLayoutManager(new GridLayoutManager(this, 5));
         mRecycleView.setAdapter(mRoomDeatilAdapter);
-        info = GroupOperateManager.getInstance().getGroupData(emChatId);
+//        info = GroupOperateManager.getInstance().getGroupData(emChatId);
 
 
         EMConversation emConversation =  EMClient.getInstance().chatManager().getConversation(emChatId);
@@ -893,4 +893,9 @@ public class MyGroupDetailActivity extends BaseActivity implements MyRoomDeatilA
                 });
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EventBus.getDefault().post(new EventCenter<>(EventUtil.ROOM_INFO));
+    }
 }
