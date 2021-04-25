@@ -1,26 +1,16 @@
 package com.haoniu.quchat.pay;
 
-import android.content.Intent;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.aite.chat.R;
 import com.alibaba.fastjson.JSON;
 import com.ehking.sdk.wepay.interfaces.WalletPay;
 import com.ehking.sdk.wepay.net.bean.AuthType;
-import com.haoniu.quchat.activity.BankActivity;
-import com.haoniu.quchat.activity.InputPasswordActivity;
 import com.haoniu.quchat.activity.TxRecordActivity;
-import com.haoniu.quchat.activity.VerifyingPayPasswordPhoneNumberActivity;
-import com.haoniu.quchat.activity.WithdrawActivity;
-import com.haoniu.quchat.aop.SingleClick;
 import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.base.MyApplication;
@@ -30,9 +20,6 @@ import com.haoniu.quchat.global.UserComm;
 import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.http.ResultListener;
-import com.haoniu.quchat.widget.CommonDialog;
-import com.haoniu.quchat.widget.CustomerKeyboard;
-import com.haoniu.quchat.widget.PasswordEditText;
 import com.zds.base.json.FastJsonUtil;
 
 import org.jetbrains.annotations.Nullable;

@@ -1,6 +1,5 @@
 package com.haoniu.quchat.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -18,12 +17,9 @@ import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.http.ResultListener;
 import com.haoniu.quchat.pay.OpenWalletActivity;
 import com.haoniu.quchat.pay.RechargeNewActivity;
-import com.haoniu.quchat.pay.WithdrawNewActivity;
 import com.haoniu.quchat.utils.EventUtil;
-import com.haoniu.quchat.utils.PhoneFormatUtil;
 import com.haoniu.quchat.utils.StringUtil;
 import com.haoniu.quchat.widget.CommonDialog;
-import com.haoniu.quchat.widget.VerifyCodeView;
 
 import java.util.HashMap;
 import java.util.Map;

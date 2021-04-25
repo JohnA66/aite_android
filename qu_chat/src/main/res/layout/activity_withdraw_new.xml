@@ -100,13 +100,24 @@
 
 
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_text"
+                android:textSize="14sp"
+                android:text="提现说明："
+                android:lineSpacingExtra="@dimen/dp_2"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:paddingBottom="5dp"/>
+            <TextView
                 android:id="@+id/tv_tixian"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black_text"
                 android:textSize="14sp"
+                tools:text="aaaaaaaa"
                 android:lineSpacingExtra="@dimen/dp_2"
                 android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginRight="@dimen/dp_16"
                 android:paddingBottom="20dp"/>
 
         </LinearLayout>

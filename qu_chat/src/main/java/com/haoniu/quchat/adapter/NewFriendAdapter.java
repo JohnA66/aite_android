@@ -44,6 +44,7 @@ public class NewFriendAdapter extends RecyclerView.Adapter<NewFriendAdapter.View
 
     private OnAgreeListener mOnAgreeListener;
     private OnDelClickListener mOnDelClickListener;
+
     public void setOnAgreeListener(OnAgreeListener onAgreeListener) {
         mOnAgreeListener = onAgreeListener;
     }
@@ -112,12 +113,12 @@ public class NewFriendAdapter extends RecyclerView.Adapter<NewFriendAdapter.View
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (info.getApplyStatus().equals("0")){
+                if (info.getApplyStatus().equals("0")) {
                     mContext.startActivity(new Intent(mContext,
                             AuditUserActivity.class)
                             .putExtra("applyFriendData", info)
                     );
-                }else {
+                } else {
                     mContext.startActivity(new Intent(mContext,
                             UserInfoDetailActivity.class)
                             .putExtra("friendUserId", info.getUserId())
@@ -125,11 +126,12 @@ public class NewFriendAdapter extends RecyclerView.Adapter<NewFriendAdapter.View
                 }
             }
         });
+        holder.mTvDel.setTag(position);
         holder.mTvDel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mOnDelClickListener != null) {
-                    mOnDelClickListener.delUser(position);
+                    mOnDelClickListener.delUser((Integer) holder.mTvDel.getTag());
                 }
 
             }
@@ -266,6 +268,7 @@ public class NewFriendAdapter extends RecyclerView.Adapter<NewFriendAdapter.View
     public void setOnDelClickListener(OnDelClickListener onDelClickListener) {
         mOnDelClickListener = onDelClickListener;
     }
+
     public interface OnDelClickListener {
         void delUser(int pos);
     }
