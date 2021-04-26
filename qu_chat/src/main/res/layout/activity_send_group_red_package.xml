@@ -10,7 +10,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
+        android:layout_height="@dimen/dp_55"
         android:layout_marginLeft="@dimen/dp_16"
         android:layout_marginTop="@dimen/dp_19"
         android:layout_marginRight="@dimen/dp_16"
@@ -25,7 +25,7 @@
             android:gravity="center_vertical"
             android:text="总金额"
             android:textColor="@color/black_text"
-            android:textSize="@dimen/sp_14" />
+            android:textSize="@dimen/sp_16" />
 
         <TextView
             android:id="@+id/tv_yuan"
@@ -35,7 +35,7 @@
             android:gravity="center_vertical"
             android:text="元"
             android:textColor="@color/black_text"
-            android:textSize="@dimen/sp_14" />
+            android:textSize="@dimen/sp_16" />
 
         <EditText
             android:id="@+id/et_red_amount"
@@ -52,12 +52,12 @@
             android:maxLength="11"
             android:textColor="@color/black_text"
             android:textColorHint="@color/grey_2"
-            android:textSize="@dimen/sp_14" />
+            android:textSize="@dimen/sp_16" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
+        android:layout_height="@dimen/dp_55"
         android:layout_marginLeft="@dimen/dp_16"
         android:layout_marginTop="@dimen/dp_38"
         android:layout_marginRight="@dimen/dp_16"
@@ -72,7 +72,7 @@
             android:text="红包个数"
             android:gravity="center_vertical"
             android:textColor="@color/black_text"
-            android:textSize="@dimen/sp_14" />
+            android:textSize="@dimen/sp_16" />
 
         <TextView
             android:id="@+id/tv_unit"
@@ -83,7 +83,7 @@
             android:layout_centerVertical="true"
             android:text="个"
             android:textColor="@color/black_text"
-            android:textSize="@dimen/sp_14" />
+            android:textSize="@dimen/sp_16" />
 
         <EditText
             android:id="@+id/et_red_num"
@@ -101,7 +101,7 @@
             android:maxLength="8"
             android:textColor="@color/black_text"
             android:textColorHint="@color/grey_2"
-            android:textSize="@dimen/sp_14" />
+            android:textSize="@dimen/sp_16" />
     </RelativeLayout>
 
     <TextView
@@ -110,7 +110,7 @@
         android:layout_marginLeft="@dimen/dp_24"
         android:layout_marginTop="@dimen/dp_12"
         android:textColor="@color/grey_2"
-        android:textSize="@dimen/sp_11"
+        android:textSize="@dimen/sp_14"
         tools:text="本群共4人" />
 
 
@@ -131,7 +131,7 @@
         android:paddingRight="@dimen/dp_14"
         android:textColor="@color/black_text"
         android:textColorHint="@color/grey_2"
-        android:textSize="@dimen/sp_14" />
+        android:textSize="@dimen/sp_16" />
 
 
     <TextView
@@ -142,7 +142,7 @@
         android:gravity="center"
         android:text="￥0.00"
         android:textColor="@color/black_text"
-        android:textSize="@dimen/sp_25"
+        android:textSize="@dimen/sp_28"
         android:textStyle="bold" />
 
     <TextView
@@ -158,6 +158,6 @@
         android:paddingBottom="@dimen/dp_13"
         android:text="塞钱进红包"
         android:textColor="@color/white"
-        android:textSize="@dimen/sp_15" />
+        android:textSize="@dimen/sp_16" />
 
 </LinearLayout>
