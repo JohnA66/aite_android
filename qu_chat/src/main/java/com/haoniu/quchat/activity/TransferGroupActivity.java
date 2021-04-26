@@ -54,10 +54,10 @@ public class TransferGroupActivity extends BaseActivity {
     private List<GroupDetailInfo.GroupUserDetailVoListBean> mGroupMemberBeans = new ArrayList<>();
     private List<GroupDetailInfo.GroupUserDetailVoListBean> mGroupUserDetailVoListBeans = new ArrayList<>();
 
-    public static void start(Context context,String emChatId,String groupId){
-        Intent intent = new Intent(context,TransferGroupActivity.class);
-        intent.putExtra("key_intent_emChatId",emChatId);
-        intent.putExtra("key_intent_groupId",groupId);
+    public static void start(Context context, String emChatId, String groupId) {
+        Intent intent = new Intent(context, TransferGroupActivity.class);
+        intent.putExtra("key_intent_emChatId", emChatId);
+        intent.putExtra("key_intent_groupId", groupId);
         context.startActivity(intent);
     }
 
@@ -75,9 +75,9 @@ public class TransferGroupActivity extends BaseActivity {
         searchBar.setOnSearchBarListener(new SearchBar.OnSearchBarListener() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(mGroupMemberBeans != null && mGroupMemberBeans.size() > 0){
+                if (mGroupMemberBeans != null && mGroupMemberBeans.size() > 0) {
                     String inputStr = s.toString();
-                    if(TextUtils.isEmpty(inputStr)){
+                    if (TextUtils.isEmpty(inputStr)) {
                         mAdapter.setNewData(mGroupMemberBeans);
                         return;
                     }
@@ -85,7 +85,7 @@ public class TransferGroupActivity extends BaseActivity {
                     mGroupUserDetailVoListBeans.clear();
                     for (int i = 0; i < mGroupMemberBeans.size(); i++) {
                         GroupDetailInfo.GroupUserDetailVoListBean groupUserDetailVoListBean = mGroupMemberBeans.get(i);
-                        if(groupUserDetailVoListBean.getUserNickName().contains(inputStr)){
+                        if (groupUserDetailVoListBean.getUserNickName().contains(inputStr)) {
                             mGroupUserDetailVoListBeans.add(groupUserDetailVoListBean);
                         }
                     }
@@ -128,11 +128,11 @@ public class TransferGroupActivity extends BaseActivity {
                 map, new ResultListener() {
                     @Override
                     public void onSuccess(String json, String msg) {
-                        int groupVersion = FastJsonUtil.getInt(json, "groupVersion");
+//                        int groupVersion = FastJsonUtil.getInt(json, "groupVersion");
                         //本地数据版本更服务器不一致 就需要更新数据接口
-                        if (groupDetailInfo.getGroupVersion() != groupVersion) {
-                            queryGroupDetail();
-                        }
+//                        if (groupDetailInfo.getGroupVersion() != groupVersion) {
+                        queryGroupDetail();
+//                        }
                     }
 
                     @Override
@@ -169,7 +169,7 @@ public class TransferGroupActivity extends BaseActivity {
             List<GroupDetailInfo.GroupUserDetailVoListBean> groupUserDetailVoList = groupDetailInfo.getGroupUserDetailVoList();
             for (int i = 0; i < groupUserDetailVoList.size(); i++) {
                 GroupDetailInfo.GroupUserDetailVoListBean groupUserDetailVoListBean = groupUserDetailVoList.get(i);
-                if(!groupUserDetailVoListBean.getUserRank().equals("2")){
+                if (!groupUserDetailVoListBean.getUserRank().equals("2")) {
                     mGroupMemberBeans.add(groupUserDetailVoListBean);
                 }
             }
@@ -180,8 +180,9 @@ public class TransferGroupActivity extends BaseActivity {
     }
 
     private CommonConfirmDialog mCommonConfirmDialog;
-    private void showCommonConfirmDialog(GroupDetailInfo.GroupUserDetailVoListBean groupUsertBean){
-        if(mCommonConfirmDialog == null){
+
+    private void showCommonConfirmDialog(GroupDetailInfo.GroupUserDetailVoListBean groupUsertBean) {
+        if (mCommonConfirmDialog == null) {
             mCommonConfirmDialog = new CommonConfirmDialog(this);
             mCommonConfirmDialog.setOnConfirmClickListener(new CommonConfirmDialog.OnConfirmClickListener() {
                 @Override

@@ -197,18 +197,16 @@ public class EaseContactListFragment extends EaseBaseFragment {
             //本地不存在数据直接请求接口
             getContactList();
         } else {
-
             setContactData(mContactList);
-
             ApiClient.requestNetHandle(getContext(), AppConfig.CHECK_FRIEND_DATA_VERSION, "",
                     null, new ResultListener() {
                         @Override
                         public void onSuccess(String json, String msg) {
                             int cacheVersion = FastJsonUtil.getInt(json, "cacheVersion");
                             //本地数据版本更服务器不一致 就需要更新数据接口
-                            if (cacheVersion != UserOperateManager.getInstance().getContactVersion()) {
+//                            if (cacheVersion != UserOperateManager.getInstance().getContactVersion()) {
                                 getContactList();
-                            }
+//                            }
                         }
 
                         @Override

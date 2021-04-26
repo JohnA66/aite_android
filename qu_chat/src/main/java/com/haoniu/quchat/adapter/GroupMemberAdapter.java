@@ -12,6 +12,7 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.aite.chat.R;
 import com.haoniu.quchat.activity.UserInfoDetailActivity;
 import com.haoniu.quchat.base.Constant;
@@ -53,7 +54,7 @@ public class GroupMemberAdapter extends RecyclerView.Adapter<GroupMemberAdapter.
     private OnClickAtUserListener onClickAtUserListener;
     private String emGroupId;
 
-    public GroupMemberAdapter(List<GroupDetailInfo.GroupUserDetailVoListBean> infoList, Context context, HashMap<String, Integer> lettes,String emGroupId) {
+    public GroupMemberAdapter(List<GroupDetailInfo.GroupUserDetailVoListBean> infoList, Context context, HashMap<String, Integer> lettes, String emGroupId) {
         this.mInfoList = infoList;
         if (copyUserList == null) {
             //只取值一次，用于无检索条件时， 返回全部数据
@@ -85,7 +86,11 @@ public class GroupMemberAdapter extends RecyclerView.Adapter<GroupMemberAdapter.
 
         final GroupDetailInfo.GroupUserDetailVoListBean info =
                 mInfoList.get(position);
-        holder.mTvName.setText(info.getUserNickName());
+        if (!TextUtils.isEmpty(info.getFriendNickName())) {
+            holder.mTvName.setText(info.getFriendNickName());
+        } else {
+            holder.mTvName.setText(info.getUserNickName());
+        }
 
         if (info.getUserRank().equals("1")) {
             holder.mTvMange.setText("管理员");
@@ -135,7 +140,7 @@ public class GroupMemberAdapter extends RecyclerView.Adapter<GroupMemberAdapter.
             public void onClick(View v) {
 
                 if (onClickAtUserListener != null) {
-                    onClickAtUserListener.atUser(info.getUserNickName(),info.getUserId());
+                    onClickAtUserListener.atUser(info.getUserNickName(), info.getUserId());
                     return;
                 }
                 if (!isSeeUserDetail) {
@@ -145,7 +150,7 @@ public class GroupMemberAdapter extends RecyclerView.Adapter<GroupMemberAdapter.
                 Intent intent = new Intent(mContext,
                         UserInfoDetailActivity.class)
                         .putExtra("friendUserId", info.getUserId())
-                        .putExtra("entryUserId",info.getEntryUserId())
+                        .putExtra("entryUserId", info.getEntryUserId())
                         .putExtra("from", "1");
 
                 if (groupUserRank == 2 || (groupUserRank == 1 && info.getUserRank().equals("0"))) {
@@ -292,8 +297,9 @@ public class GroupMemberAdapter extends RecyclerView.Adapter<GroupMemberAdapter.
     public interface OnDelClickListener {
         void delUser(int pos);
     }
+
     public interface OnClickAtUserListener {
-        void atUser(String atUserName,String atUserId);
+        void atUser(String atUserName, String atUserId);
     }
 
 

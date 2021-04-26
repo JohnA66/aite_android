@@ -137,11 +137,11 @@ public class GroupUserListActivity extends BaseActivity {
                 map, new ResultListener() {
                     @Override
                     public void onSuccess(String json, String msg) {
-                        int groupVersion = FastJsonUtil.getInt(json, "groupVersion");
+//                        int groupVersion = FastJsonUtil.getInt(json, "groupVersion");
                         //本地数据版本更服务器不一致 就需要更新数据接口
-                        if (groupDetailInfo.getGroupVersion() != groupVersion) {
+//                        if (groupDetailInfo.getGroupVersion() != groupVersion) {
                             queryGroupDetail();
-                        }
+//                        }
                     }
 
                     @Override

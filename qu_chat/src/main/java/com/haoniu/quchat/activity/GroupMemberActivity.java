@@ -102,28 +102,31 @@ public class GroupMemberActivity extends BaseActivity implements GroupMemberAdap
 
 
     public void loadGroupDataFromLocal() {
-        groupDetailInfo = GroupOperateManager.getInstance().getGroupMemberList(emChatId);
-        Map<String, Object> map = new HashMap<>();
-        map.put("groupId", groupId);
-        if (groupDetailInfo != null)
-            setGroupMemberData();
 
-        ApiClient.requestNetHandle(this, AppConfig.CHECK_GROUP_DATA_VERSION, "",
-                map, new ResultListener() {
-                    @Override
-                    public void onSuccess(String json, String msg) {
-                        int groupVersion = FastJsonUtil.getInt(json, "groupVersion");
-                        //本地数据版本更服务器不一致 就需要更新数据接口
-                        if (groupDetailInfo.getGroupVersion() != groupVersion) {
-                            queryGroupDetail();
-                        }
-                    }
+        queryGroupDetail();
 
-                    @Override
-                    public void onFailure(String msg) {
-                        queryGroupDetail();
-                    }
-                });
+//        groupDetailInfo = GroupOperateManager.getInstance().getGroupMemberList(emChatId);
+//        Map<String, Object> map = new HashMap<>();
+//        map.put("groupId", groupId);
+//        if (groupDetailInfo != null) {
+//            setGroupMemberData();
+//        }
+//        ApiClient.requestNetHandle(this, AppConfig.CHECK_GROUP_DATA_VERSION, "",
+//                map, new ResultListener() {
+//                    @Override
+//                    public void onSuccess(String json, String msg) {
+////                        int groupVersion = FastJsonUtil.getInt(json, "groupVersion");
+//                        //本地数据版本更服务器不一致 就需要更新数据接口
+////                        if (groupDetailInfo.getGroupVersion() != groupVersion) {
+//                            queryGroupDetail();
+////                        }
+//                    }
+//
+//                    @Override
+//                    public void onFailure(String msg) {
+//                        queryGroupDetail();
+//                    }
+//                });
 
     }
 
