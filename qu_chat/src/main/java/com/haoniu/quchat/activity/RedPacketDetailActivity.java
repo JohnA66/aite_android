@@ -82,7 +82,7 @@ public class RedPacketDetailActivity extends BaseActivity {
     private boolean fromRecord;
     private TextView tv_message_hb, tv_intro;
     private LinearLayout ll_user_money;
-    private RelativeLayout ll_message_hb;
+    private LinearLayout ll_message_hb;
 
     /**
      * 替代onCreate的使用
@@ -170,7 +170,7 @@ public class RedPacketDetailActivity extends BaseActivity {
 
         Map<String, Object> map = new HashMap<>();
         map.put("redPacketId", rid + "");
-        String url = fromRecord ? AppConfig.getRedPacketFromDB: AppConfig.getRedPacket;
+        String url = fromRecord ? AppConfig.getRedPacketFromDB : AppConfig.getRedPacket;
         ApiClient.requestNetHandle(this, url, "",
                 map, new ResultListener() {
                     @Override
