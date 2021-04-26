@@ -41,7 +41,8 @@
             android:maxLength="40"
             android:maxLines="1"
             android:text=""
-            android:textColor="#343434"
+            android:textStyle="bold"
+            android:textColor="@color/black_text"
             android:textSize="@dimen/sp_17" />
     </LinearLayout>
 
@@ -61,7 +62,7 @@
             android:maxLength="15"
             android:maxLines="1"
             android:text="0"
-            android:textColor="@color/black_deep"
+            android:textColor="@color/black_text"
             android:textSize="45sp" />
 
         <TextView
@@ -71,7 +72,7 @@
             android:layout_marginLeft="@dimen/dp_2"
             android:text="@string/glod"
             android:visibility="gone"
-            android:textColor="@color/black_deep"
+            android:textColor="@color/black_text"
             android:textSize="@dimen/sp_12" />
 
     </LinearLayout>

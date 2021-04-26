@@ -67,13 +67,16 @@ public class TitleBar extends RelativeLayout {
     }
 
     public void setUnreadMsgCount(int count) {
-        if (count == 0)
+        if (count <= 0) {
+            tvUnreadMsg.setVisibility(View.GONE);
             return;
+        }
+
         tvUnreadMsg.setVisibility(View.VISIBLE);
 
-        if (count > 99){
+        if (count > 99) {
             tvUnreadMsg.setText("99+");
-        }else {
+        } else {
             tvUnreadMsg.setText(count + "");
         }
 

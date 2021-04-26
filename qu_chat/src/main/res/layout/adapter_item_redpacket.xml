@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_60"
+        android:layout_height="@dimen/dp_59"
         android:orientation="horizontal">
 
         <com.haoniu.quchat.widget.EaseImageView
