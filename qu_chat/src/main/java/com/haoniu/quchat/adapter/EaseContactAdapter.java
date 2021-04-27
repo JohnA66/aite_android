@@ -56,6 +56,7 @@ public class EaseContactAdapter extends ArrayAdapter<EaseUser> implements Sectio
         ImageView avatar;
         TextView nameView;
         TextView headerView;
+        TextView onlineStatus;
     }
 
     @Override
@@ -71,6 +72,7 @@ public class EaseContactAdapter extends ArrayAdapter<EaseUser> implements Sectio
             holder.avatar = (ImageView) convertView.findViewById(R.id.avatar);
             holder.nameView = (TextView) convertView.findViewById(R.id.name);
             holder.headerView = (TextView) convertView.findViewById(R.id.header);
+            holder.onlineStatus=(TextView) convertView.findViewById(R.id.tv_online_status);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();

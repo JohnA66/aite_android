@@ -40,6 +40,7 @@ public class EaseUser extends EMContact {
     private String friendNickName;
 
     private String nickName;
+    private String line;
 
     public String getFriendNickName() {
         return friendNickName;

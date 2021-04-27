@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/dp_11"
-            android:layout_toLeftOf="@+id/unread_msg_number"
+            android:layout_toLeftOf="@+id/tv_online_status"
             android:layout_toRightOf="@id/avatar"
             android:gravity="center_vertical"
             android:orientation="vertical" >
@@ -78,6 +78,19 @@
                 android:textSize="@dimen/sp_13"
                 android:visibility="gone" />
         </LinearLayout>
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:id="@+id/tv_online_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_20"
+            android:gravity="center"
+            android:textColor="#666666"
+            tools:text="在线"
+            android:visibility="invisible"
+            android:textSize="@dimen/sp_12" />
 
         <TextView
             android:layout_centerVertical="true"

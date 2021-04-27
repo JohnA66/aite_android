@@ -60,7 +60,7 @@ public class ShareQrActivity extends BaseActivity {
 
     private void createImgQr() {
         try {
-            qrCodeBitmap = QRHelper.addLogo(QRHelper.createQRCode("https://www.pgyer.com/WYVy", 800), BitmapFactory.decodeResource(getResources(),R.mipmap.aite_launcher));
+            qrCodeBitmap = QRHelper.addLogo(QRHelper.createQRCode("https://a.app.qq.com/o/simple.jsp?pkgname=com.aite.chat", 800), BitmapFactory.decodeResource(getResources(),R.mipmap.aite_launcher));
             mImgQr.setImageBitmap(qrCodeBitmap);
         } catch (WriterException e) {
             e.printStackTrace();
