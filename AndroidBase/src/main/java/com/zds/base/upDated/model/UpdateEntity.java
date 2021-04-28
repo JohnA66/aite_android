@@ -21,6 +21,8 @@ public class UpdateEntity implements LibraryUpdateEntity {
     //受影响的版本号 如果开启强制更新 那么这个字段包含的所有版本都会被强制更新 格式 2|3|4
     public String hasAffectCodes = "";
 
+    public int isGrade;
+
     public int getVersionCode() {
         return versionCode;
     }
@@ -85,6 +87,14 @@ public class UpdateEntity implements LibraryUpdateEntity {
         this.hasAffectCodes = hasAffectCodes;
     }
 
+    public int getIsGrade() {
+        return isGrade;
+    }
+
+    public void setIsGrade(int isGrade) {
+        this.isGrade = isGrade;
+    }
+
     @Override
     public int getVersionCodes() {
         return getVersionCode();
@@ -124,4 +134,11 @@ public class UpdateEntity implements LibraryUpdateEntity {
     public String getHasAffectCodess() {
         return getHasAffectCodes();
     }
+
+    @Override
+    public int isGrade() {
+        return 0;
+    }
+
+
 }

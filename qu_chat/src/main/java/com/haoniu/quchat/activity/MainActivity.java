@@ -175,9 +175,11 @@ public class MainActivity extends BaseActivity {
             startActivity(new Intent(this, /*AuthenticationActivity.class*/LoginNewActivity.class));
             return;
         }
+        AppConfig.checkVersion(this,true);
 
 
     }
+
 
     /**
      * 替代onCreate的使用

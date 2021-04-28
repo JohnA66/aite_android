@@ -35,6 +35,7 @@ public class VersionInfo implements LibraryUpdateEntity {
     private double verNumber;
     private String verRemark;
 
+    private int isGrade;
     @Override
     public int getVersionCodes() {
         return new Double(verNumber).intValue();
@@ -74,6 +75,11 @@ public class VersionInfo implements LibraryUpdateEntity {
     public String getHasAffectCodess() {
         return "";
 //        0 != 0 ? v() : ""
+    }
+
+    @Override
+    public int isGrade() {
+        return isGrade;
     }
 
 
@@ -155,5 +161,13 @@ public class VersionInfo implements LibraryUpdateEntity {
 
     public void setVerRemark(String verRemark) {
         this.verRemark = verRemark;
+    }
+
+    public int getIsGrade() {
+        return isGrade;
+    }
+
+    public void setIsGrade(int isGrade) {
+        this.isGrade = isGrade;
     }
 }

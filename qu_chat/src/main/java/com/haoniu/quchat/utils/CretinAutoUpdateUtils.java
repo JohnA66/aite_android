@@ -39,6 +39,7 @@ import com.zds.base.upDated.model.UpdateEntity;
 import com.zds.base.upDated.utils.DownloadReceiver;
 import com.zds.base.upDated.utils.DownloadService;
 import com.zds.base.upDated.view.ProgressView;
+import com.zds.base.util.SystemUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -185,77 +186,57 @@ public class CretinAutoUpdateUtils {
             mContext.unregisterReceiver(receiver);
     }
 
-    private void initUp(){
-        Map<String,Object> map =new HashMap<>();
-        map.put("type","Android");
+    private void initUp() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("type", "Android");
+        map.put("version", SystemUtil.getAppVersionName());
         ApiClient.requestNetHandle(mContext, checkUrl, "", map, new ResultListener() {
-                    @Override
-                    public void onSuccess(String json, String msg) {
-                        if (cls != null) {
-                            if (cls instanceof LibraryUpdateEntity) {
-                                LibraryUpdateEntity o = (LibraryUpdateEntity)
-                                        FastJsonUtil.getObject(json,  cls.getClass());//反序列化
-                                UpdateEntity updateEntity = new UpdateEntity();
-                                updateEntity.setVersionCode(o.getVersionCodes());
-                                updateEntity.setIsForceUpdate(o.getIsForceUpdates());
-                                updateEntity.setPreBaselineCode(o.getPreBaselineCodes());
-                                updateEntity.setVersionName(o.getVersionNames());
-                                updateEntity.setDownurl(o.getDownurls());
-                                updateEntity.setUpdateLog(o.getUpdateLogs());
-                                updateEntity.setSize(o.getApkSizes());
-                                updateEntity.setHasAffectCodes(o.getHasAffectCodess());
-                                up(updateEntity);
-                            }
-                        }
-
-                    }
-
-                    @Override
-                    public void onFailure(String msg) {
-                        ToastUtil.toast(msg);
-                    }
-    });
-    }
-
-    private void  up(UpdateEntity data){
-        try {
-            if (data != null) {
-                if (forceCallBack != null) {
-                    if (data.versionCode > getVersionCode(mContext)) {
-                        forceCallBack.isHaveVersion(true);
-                    } else {
-                        forceCallBack.isHaveVersion(false);
+            @Override
+            public void onSuccess(String json, String msg) {
+                if (cls != null) {
+                    if (cls instanceof LibraryUpdateEntity) {
+                        LibraryUpdateEntity o = (LibraryUpdateEntity)
+                                FastJsonUtil.getObject(json, cls.getClass());//反序列化
+                        UpdateEntity updateEntity = new UpdateEntity();
+                        updateEntity.setVersionCode(o.getVersionCodes());
+                        updateEntity.setIsForceUpdate(o.getIsForceUpdates());
+                        updateEntity.setPreBaselineCode(o.getPreBaselineCodes());
+                        updateEntity.setVersionName(o.getVersionNames());
+                        updateEntity.setDownurl(o.getDownurls());
+                        updateEntity.setUpdateLog(o.getUpdateLogs());
+                        updateEntity.setSize(o.getApkSizes());
+                        updateEntity.setHasAffectCodes(o.getHasAffectCodess());
+                        updateEntity.setIsGrade(o.isGrade());
+                        up(updateEntity);
                     }
                 }
-                if (data.isForceUpdate == 2) {
-                    if (data.versionCode > getVersionCode(mContext)) {
 
-                        //所有旧版本强制更新
-                        showUpdateDialog(data, true, false);
+            }
+
+            @Override
+            public void onFailure(String msg) {
+                ToastUtil.toast(msg);
+            }
+        });
+    }
+
+    private void up(UpdateEntity data) {
+        try {
+            if (data != null) {
+                if (0 == data.getIsGrade()) {//不升级
+                    if (forceCallBack != null) {
+                        forceCallBack.isHaveVersion(false);
                     }
-                } else if (data.isForceUpdate == 1) {
-                    //hasAffectCodes提及的版本强制更新
-                    if (data.versionCode > getVersionCode(mContext)) {
-                        //有更新
-                        String[] hasAffectCodes = data.hasAffectCodes.split("\\|");
-                        if (Arrays.asList(hasAffectCodes).contains(getVersionCode(mContext) + "")) {
-                            //被列入强制更新 不可忽略此版本
-                            showUpdateDialog(data, true, false);
-                        } else {
-                            String dataVersion = data.versionName;
-                            if (!TextUtils.isEmpty(dataVersion)) {
-                                List listCodes = loadArray();
-                                if (!listCodes.contains(dataVersion)) {
-                                    //没有设置为已忽略
-                                    showUpdateDialog(data, false, true);
-                                }
-                            }
-                        }
-                    }
-                } else if (data.isForceUpdate == 0) {
-                    if (data.versionCode > getVersionCode(mContext)) {
-                        showUpdateDialog(data, false, true);
-                    }
+                    return;
+                }
+                if (forceCallBack != null) {
+                    forceCallBack.isHaveVersion(true);
+                }
+                if (data.isForceUpdate == 2) {
+                    //所有旧版本强制更新
+                    showUpdateDialog(data, true, false);
+                } else {
+                    showUpdateDialog(data, false, true);
                 }
             } else {
                 //Toast.makeText(mContext, "网络错误", Toast.LENGTH_SHORT).show();
@@ -264,6 +245,7 @@ public class CretinAutoUpdateUtils {
 
         }
     }
+
     /**
      * 显示更新对话框
      *
@@ -592,10 +574,14 @@ public class CretinAutoUpdateUtils {
 
     /**
      * 调用第三方浏览器打开
+     *
      * @param context
-     * @param url 要浏览的资源地址
+     * @param url     要浏览的资源地址
      */
-    public static  void openBrowser(Context context,String url){
+    public static void openBrowser(Context context, String url) {
+        if (TextUtils.isEmpty(url)) {
+            return;
+        }
         final Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));
