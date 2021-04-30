@@ -196,7 +196,7 @@ public class SendGroupRedPackageActivity extends BaseActivity {
             @Override
             public void onSuccess(String json, String msg) {
 //                if (isSelectBalance) {
-                toast(msg);
+//                toast(msg);
                 if (json.length()>1500){
                     startActivity(new Intent(SendGroupRedPackageActivity.this, WebViewActivity.class).putExtra("url", json).putExtra("title", "充值"));
                 }
