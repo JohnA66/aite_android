@@ -5,7 +5,9 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
+import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -88,6 +90,7 @@ import com.zds.base.util.UriUtil;
 import org.json.JSONArray;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -920,6 +923,38 @@ public class BaseChatFragment extends EaseBaseFragment implements EMMessageListe
                         if (selectedImage != null) {
                             sendPicByUri(selectedImage);
                         }
+//                        Uri selectedImage = data.getData();
+//                        if (selectedImage != null) {
+//                            if (selectedImage.toString().contains("video")) {
+//                                try {
+//                                    String[] filePathColumn = {MediaStore.Video.Media.DATA, MediaStore.Video.Media.DURATION};
+//                                    Cursor cursor = getContext().getContentResolver().query(selectedImage,
+//                                            filePathColumn, null, null, null);
+//                                    if (null != cursor) {
+//                                        cursor.moveToFirst();
+//                                        int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+//                                        int columnIndexDur = cursor.getColumnIndex(filePathColumn[1]);
+//                                        String videoPath = cursor.getString(columnIndex);
+//                                        int dur = cursor.getInt(columnIndexDur);
+//                                        cursor.close();
+//                                        File file =
+//                                                new File(PathUtil.getInstance().getImagePath(), "thvideo" + System.currentTimeMillis());
+//
+//                                        FileOutputStream fos = new FileOutputStream(file);
+//                                        Bitmap ThumbBitmap =
+//                                                ThumbnailUtils.createVideoThumbnail(videoPath, 3);
+//                                        ThumbBitmap.compress(Bitmap.CompressFormat.JPEG, 85, fos);
+//                                        fos.close();
+//                                        sendVideoMessage(videoPath,
+//                                                file.getAbsolutePath(), dur);
+//                                    }
+//                                    return;
+//                                } catch (Exception e) {
+//                                    e.printStackTrace();
+//                                }
+//                            }
+//                            sendPicByUri(selectedImage);
+//                        }
                     }
                 } else if (requestCode == REQUEST_AT_MERBER_CODE) {
                     EaseAtMessageHelper.get().addAtUser(data.getStringExtra(Constant.PARAM_AT_USERID));

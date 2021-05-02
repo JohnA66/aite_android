@@ -35,10 +35,10 @@ public class EaseShowVideoActivity extends EaseBaseActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		super.onCreate(savedInstanceState);
 		setContentView(R.layout.ease_showvideo_activity);
 		loadingLayout = (RelativeLayout) findViewById(R.id.loading_layout);
 		progressBar = (ProgressBar) findViewById(R.id.progressBar);

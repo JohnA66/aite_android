@@ -40,6 +40,8 @@ public class WithdrawNewActivity extends BaseActivity {
     TextView mTvHand_rate;
     @BindView(R.id.tv_my_money_hint)
     TextView mTvMoneyHint;
+    @BindView(R.id.tv_my_money_hint_min)
+    TextView mTvMoneyHintMin;
     @BindView(R.id.toolbar_subtitle)
     TextView mToolbarSubtitle;
     @BindView(R.id.view_bottom)
@@ -87,7 +89,7 @@ public class WithdrawNewActivity extends BaseActivity {
                     LoginInfo loginInfo = JSON.parseObject(json, LoginInfo.class);
 //                    mTvHand_rate.setText("提现金额（当前手续费率为" + loginInfo.getHandRate() + ")");
                     mTvHand_rate.setText("提现金额");
-                    mTvMoneyHint.setText("我的余额：" + loginInfo.getMoney() + "元，最低100.00元起提");
+                    mTvMoneyHint.setText("我的余额：" + loginInfo.getMoney() + "元");
                 }
             }
 
@@ -102,7 +104,9 @@ public class WithdrawNewActivity extends BaseActivity {
             public void onSuccess(String json, String msg) {
                 if (json != null) {
                     //{"withdrawExplain":"银行卡\r\n费率:0.6%+1元/笔银行付款费\r\n单日最多提现3次单笔最高10000元,单日最高30000元。每个账户只能同时进行一笔提现\r\n个别订单有可能被银行风控系统拦截,会延迟到账,我们会与相关机构沟通,在1-2个工作日内处理\r\n如您使用的银行卡多次出现打款失败,通常为卡片兼容问题,请更换银行卡后再试。\r\n注意:部分银行小额打款时不会发送短信通知,到账情况请以银行流水为准。"}
-                    tv_tixian.setText(FastJsonUtil.getString(json,"withdrawExplain"));
+                    tv_tixian.setText(FastJsonUtil.getString(json, "withdrawExplain"));
+                    mTvMoneyHintMin.setText("，最低" + FastJsonUtil.getString(json, "minWithdrawAmount") + "元起提");
+
                 }
             }
 
@@ -167,15 +171,15 @@ public class WithdrawNewActivity extends BaseActivity {
                     walletPay.walletPayCallback = new WalletPay.WalletPayCallback() {
                         @Override
                         public void callback(@Nullable String source, @Nullable String status, @Nullable String errorMessage) {
-                            if(status == "SUCCESS" || status == "PROCESS"){
+                            if (status == "SUCCESS" || status == "PROCESS") {
                                 queryResult(walletWithdrawBean.requestId);
                             }
                         }
                     };
                     //调起sdk的提现
-                    walletPay.evoke(Constant.MERCHANT_ID,UserComm.getUserInfo().ncountUserId,
+                    walletPay.evoke(Constant.MERCHANT_ID, UserComm.getUserInfo().ncountUserId,
                             walletWithdrawBean.token, AuthType.WITHHOLDING.name());
-                }else {
+                } else {
                     toast("服务器开小差，请稍后重试");
                 }
             }
@@ -202,7 +206,7 @@ public class WithdrawNewActivity extends BaseActivity {
                     public void onSuccess(String json, String msg) {
                         if (json != null && json.length() > 0) {
                             WalletRechargeQueryBean walletRechargeQueryBean = FastJsonUtil.getObject(json, WalletRechargeQueryBean.class);
-                            switch (walletRechargeQueryBean.orderStatus){
+                            switch (walletRechargeQueryBean.orderStatus) {
                                 case "SUCCESS":
                                 case "PROCESS":
                                     toast("提现申请成功，等待银行处理");
@@ -213,7 +217,7 @@ public class WithdrawNewActivity extends BaseActivity {
                                     break;
                             }
 
-                        }else {
+                        } else {
                             toast("服务器开小差，请稍后重试");
                         }
                     }
