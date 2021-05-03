@@ -80,8 +80,8 @@ public class EaseShowBigImageNewFragment extends EaseBaseFragment {
                 // int screenHeight =metrics.heightPixels;
                 bitmap = EaseImageCache.getInstance().get(uri.getPath());
                 if (bitmap == null) {
-                    EaseLoadLocalBigImgTask task = new EaseLoadLocalBigImgTask(getContext(), uri.getPath(), image, pb_load_local, ImageUtils.SCALE_IMAGE_WIDTH,
-                            ImageUtils.SCALE_IMAGE_HEIGHT);
+                    EaseLoadLocalBigImgTask task = new EaseLoadLocalBigImgTask(getContext(), uri.getPath(), image, pb_load_local,3000,
+                           4000);
                     if (android.os.Build.VERSION.SDK_INT > 10) {
                         task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
                     } else {
