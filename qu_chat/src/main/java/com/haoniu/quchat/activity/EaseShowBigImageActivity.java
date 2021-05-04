@@ -13,21 +13,6 @@
  */
 package com.haoniu.quchat.activity;
 
-import java.io.File;
-
-
-import com.haoniu.quchat.base.EaseBaseActivity;
-import com.haoniu.quchat.entity.EventCenter;
-import com.hyphenate.EMCallBack;
-import com.hyphenate.chat.EMClient;
-import com.hyphenate.chat.EMMessage;
-import com.aite.chat.R;
-import com.haoniu.quchat.model.EaseImageCache;
-import com.haoniu.quchat.utils.EaseLoadLocalBigImgTask;
-import com.haoniu.quchat.widget.photoview.EasePhotoView;
-import com.hyphenate.util.EMLog;
-import com.hyphenate.util.ImageUtils;
-
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
@@ -38,6 +23,20 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ProgressBar;
+
+import com.aite.chat.R;
+import com.haoniu.quchat.base.EaseBaseActivity;
+import com.haoniu.quchat.entity.EventCenter;
+import com.haoniu.quchat.model.EaseImageCache;
+import com.haoniu.quchat.utils.EaseLoadLocalBigImgTask;
+import com.haoniu.quchat.widget.photoview.EasePhotoView;
+import com.hyphenate.EMCallBack;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMMessage;
+import com.hyphenate.util.EMLog;
+import com.hyphenate.util.ImageUtils;
+
+import java.io.File;
 
 /**
  * download and show original image

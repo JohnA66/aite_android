@@ -5,15 +5,12 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
-import com.google.zxing.WriterException;
 import com.aite.chat.R;
+import com.google.zxing.WriterException;
 import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.help.QRHelper;
-import com.zds.base.util.BarUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

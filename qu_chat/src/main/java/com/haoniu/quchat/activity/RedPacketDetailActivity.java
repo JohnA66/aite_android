@@ -9,13 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.aite.chat.R;
 import com.haoniu.quchat.adapter.RedPacketAdapter;
 import com.haoniu.quchat.base.BaseActivity;
-import com.haoniu.quchat.base.MyApplication;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.entity.RedPacketInfo;
 import com.haoniu.quchat.global.UserComm;

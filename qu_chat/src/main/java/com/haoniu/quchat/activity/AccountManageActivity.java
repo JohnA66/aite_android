@@ -15,7 +15,6 @@ import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.http.ResultListener;
 import com.zds.base.Toast.ToastUtil;
-import com.zds.base.util.StringUtil;
 
 import java.util.HashMap;
 import java.util.Map;

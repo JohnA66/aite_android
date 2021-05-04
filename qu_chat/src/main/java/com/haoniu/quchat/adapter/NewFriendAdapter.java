@@ -17,11 +17,8 @@ import android.widget.TextView;
 import com.aite.chat.R;
 import com.haoniu.quchat.activity.AuditUserActivity;
 import com.haoniu.quchat.activity.UserInfoDetailActivity;
-import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.entity.ApplyFriendData;
-import com.haoniu.quchat.entity.NewFriendInfo;
 import com.haoniu.quchat.http.AppConfig;
-import com.haoniu.quchat.utils.ProjectUtil;
 import com.zds.base.ImageLoad.GlideUtils;
 
 import java.util.ArrayList;

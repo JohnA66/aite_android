@@ -20,8 +20,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.text.TextUtils;
 
-import com.google.gson.reflect.TypeToken;
 import com.aite.chat.R;
+import com.google.gson.reflect.TypeToken;
 import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.base.EaseConstant;
 import com.haoniu.quchat.domain.EaseUser;

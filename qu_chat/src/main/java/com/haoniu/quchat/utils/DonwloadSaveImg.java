@@ -11,12 +11,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
-import com.haoniu.quchat.interfaces.OnClickSuccessResult;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.UUID;
+import com.haoniu.quchat.interfaces.OnClickSuccessResult;
 
 import java.io.BufferedOutputStream;
 import java.io.File;

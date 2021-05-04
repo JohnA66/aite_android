@@ -17,6 +17,7 @@
 package com.zds.base.code.maxicode.decoder;
 
 import com.zds.base.code.common.DecoderResult;
+
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 

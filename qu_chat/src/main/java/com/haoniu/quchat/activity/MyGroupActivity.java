@@ -1,20 +1,12 @@
 package com.haoniu.quchat.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.aite.chat.R;
 import com.haoniu.quchat.adapter.MyGroupAdapter;
 import com.haoniu.quchat.base.BaseActivity;
-import com.haoniu.quchat.base.MyHelper;
-import com.haoniu.quchat.domain.EaseGroupInfo;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.entity.GroupInfo;
 import com.haoniu.quchat.entity.MyGroupInfoList;
@@ -32,7 +24,6 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 
 /**
  * @author lhb

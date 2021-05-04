@@ -8,14 +8,14 @@ import android.view.LayoutInflater;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import com.hyphenate.chat.EMClient;
-import com.hyphenate.chat.EMConversation;
-import com.hyphenate.chat.EMMessage;
 import com.aite.chat.R;
 import com.haoniu.quchat.adapter.EaseMessageAdapter;
 import com.haoniu.quchat.model.styles.EaseMessageListItemStyle;
 import com.haoniu.quchat.utils.EaseCommonUtils;
 import com.haoniu.quchat.widget.chatrow.EaseCustomChatRowProvider;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMConversation;
+import com.hyphenate.chat.EMMessage;
 
 public class EaseChatMessageList extends RelativeLayout {
 

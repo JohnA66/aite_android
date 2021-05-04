@@ -1,11 +1,7 @@
 package com.haoniu.quchat.widget.my_message;
 
 import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.style.ForegroundColorSpan;
 import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.aite.chat.R;

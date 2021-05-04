@@ -17,11 +17,11 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.aite.chat.R;
 import com.haoniu.quchat.base.BaseActivity;
+import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.entity.EventCenter;
 import com.hyphenate.chat.EMMessage;
-import com.haoniu.quchat.base.Constant;
-import com.aite.chat.R;
 
 public class ContextMenuActivity extends BaseActivity {
     public static final int RESULT_CODE_COPY = 1;

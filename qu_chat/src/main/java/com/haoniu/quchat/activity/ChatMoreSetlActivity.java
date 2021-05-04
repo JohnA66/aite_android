@@ -6,27 +6,22 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aite.chat.R;
 import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.base.Constant;
-import com.haoniu.quchat.base.MyHelper;
-import com.haoniu.quchat.base.Storage;
-import com.haoniu.quchat.domain.EaseGroupInfo;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.entity.GroupDetailInfo;
 import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.http.ResultListener;
-import com.haoniu.quchat.utils.EventUtil;
 import com.haoniu.quchat.operate.GroupOperateManager;
+import com.haoniu.quchat.utils.EventUtil;
 import com.haoniu.quchat.view.MyDialog;
 import com.haoniu.quchat.widget.EaseAlertDialog;
 import com.hyphenate.chat.EMClient;
-import com.hyphenate.chat.EMConversation;
 import com.hyphenate.exceptions.HyphenateException;
 
 import org.greenrobot.eventbus.EventBus;

@@ -6,8 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.aite.chat.R;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.haoniu.quchat.adapter.RechargeAdapter;
 import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.entity.EventCenter;

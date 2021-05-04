@@ -12,9 +12,6 @@ import android.widget.TextView;
 import com.aite.chat.R;
 import com.haoniu.quchat.adapter.ShareMyOrOtherIdAdapter;
 import com.haoniu.quchat.base.BaseActivity;
-import com.haoniu.quchat.base.MyHelper;
-import com.haoniu.quchat.domain.EaseGroupInfo;
-import com.haoniu.quchat.domain.EaseUser;
 import com.haoniu.quchat.entity.AddContactInfo;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.entity.GroupInfo;
@@ -26,7 +23,6 @@ import com.haoniu.quchat.operate.UserOperateManager;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;

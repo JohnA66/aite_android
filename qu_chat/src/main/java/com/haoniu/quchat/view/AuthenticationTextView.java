@@ -4,11 +4,8 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.text.TextPaint;
 import android.util.AttributeSet;
-import android.view.Display;
-import android.widget.TextView;
 
 import com.haoniu.quchat.utils.DisplayUtil;
 

@@ -5,12 +5,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.BaseAdapter;
 
-import com.hyphenate.chat.EMClient;
-import com.hyphenate.chat.EMMessage;
-import com.hyphenate.chat.EMNormalFileMessageBody;
 import com.haoniu.quchat.activity.EaseShowNormalFileActivity;
 import com.haoniu.quchat.widget.chatrow.EaseChatRow;
 import com.haoniu.quchat.widget.chatrow.EaseChatRowFile;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMMessage;
+import com.hyphenate.chat.EMNormalFileMessageBody;
 import com.hyphenate.exceptions.HyphenateException;
 import com.hyphenate.util.FileUtils;
 

@@ -2,7 +2,6 @@ package com.haoniu.quchat.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,23 +13,17 @@ import com.aite.chat.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.gson.JsonArray;
 import com.haoniu.quchat.adapter.GroupSingleMemberMuteAdapter;
-import com.haoniu.quchat.adapter.TransferGroupAdapter;
 import com.haoniu.quchat.base.BaseActivity;
-import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.entity.GroupDetailInfo;
 import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.http.ResultListener;
 import com.haoniu.quchat.operate.GroupOperateManager;
-import com.haoniu.quchat.utils.EventUtil;
-import com.haoniu.quchat.view.CommonConfirmDialog;
 import com.haoniu.quchat.widget.SearchBar;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.exceptions.HyphenateException;
 import com.zds.base.json.FastJsonUtil;
-
-import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -14,7 +14,6 @@ import com.aite.chat.R;
 import com.haoniu.quchat.aop.SingleClick;
 import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.base.Constant;
-import com.haoniu.quchat.base.MyHelper;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.entity.LoginInfo;
 import com.haoniu.quchat.global.UserComm;

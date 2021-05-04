@@ -1,7 +1,6 @@
 package com.haoniu.quchat.adapter;
 
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,7 +10,6 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.haoniu.quchat.entity.GroupDetailInfo;
 import com.haoniu.quchat.http.AppConfig;
 import com.zds.base.ImageLoad.GlideUtils;
-import com.zds.base.Toast.ToastUtil;
 
 public class GroupSingleMemberMuteAdapter extends BaseQuickAdapter<GroupDetailInfo.GroupUserDetailVoListBean, BaseViewHolder> {
 

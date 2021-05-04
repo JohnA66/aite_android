@@ -4,14 +4,13 @@ import android.content.Context;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.aite.chat.R;
 import com.bumptech.glide.Glide;
 import com.haoniu.quchat.base.Constant;
-import com.haoniu.quchat.base.MyHelper;
-import com.haoniu.quchat.http.AppConfig;
-import com.aite.chat.R;
 import com.haoniu.quchat.base.EaseUI;
 import com.haoniu.quchat.base.EaseUI.EaseUserProfileProvider;
 import com.haoniu.quchat.domain.EaseUser;
+import com.haoniu.quchat.http.AppConfig;
 import com.hyphenate.chat.EMMessage;
 import com.zds.base.ImageLoad.GlideUtils;
 import com.zds.base.json.FastJsonUtil;

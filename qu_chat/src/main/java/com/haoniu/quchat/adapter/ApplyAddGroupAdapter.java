@@ -3,9 +3,9 @@ package com.haoniu.quchat.adapter;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.aite.chat.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.aite.chat.R;
 import com.haoniu.quchat.entity.ApplyListInfo;
 import com.haoniu.quchat.http.AppConfig;
 import com.zds.base.ImageLoad.GlideUtils;

@@ -3,9 +3,9 @@ package com.haoniu.quchat.model;
 import android.text.TextUtils;
 
 import com.aite.chat.R;
-import com.haoniu.quchat.domain.EaseUser;
 import com.haoniu.quchat.base.EaseConstant;
 import com.haoniu.quchat.base.EaseUI;
+import com.haoniu.quchat.domain.EaseUser;
 import com.haoniu.quchat.utils.EaseUserUtils;
 import com.haoniu.quchat.utils.PreferenceManager;
 import com.hyphenate.chat.EMClient;
@@ -16,9 +16,7 @@ import com.zds.base.json.FastJsonUtil;
 import org.json.JSONArray;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class EaseAtMessageHelper {
     private List<String> toAtUserList = new ArrayList<String>();

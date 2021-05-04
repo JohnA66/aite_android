@@ -3,6 +3,7 @@ package com.haoniu.quchat.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+
 import com.aite.chat.R;
 import com.haoniu.quchat.adapter.GroupMemberAdapter;
 import com.haoniu.quchat.base.BaseActivity;
@@ -13,18 +14,22 @@ import com.haoniu.quchat.help.RclViewHelp;
 import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.http.ResultListener;
-import com.haoniu.quchat.utils.EventUtil;
 import com.haoniu.quchat.operate.GroupOperateManager;
+import com.haoniu.quchat.utils.EventUtil;
 import com.haoniu.quchat.utils.SortUtil;
 import com.haoniu.quchat.view.SlideRecyclerView;
 import com.haoniu.quchat.widget.EaseAlertDialog;
 import com.haoniu.quchat.widget.SearchBar;
 import com.zds.base.json.FastJsonUtil;
+
 import org.greenrobot.eventbus.EventBus;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
 import butterknife.BindView;
+
 import static com.haoniu.quchat.base.Constant.PARAM_AT_NAME;
 import static com.haoniu.quchat.base.Constant.PARAM_AT_USERID;
 

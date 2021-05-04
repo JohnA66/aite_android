@@ -3,7 +3,6 @@ package com.haoniu.quchat.activity.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -26,10 +25,6 @@ import com.haoniu.quchat.activity.MainActivity;
 import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.db.InviteMessgeDao;
 import com.haoniu.quchat.global.Global;
-import com.haoniu.quchat.http.ApiClient;
-import com.haoniu.quchat.http.AppConfig;
-import com.haoniu.quchat.http.ResultListener;
-import com.haoniu.quchat.model.EaseAtMessageHelper;
 import com.haoniu.quchat.operate.GroupOperateManager;
 import com.haoniu.quchat.operate.UserOperateManager;
 import com.haoniu.quchat.widget.EaseAlertDialog;
@@ -40,19 +35,13 @@ import com.hyphenate.chat.EMConversation;
 import com.hyphenate.chat.EMConversation.EMConversationType;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.util.NetUtils;
-import com.zds.base.Toast.ToastUtil;
 import com.zds.base.code.activity.CaptureActivity;
-
 import com.zds.base.util.DensityUtils;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.darsh.multipleimageselect.helpers.Constants.REQUEST_CODE;
-import static com.zds.base.code.activity.CaptureActivity.INTENT_EXTRA_KEY_QR_SCAN;
 
 /**
  * @author Administrator

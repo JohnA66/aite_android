@@ -15,7 +15,6 @@ import android.widget.TextView;
 import com.aite.chat.R;
 import com.haoniu.quchat.adapter.ContactAdapter;
 import com.haoniu.quchat.base.BaseActivity;
-import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.help.RclViewHelp;
 import com.haoniu.quchat.http.ApiClient;

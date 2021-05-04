@@ -9,48 +9,34 @@ package com.haoniu.quchat.activity.fragment;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.aite.chat.R;
 import com.haoniu.quchat.activity.AddContactActivity;
 import com.haoniu.quchat.activity.ChatActivity;
 import com.haoniu.quchat.activity.ContactActivity;
-import com.haoniu.quchat.activity.MyGroupActivity;
-import com.haoniu.quchat.activity.NewFriendActivity;
 import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.domain.EaseUser;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.global.Global;
-import com.haoniu.quchat.http.ApiClient;
-import com.haoniu.quchat.http.AppConfig;
-import com.haoniu.quchat.http.ResultListener;
 import com.haoniu.quchat.widget.EaseAlertDialog;
 import com.haoniu.quchat.widget.PopWinShare;
 import com.haoniu.quchat.widget.SearchBar;
-import com.zds.base.Toast.ToastUtil;
 import com.zds.base.code.activity.CaptureActivity;
 import com.zds.base.util.DensityUtils;
-import java.util.HashMap;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.darsh.multipleimageselect.helpers.Constants.REQUEST_CODE;
-import static com.zds.base.code.activity.CaptureActivity.INTENT_EXTRA_KEY_QR_SCAN;
 
 /**
  * contact list

@@ -4,9 +4,9 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.TextView;
 
+import com.aite.chat.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.aite.chat.R;
 import com.haoniu.quchat.model.GroupManageListInfo;
 
 import java.util.List;

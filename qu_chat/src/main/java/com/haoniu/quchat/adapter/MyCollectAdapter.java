@@ -1,18 +1,12 @@
 package com.haoniu.quchat.adapter;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.amap.api.maps.model.MultiPointItem;
+import com.aite.chat.R;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.chad.library.adapter.base.entity.MultiItemEntity;
-import com.aite.chat.R;
-import com.haoniu.quchat.activity.CollectAdapter;
 import com.haoniu.quchat.entity.CollectInfo;
 import com.haoniu.quchat.http.AppConfig;
-import com.haoniu.quchat.utils.EaseCommonUtils;
 import com.haoniu.quchat.utils.EaseSmileUtils;
 import com.zds.base.ImageLoad.GlideUtils;
 

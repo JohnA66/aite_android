@@ -9,15 +9,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.haoniu.quchat.http.ApiClient;
-import com.haoniu.quchat.http.AppConfig;
-import com.haoniu.quchat.http.ResultListener;
 import com.aite.chat.R;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.haoniu.quchat.adapter.ApplyRecordAdapter;
 import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.entity.ApplyRecordInfo;
 import com.haoniu.quchat.entity.EventCenter;
+import com.haoniu.quchat.http.ApiClient;
+import com.haoniu.quchat.http.AppConfig;
+import com.haoniu.quchat.http.ResultListener;
 import com.zds.base.Toast.ToastUtil;
 import com.zds.base.json.FastJsonUtil;
 

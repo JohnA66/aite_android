@@ -8,11 +8,9 @@ import android.view.View;
 
 import com.aite.chat.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.haoniu.quchat.activity.fragment.FindFragmentNewAdapter;
 import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.entity.Custom1BaseInfo;
 import com.haoniu.quchat.entity.EventCenter;
-import com.haoniu.quchat.entity.NewFindInfo;
 import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.ResultListener;
 import com.zds.base.Toast.ToastUtil;

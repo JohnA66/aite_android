@@ -2,19 +2,13 @@ package com.haoniu.quchat.activity.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
+
 import com.aite.chat.R;
 import com.haoniu.quchat.adapter.GroupMemberAdapter;
 import com.haoniu.quchat.adapter.GroupUserApplyAdapter;
 import com.haoniu.quchat.base.MyBaseFragment;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.entity.GroupUserAuditInfo;
-import com.haoniu.quchat.entity.NewFriendInfo;
 import com.haoniu.quchat.help.RclViewHelp;
 import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;
@@ -29,7 +23,6 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 
 /**
  * @author lhb

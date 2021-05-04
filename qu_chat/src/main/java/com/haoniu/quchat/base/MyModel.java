@@ -7,7 +7,6 @@ import com.haoniu.quchat.domain.EaseGroupInfo;
 import com.haoniu.quchat.domain.EaseUser;
 import com.haoniu.quchat.domain.RobotUser;
 import com.haoniu.quchat.entity.ApplyStateInfo;
-import com.haoniu.quchat.entity.GroupDetailInfo;
 import com.haoniu.quchat.entity.MsgStateInfo;
 import com.haoniu.quchat.model.EaseAtMessageHelper;
 import com.haoniu.quchat.utils.PreferenceManager;

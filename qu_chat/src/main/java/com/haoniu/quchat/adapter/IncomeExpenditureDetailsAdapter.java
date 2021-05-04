@@ -1,8 +1,8 @@
 package com.haoniu.quchat.adapter;
 
+import com.aite.chat.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.aite.chat.R;
 import com.haoniu.quchat.entity.BalancePaymentInfo;
 import com.zds.base.util.StringUtil;
 

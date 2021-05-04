@@ -8,13 +8,13 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.aite.chat.R;
+import com.haoniu.quchat.model.EaseImageCache;
+import com.haoniu.quchat.utils.EaseCommonUtils;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMFileMessageBody;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMVideoMessageBody;
-import com.aite.chat.R;
-import com.haoniu.quchat.model.EaseImageCache;
-import com.haoniu.quchat.utils.EaseCommonUtils;
 import com.hyphenate.util.DateUtils;
 import com.hyphenate.util.EMLog;
 import com.hyphenate.util.ImageUtils;

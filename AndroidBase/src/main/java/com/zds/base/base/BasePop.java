@@ -3,8 +3,6 @@ package com.zds.base.base;
 import android.content.Context;
 import android.view.View;
 
-
-
 import razerdp.basepopup.BasePopupWindow;
 
 /**

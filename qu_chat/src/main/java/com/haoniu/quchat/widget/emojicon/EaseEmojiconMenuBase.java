@@ -1,11 +1,11 @@
 package com.haoniu.quchat.widget.emojicon;
 
-import com.haoniu.quchat.domain.EaseEmojicon;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
+
+import com.haoniu.quchat.domain.EaseEmojicon;
 
 public class EaseEmojiconMenuBase extends LinearLayout{
     protected EaseEmojiconMenuListener listener;

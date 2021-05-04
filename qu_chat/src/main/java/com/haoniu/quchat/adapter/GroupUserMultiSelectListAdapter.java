@@ -7,12 +7,10 @@ import android.widget.CompoundButton;
 import android.widget.Filter;
 import android.widget.Filterable;
 
+import com.aite.chat.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.aite.chat.R;
 import com.haoniu.quchat.entity.GroupDetailInfo;
-import com.haoniu.quchat.entity.GroupInfo;
-import com.haoniu.quchat.global.UserComm;
 import com.zds.base.ImageLoad.GlideUtils;
 
 import java.util.ArrayList;

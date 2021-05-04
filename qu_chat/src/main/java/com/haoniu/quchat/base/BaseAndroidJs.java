@@ -12,9 +12,9 @@ import android.webkit.JavascriptInterface;
 import android.webkit.ValueCallback;
 import android.webkit.WebView;
 
+import com.aite.chat.R;
 import com.github.dfqin.grantor.PermissionListener;
 import com.github.dfqin.grantor.PermissionsUtil;
-import com.aite.chat.R;
 import com.haoniu.quchat.activity.MainActivity;
 import com.haoniu.quchat.alipay.MyALipayUtils;
 import com.haoniu.quchat.share.ShareInfo;

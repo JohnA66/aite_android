@@ -3,10 +3,10 @@ package com.haoniu.quchat.widget.presenter;
 import android.content.Context;
 import android.widget.BaseAdapter;
 
-import com.hyphenate.chat.EMClient;
-import com.hyphenate.chat.EMMessage;
 import com.haoniu.quchat.widget.chatrow.EaseChatRow;
 import com.haoniu.quchat.widget.chatrow.EaseChatRowText;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMMessage;
 import com.hyphenate.exceptions.HyphenateException;
 
 /**

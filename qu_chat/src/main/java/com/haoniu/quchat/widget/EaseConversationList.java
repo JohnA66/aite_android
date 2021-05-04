@@ -6,10 +6,11 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
 import android.widget.ListView;
-import com.hyphenate.chat.EMConversation;
-import com.hyphenate.chat.EMMessage;
+
 import com.aite.chat.R;
 import com.haoniu.quchat.adapter.EaseConversationAdapter;
+import com.hyphenate.chat.EMConversation;
+import com.hyphenate.chat.EMMessage;
 
 import java.util.ArrayList;
 import java.util.List;

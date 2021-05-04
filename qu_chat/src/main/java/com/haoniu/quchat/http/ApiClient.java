@@ -6,7 +6,6 @@ import android.util.Log;
 import com.aite.chat.BuildConfig;
 import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.base.MyApplication;
-import com.haoniu.quchat.base.Storage;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.global.UserComm;
 import com.haoniu.quchat.utils.EventUtil;

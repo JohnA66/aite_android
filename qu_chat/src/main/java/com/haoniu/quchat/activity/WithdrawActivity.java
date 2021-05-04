@@ -10,8 +10,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.alibaba.fastjson.JSON;
 import com.aite.chat.R;
+import com.alibaba.fastjson.JSON;
 import com.haoniu.quchat.aop.SingleClick;
 import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.base.MyApplication;

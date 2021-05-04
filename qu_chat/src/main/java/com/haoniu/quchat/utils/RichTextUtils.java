@@ -34,7 +34,6 @@ import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
 import android.widget.TextView;
 
-
 import com.haoniu.quchat.base.MyApplication;
 
 import static android.graphics.BlurMaskFilter.Blur;

@@ -4,7 +4,6 @@ import android.text.TextUtils;
 
 import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.global.UserComm;
-import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.operate.UserOperateManager;
 import com.hyphenate.chat.EMMessage;
 

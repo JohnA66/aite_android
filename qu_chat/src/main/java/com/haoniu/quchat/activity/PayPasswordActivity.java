@@ -6,7 +6,6 @@ import android.widget.LinearLayout;
 
 import com.aite.chat.R;
 import com.haoniu.quchat.base.BaseActivity;
-import com.haoniu.quchat.base.MyApplication;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.global.UserComm;
 

@@ -18,7 +18,6 @@ import com.aite.chat.R;
 import com.haoniu.quchat.adapter.SelectMoneyAdapter;
 import com.haoniu.quchat.aop.SingleClick;
 import com.haoniu.quchat.base.BaseActivity;
-import com.haoniu.quchat.base.MyApplication;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.entity.JsonBankCardList;
 import com.haoniu.quchat.entity.LoginInfo;
@@ -29,7 +28,6 @@ import com.haoniu.quchat.http.ResultListener;
 import com.haoniu.quchat.widget.CommonDialog;
 import com.haoniu.quchat.widget.CustomerKeyboard;
 import com.haoniu.quchat.widget.PasswordEditText;
-
 
 import java.util.ArrayList;
 import java.util.Arrays;

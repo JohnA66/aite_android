@@ -13,15 +13,13 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.aite.chat.R;
 import com.bumptech.glide.Glide;
 import com.github.dfqin.grantor.PermissionListener;
 import com.github.dfqin.grantor.PermissionsUtil;
 import com.google.zxing.WriterException;
-import com.aite.chat.R;
-import com.haoniu.quchat.aop.SingleClick;
 import com.haoniu.quchat.aop.XClickUtil;
 import com.haoniu.quchat.base.BaseActivity;
-import com.haoniu.quchat.base.MyApplication;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.global.UserComm;
 import com.haoniu.quchat.help.QRHelper;

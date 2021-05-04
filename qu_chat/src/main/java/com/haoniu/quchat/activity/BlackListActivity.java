@@ -14,7 +14,6 @@ import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.http.ResultListener;
 import com.haoniu.quchat.model.BlackListInfo;
 import com.haoniu.quchat.model.ContactInfo;
-import com.haoniu.quchat.model.ContactListInfo;
 import com.haoniu.quchat.utils.EventUtil;
 import com.zds.base.json.FastJsonUtil;
 

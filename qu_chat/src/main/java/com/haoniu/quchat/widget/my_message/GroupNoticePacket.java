@@ -1,16 +1,12 @@
 package com.haoniu.quchat.widget.my_message;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.View;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.aite.chat.R;
-import com.haoniu.quchat.activity.PayPasswordActivity;
-import com.haoniu.quchat.activity.RedPacketDetailActivity;
 import com.haoniu.quchat.entity.EventCenter;
-import com.haoniu.quchat.global.UserComm;
 import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.http.ResultListener;
@@ -18,7 +14,6 @@ import com.haoniu.quchat.utils.EventUtil;
 import com.haoniu.quchat.widget.chatrow.EaseChatRow;
 import com.hyphenate.chat.EMMessage;
 import com.zds.base.Toast.ToastUtil;
-import com.zds.base.json.FastJsonUtil;
 
 import org.greenrobot.eventbus.EventBus;
 

@@ -1,9 +1,8 @@
 package com.haoniu.quchat.login;
 
 import android.content.Intent;
-import android.os.CountDownTimer;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.CheckBox;
@@ -16,7 +15,6 @@ import android.widget.TextView;
 import com.aite.chat.R;
 import com.haoniu.quchat.activity.WebViewActivity;
 import com.haoniu.quchat.base.BaseActivity;
-import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;

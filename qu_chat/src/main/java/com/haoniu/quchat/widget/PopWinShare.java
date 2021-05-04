@@ -1,7 +1,6 @@
 package com.haoniu.quchat.widget;
 
 import android.app.Activity;
-import android.graphics.drawable.ColorDrawable;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;

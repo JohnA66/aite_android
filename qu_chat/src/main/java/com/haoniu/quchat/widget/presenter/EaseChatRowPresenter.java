@@ -2,17 +2,16 @@ package com.haoniu.quchat.widget.presenter;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.BaseAdapter;
 
-import com.hyphenate.EMCallBack;
-import com.hyphenate.chat.EMClient;
-import com.hyphenate.chat.EMMessage;
 import com.aite.chat.R;
 import com.haoniu.quchat.model.styles.EaseMessageListItemStyle;
 import com.haoniu.quchat.widget.EaseAlertDialog;
 import com.haoniu.quchat.widget.EaseChatMessageList;
 import com.haoniu.quchat.widget.chatrow.EaseChatRow;
+import com.hyphenate.EMCallBack;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMMessage;
 
 /**
  * Created by zhangsong on 17-10-12.

@@ -10,10 +10,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-
 import com.aite.chat.R;
 import com.haoniu.quchat.base.BaseActivity;
-import com.haoniu.quchat.base.MyApplication;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.entity.LoginInfo;
 import com.haoniu.quchat.global.UserComm;

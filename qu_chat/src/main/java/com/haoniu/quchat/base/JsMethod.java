@@ -16,7 +16,6 @@ import com.haoniu.quchat.alipay.MyALipayUtils;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.global.UserComm;
 import com.haoniu.quchat.utils.payUtil.WXPay;
-
 import com.zds.base.json.FastJsonUtil;
 
 import org.greenrobot.eventbus.EventBus;

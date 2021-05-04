@@ -6,10 +6,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.aite.chat.R;
 import com.haoniu.quchat.http.AppConfig;
 import com.hyphenate.chat.EMLocationMessageBody;
 import com.hyphenate.chat.EMMessage;
-import com.aite.chat.R;
 import com.hyphenate.util.LatLng;
 import com.zds.base.ImageLoad.GlideUtils;
 

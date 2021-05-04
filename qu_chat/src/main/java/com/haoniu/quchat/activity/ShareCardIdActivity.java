@@ -7,9 +7,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.widget.TextView;
 
+import com.aite.chat.R;
 import com.flyco.tablayout.SegmentTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
-import com.aite.chat.R;
 import com.haoniu.quchat.activity.fragment.ShareCardIdContactListFragment;
 import com.haoniu.quchat.activity.fragment.ShareCardIdConversationListFragment;
 import com.haoniu.quchat.base.BaseActivity;

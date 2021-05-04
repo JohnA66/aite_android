@@ -5,10 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 
 import com.aite.chat.R;
-import com.haoniu.quchat.adapter.FindAdapter;
 import com.haoniu.quchat.base.MyBaseFragment;
 import com.haoniu.quchat.entity.EventCenter;
-import com.haoniu.quchat.entity.FindInfo;
 import com.haoniu.quchat.entity.NewFindInfo;
 import com.haoniu.quchat.help.RclViewHelp;
 import com.haoniu.quchat.http.ApiClient;

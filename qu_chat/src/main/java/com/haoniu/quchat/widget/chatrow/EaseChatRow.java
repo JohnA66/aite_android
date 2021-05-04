@@ -33,7 +33,6 @@ import com.hyphenate.util.DateUtils;
 import com.zds.base.ImageLoad.GlideUtils;
 import com.zds.base.Toast.ToastUtil;
 
-
 import java.util.Date;
 
 public abstract class EaseChatRow extends LinearLayout {

@@ -8,19 +8,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.haoniu.quchat.base.Constant;
+import com.aite.chat.R;
+import com.haoniu.quchat.base.BaseActivity;
+import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.entity.GroupDetailInfo;
 import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;
-import com.aite.chat.R;
-import com.haoniu.quchat.base.BaseActivity;
-import com.haoniu.quchat.base.MyApplication;
-import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.http.ResultListener;
 import com.haoniu.quchat.utils.ImageUtil;
 import com.haoniu.quchat.utils.StringUtil;
 import com.haoniu.quchat.widget.EaseImageView;
-import com.hyphenate.chat.EMMessage;
 import com.zds.base.ImageLoad.GlideUtils;
 
 import org.greenrobot.eventbus.EventBus;

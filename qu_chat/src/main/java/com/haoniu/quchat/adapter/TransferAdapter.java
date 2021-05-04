@@ -2,9 +2,9 @@ package com.haoniu.quchat.adapter;
 
 import android.view.View;
 
+import com.aite.chat.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.aite.chat.R;
 import com.haoniu.quchat.entity.TransferRecordInfo;
 import com.zds.base.util.StringUtil;
 

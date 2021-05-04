@@ -1,9 +1,5 @@
 package com.haoniu.quchat.widget;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Handler;
@@ -22,6 +18,10 @@ import com.haoniu.quchat.utils.EaseSmileUtils;
 import com.haoniu.quchat.widget.emojicon.EaseEmojiconMenu;
 import com.haoniu.quchat.widget.emojicon.EaseEmojiconMenuBase;
 import com.haoniu.quchat.widget.emojicon.EaseEmojiconMenuBase.EaseEmojiconMenuListener;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * input menu

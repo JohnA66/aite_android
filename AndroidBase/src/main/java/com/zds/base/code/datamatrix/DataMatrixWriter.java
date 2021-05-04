@@ -17,11 +17,11 @@
 package com.zds.base.code.datamatrix;
 
 import com.zds.base.code.BarcodeFormat;
+import com.zds.base.code.Dimension;
 import com.zds.base.code.EncodeHintType;
 import com.zds.base.code.Writer;
 import com.zds.base.code.common.BitMatrix;
 import com.zds.base.code.datamatrix.encoder.DefaultPlacement;
-import com.zds.base.code.Dimension;
 import com.zds.base.code.datamatrix.encoder.ErrorCorrection;
 import com.zds.base.code.datamatrix.encoder.HighLevelEncoder;
 import com.zds.base.code.datamatrix.encoder.SymbolInfo;

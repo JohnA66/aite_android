@@ -27,11 +27,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.haoniu.quchat.http.AppConfig;
 import com.aite.chat.R;
 import com.haoniu.quchat.db.InviteMessgeDao;
 import com.haoniu.quchat.domain.InviteMessage;
 import com.haoniu.quchat.domain.InviteMessage.InviteMessageStatus;
+import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.utils.EaseUserUtils;
 import com.hyphenate.chat.EMClient;
 import com.zds.base.ImageLoad.GlideUtils;

@@ -3,9 +3,9 @@ package com.haoniu.quchat.adapter;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import com.aite.chat.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.aite.chat.R;
 import com.haoniu.quchat.entity.ChatBgInfo;
 
 import java.util.List;

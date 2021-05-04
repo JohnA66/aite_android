@@ -1,7 +1,6 @@
 package com.haoniu.quchat.base;
 
 import android.app.Activity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -35,7 +34,6 @@ import com.haoniu.quchat.model.EaseNotifier;
 import com.haoniu.quchat.model.EaseNotifier.EaseNotificationInfoProvider;
 import com.haoniu.quchat.operate.GroupOperateManager;
 import com.haoniu.quchat.operate.UserOperateManager;
-
 import com.haoniu.quchat.receiver.CallReceiver;
 import com.haoniu.quchat.receiver.HeadsetReceiver;
 import com.haoniu.quchat.utils.EaseCommonUtils;
@@ -64,6 +62,7 @@ import com.hyphenate.exceptions.HyphenateException;
 import com.hyphenate.util.EMLog;
 
 import org.greenrobot.eventbus.EventBus;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;

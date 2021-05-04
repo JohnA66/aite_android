@@ -6,13 +6,13 @@ import android.os.AsyncTask;
 import android.widget.BaseAdapter;
 import android.widget.Toast;
 
-import com.hyphenate.chat.EMClient;
-import com.hyphenate.chat.EMMessage;
-import com.hyphenate.chat.EMVoiceMessageBody;
 import com.aite.chat.R;
 import com.haoniu.quchat.widget.chatrow.EaseChatRow;
 import com.haoniu.quchat.widget.chatrow.EaseChatRowVoice;
 import com.haoniu.quchat.widget.chatrow.EaseChatRowVoicePlayer;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMMessage;
+import com.hyphenate.chat.EMVoiceMessageBody;
 import com.hyphenate.exceptions.HyphenateException;
 import com.hyphenate.util.EMLog;
 

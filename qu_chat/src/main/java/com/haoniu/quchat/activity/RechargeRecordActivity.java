@@ -4,9 +4,8 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.aite.chat.R;
-import com.haoniu.quchat.adapter.RechargeAdapter;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.haoniu.quchat.adapter.RechargeAdapter2;
 import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.entity.EventCenter;

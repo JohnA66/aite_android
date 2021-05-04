@@ -10,9 +10,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.aite.chat.R;
-import com.haoniu.quchat.adapter.GroupUserListAdapter;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.haoniu.quchat.adapter.GroupUserMultiSelectListAdapter;
 import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.base.Constant;
@@ -26,20 +25,13 @@ import com.haoniu.quchat.http.ResultListener;
 import com.haoniu.quchat.operate.GroupOperateManager;
 import com.haoniu.quchat.utils.EventUtil;
 import com.haoniu.quchat.utils.SortUtil;
-import com.hyphenate.util.HanziToPinyin;
-import com.zds.base.Toast.ToastUtil;
 import com.zds.base.json.FastJsonUtil;
 
 import org.greenrobot.eventbus.EventBus;
 
-import java.text.CollationKey;
-import java.text.Collator;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 import butterknife.BindView;

@@ -1,6 +1,5 @@
 package com.haoniu.quchat.activity.fragment;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -21,7 +20,6 @@ import com.haoniu.quchat.activity.WalletActivity;
 import com.haoniu.quchat.activity.WebViewActivity;
 import com.haoniu.quchat.aop.SingleClick;
 import com.haoniu.quchat.base.Constant;
-import com.haoniu.quchat.base.MyApplication;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.entity.LoginInfo;
 import com.haoniu.quchat.global.Global;
@@ -29,20 +27,16 @@ import com.haoniu.quchat.global.UserComm;
 import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.http.ResultListener;
-import com.haoniu.quchat.pay.OpenWalletActivity;
+import com.haoniu.quchat.operate.UserOperateManager;
 import com.haoniu.quchat.pay.StoreShowSwitchBean;
-import com.haoniu.quchat.pay.WalletTransferBean;
 import com.haoniu.quchat.paysdk.TradeSession;
 import com.haoniu.quchat.utils.EventUtil;
 import com.haoniu.quchat.utils.StringUtil;
-import com.haoniu.quchat.operate.UserOperateManager;
 import com.haoniu.quchat.widget.EaseImageView;
-
 import com.zds.base.ImageLoad.GlideUtils;
 import com.zds.base.Toast.ToastUtil;
 import com.zds.base.code.activity.CaptureActivity;
 import com.zds.base.json.FastJsonUtil;
-
 
 import java.util.HashMap;
 import java.util.Map;

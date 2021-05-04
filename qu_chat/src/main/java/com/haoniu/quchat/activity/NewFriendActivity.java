@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.aite.chat.R;
 import com.haoniu.quchat.adapter.NewFriendAdapter;
 import com.haoniu.quchat.base.BaseActivity;
-import com.haoniu.quchat.base.MyHelper;
 import com.haoniu.quchat.db.InviteMessgeDao;
 import com.haoniu.quchat.entity.ApplyFriendData;
 import com.haoniu.quchat.entity.EventCenter;

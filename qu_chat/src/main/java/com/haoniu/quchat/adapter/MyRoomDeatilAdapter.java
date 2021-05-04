@@ -5,9 +5,9 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.aite.chat.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.aite.chat.R;
 import com.haoniu.quchat.activity.ContactActivity;
 import com.haoniu.quchat.activity.GroupUserDelActivity;
 import com.haoniu.quchat.activity.UserInfoDetailActivity;
@@ -21,7 +21,6 @@ import com.haoniu.quchat.operate.GroupOperateManager;
 import com.haoniu.quchat.utils.EaseUserUtils;
 import com.zds.base.ImageLoad.GlideUtils;
 import com.zds.base.Toast.ToastUtil;
-import com.zds.base.util.StringUtil;
 
 import java.util.List;
 

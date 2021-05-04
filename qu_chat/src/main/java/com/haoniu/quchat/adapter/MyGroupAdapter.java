@@ -6,19 +6,16 @@ import android.view.View;
 import android.widget.Filter;
 import android.widget.Filterable;
 
+import com.aite.chat.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.aite.chat.R;
 import com.haoniu.quchat.activity.ChatActivity;
 import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.base.EaseConstant;
 import com.haoniu.quchat.entity.GroupInfo;
-import com.haoniu.quchat.entity.MyGroupInfoList;
 import com.haoniu.quchat.http.AppConfig;
-import com.haoniu.quchat.model.ContactListInfo;
 import com.zds.base.ImageLoad.GlideUtils;
 
-import java.security.acl.Group;
 import java.util.ArrayList;
 import java.util.List;
 

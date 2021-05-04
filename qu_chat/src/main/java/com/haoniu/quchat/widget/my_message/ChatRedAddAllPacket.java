@@ -9,8 +9,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.gson.reflect.TypeToken;
 import com.aite.chat.R;
+import com.google.gson.reflect.TypeToken;
 import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.widget.chatrow.EaseChatRow;
 import com.hyphenate.chat.EMMessage;

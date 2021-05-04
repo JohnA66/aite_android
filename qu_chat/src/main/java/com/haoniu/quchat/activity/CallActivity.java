@@ -15,10 +15,8 @@ import com.aite.chat.R;
 import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.entity.EventCenter;
-
 import com.hyphenate.EMCallBack;
 import com.hyphenate.EMError;
-
 import com.hyphenate.chat.EMCallManager;
 import com.hyphenate.chat.EMCallStateChangeListener;
 import com.hyphenate.chat.EMClient;

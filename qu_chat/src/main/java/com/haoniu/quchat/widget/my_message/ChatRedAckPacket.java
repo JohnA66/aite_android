@@ -12,14 +12,10 @@ import android.widget.TextView;
 
 import com.aite.chat.R;
 import com.haoniu.quchat.base.Constant;
-import com.haoniu.quchat.base.MyApplication;
-import com.haoniu.quchat.base.MyHelper;
-
 import com.haoniu.quchat.global.UserComm;
 import com.haoniu.quchat.operate.UserOperateManager;
 import com.haoniu.quchat.widget.chatrow.EaseChatRow;
 import com.hyphenate.chat.EMMessage;
-import com.zds.base.json.FastJsonUtil;
 
 
 public class ChatRedAckPacket extends EaseChatRow {

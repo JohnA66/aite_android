@@ -16,13 +16,13 @@
 
 package com.zds.base.code.oned;
 
-import java.util.Map;
-
 import com.zds.base.code.BarcodeFormat;
 import com.zds.base.code.EncodeHintType;
 import com.zds.base.code.FormatException;
 import com.zds.base.code.WriterException;
 import com.zds.base.code.common.BitMatrix;
+
+import java.util.Map;
 
 /**
  * This object renders an UPC-E code as a {@link BitMatrix}.

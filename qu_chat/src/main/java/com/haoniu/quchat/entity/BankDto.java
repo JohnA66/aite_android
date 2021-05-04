@@ -1,7 +1,5 @@
 package com.haoniu.quchat.entity;
 
-import com.haoniu.quchat.utils.StringUtil;
-
 import java.io.Serializable;
 
 /**

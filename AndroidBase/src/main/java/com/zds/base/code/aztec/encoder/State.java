@@ -16,10 +16,10 @@
 
 package com.zds.base.code.aztec.encoder;
 
+import com.zds.base.code.common.BitArray;
+
 import java.util.Deque;
 import java.util.LinkedList;
-
-import com.zds.base.code.common.BitArray;
 
 /**
  * State represents all information about a sequence necessary to generate the current output.

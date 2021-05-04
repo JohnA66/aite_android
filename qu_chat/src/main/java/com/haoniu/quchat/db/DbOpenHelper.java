@@ -17,7 +17,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.haoniu.quchat.base.MyHelper;
 import com.haoniu.quchat.global.UserComm;
 
 public class DbOpenHelper extends SQLiteOpenHelper {

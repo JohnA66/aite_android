@@ -16,9 +16,7 @@ import com.aite.chat.R;
 import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.base.MyHelper;
 import com.haoniu.quchat.base.MyModel;
-import com.haoniu.quchat.base.Storage;
 import com.haoniu.quchat.entity.EventCenter;
-import com.haoniu.quchat.entity.LoginInfo;
 import com.haoniu.quchat.global.UserComm;
 import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;
@@ -36,10 +34,8 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 

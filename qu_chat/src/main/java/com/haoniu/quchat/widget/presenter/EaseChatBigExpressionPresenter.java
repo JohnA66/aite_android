@@ -3,9 +3,9 @@ package com.haoniu.quchat.widget.presenter;
 import android.content.Context;
 import android.widget.BaseAdapter;
 
-import com.hyphenate.chat.EMMessage;
 import com.haoniu.quchat.widget.chatrow.EaseChatRow;
 import com.haoniu.quchat.widget.chatrow.EaseChatRowBigExpression;
+import com.hyphenate.chat.EMMessage;
 
 /**
  * Created by zhangsong on 17-10-12.

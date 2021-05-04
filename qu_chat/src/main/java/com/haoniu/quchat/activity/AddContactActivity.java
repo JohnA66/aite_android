@@ -16,23 +16,19 @@ package com.haoniu.quchat.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.aite.chat.R;
 import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.base.Constant;
-import com.haoniu.quchat.base.MyApplication;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.global.Global;
 import com.haoniu.quchat.global.UserComm;
 import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.http.ResultListener;
-import com.zds.base.Toast.ToastUtil;
 import com.zds.base.code.activity.CaptureActivity;
-
 
 import java.util.ArrayList;
 import java.util.HashMap;

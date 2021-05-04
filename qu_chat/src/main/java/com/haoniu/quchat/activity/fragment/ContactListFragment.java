@@ -6,8 +6,6 @@ package com.haoniu.quchat.activity.fragment;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
@@ -17,7 +15,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.Toast;
 
 import com.aite.chat.R;
 import com.haoniu.quchat.activity.AddContactActivity;
@@ -36,17 +33,17 @@ import com.haoniu.quchat.global.Global;
 import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.http.ResultListener;
+import com.haoniu.quchat.operate.UserOperateManager;
 import com.haoniu.quchat.utils.EventUtil;
 import com.haoniu.quchat.utils.PreferenceManager;
-import com.haoniu.quchat.operate.UserOperateManager;
 import com.haoniu.quchat.widget.ContactItemView;
 import com.haoniu.quchat.widget.PopWinShare;
 import com.haoniu.quchat.widget.SearchBar;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.exceptions.HyphenateException;
-import com.hyphenate.util.EMLog;
 import com.zds.base.code.activity.CaptureActivity;
 import com.zds.base.util.DensityUtils;
+
 import java.util.HashMap;
 import java.util.Map;
 

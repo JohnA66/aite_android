@@ -1,9 +1,5 @@
 package com.haoniu.quchat.help;
 
-import java.util.EnumMap;
-import java.util.Hashtable;
-import java.util.Map;
-
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -16,6 +12,10 @@ import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
+
+import java.util.EnumMap;
+import java.util.Hashtable;
+import java.util.Map;
 
 public final class QRHelper {
     private static final int BLACK = 0xff000000;

@@ -3,10 +3,9 @@ package com.haoniu.quchat.adapter;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 
+import com.aite.chat.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.aite.chat.R;
-import com.haoniu.quchat.model.ChatRedRecordInfo;
 import com.haoniu.quchat.model.MyRedInfo;
 import com.haoniu.quchat.utils.StringUtil;
 

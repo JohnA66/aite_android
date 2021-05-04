@@ -1,9 +1,8 @@
 package com.haoniu.quchat.login;
 
 import android.content.Intent;
-import android.os.CountDownTimer;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
@@ -14,7 +13,6 @@ import android.widget.Toast;
 import com.aite.chat.R;
 import com.alibaba.fastjson.JSON;
 import com.haoniu.quchat.activity.AccountManageActivity;
-import com.haoniu.quchat.activity.AuthenticationActivity;
 import com.haoniu.quchat.activity.MainActivity;
 import com.haoniu.quchat.activity.UpDataPasswordActivity;
 import com.haoniu.quchat.base.BaseActivity;

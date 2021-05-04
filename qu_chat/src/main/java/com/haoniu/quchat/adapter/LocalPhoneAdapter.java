@@ -8,11 +8,10 @@ import android.view.View;
 import android.widget.Filter;
 import android.widget.Filterable;
 
+import com.aite.chat.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.aite.chat.R;
 import com.haoniu.quchat.base.Constant;
-import com.haoniu.quchat.global.Global;
 import com.haoniu.quchat.http.ApiClient;
 import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.http.ResultListener;

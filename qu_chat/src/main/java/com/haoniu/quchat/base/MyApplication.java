@@ -22,11 +22,9 @@ import android.support.multidex.MultiDex;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 
-import com.alibaba.fastjson.JSON;
 import com.aite.chat.BuildConfig;
 import com.aite.chat.R;
-import com.haoniu.quchat.activity.AuthenticationActivity;
-import com.haoniu.quchat.activity.LoginActivity;
+import com.alibaba.fastjson.JSON;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.entity.LoginInfo;
 import com.haoniu.quchat.entity.VersionInfo;

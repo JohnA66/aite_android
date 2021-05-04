@@ -14,11 +14,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.hyphenate.EMError;
 import com.aite.chat.R;
 import com.haoniu.quchat.model.EaseVoiceRecorder;
 import com.haoniu.quchat.utils.EaseCommonUtils;
 import com.haoniu.quchat.widget.chatrow.EaseChatRowVoicePlayer;
+import com.hyphenate.EMError;
 
 /**
  * Voice recorder view

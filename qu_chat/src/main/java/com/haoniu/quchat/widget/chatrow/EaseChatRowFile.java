@@ -5,9 +5,9 @@ import android.view.View;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.aite.chat.R;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMNormalFileMessageBody;
-import com.aite.chat.R;
 import com.hyphenate.util.TextFormater;
 
 import java.io.File;

@@ -7,7 +7,6 @@ import android.widget.TextView;
 
 import com.aite.chat.R;
 import com.haoniu.quchat.base.Constant;
-import com.haoniu.quchat.base.MyApplication;
 import com.haoniu.quchat.utils.ImageUtil;
 import com.haoniu.quchat.widget.EaseImageView;
 import com.haoniu.quchat.widget.chatrow.EaseChatRow;

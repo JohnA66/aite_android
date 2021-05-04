@@ -16,10 +16,10 @@
 
 package com.zds.base.code.common;
 
+import com.zds.base.code.DecodeHintType;
+
 import java.nio.charset.Charset;
 import java.util.Map;
-
-import com.zds.base.code.DecodeHintType;
 
 /**
  * Common string-related functions.

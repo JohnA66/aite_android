@@ -1,13 +1,10 @@
 package com.haoniu.quchat.adapter;
 
+import com.aite.chat.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.aite.chat.R;
-import com.haoniu.quchat.base.MyApplication;
-import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.operate.UserOperateManager;
 import com.haoniu.quchat.utils.EaseSmileUtils;
-import com.haoniu.quchat.utils.EaseUserUtils;
 import com.haoniu.quchat.utils.ImageUtil;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMTextMessageBody;

@@ -21,7 +21,6 @@ import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.entity.GroupUserAuditInfo;
 import com.haoniu.quchat.global.Global;
 import com.haoniu.quchat.http.AppConfig;
-import com.haoniu.quchat.utils.ProjectUtil;
 import com.zds.base.ImageLoad.GlideUtils;
 
 import java.util.ArrayList;

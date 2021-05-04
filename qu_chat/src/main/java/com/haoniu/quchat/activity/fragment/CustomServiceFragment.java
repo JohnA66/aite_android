@@ -10,15 +10,13 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.aite.chat.R;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.haoniu.quchat.activity.ChatActivity;
 import com.haoniu.quchat.activity.custom1.Custom1Activity;
 import com.haoniu.quchat.adapter.ServiceAdapter;
 import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.base.EaseConstant;
-import com.haoniu.quchat.base.MyHelper;
-import com.haoniu.quchat.domain.EaseUser;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.entity.ServiceInfo;
 import com.haoniu.quchat.http.ApiClient;

@@ -9,7 +9,6 @@ import com.haoniu.quchat.http.AppConfig
 import com.haoniu.quchat.http.ResultListener
 import com.zds.base.json.FastJsonUtil
 import kotlinx.android.synthetic.main.activity_tips.*
-import kotlinx.android.synthetic.main.activity_transfer_detail.*
 import kotlinx.android.synthetic.main.toolbar_layout.*
 
 /**

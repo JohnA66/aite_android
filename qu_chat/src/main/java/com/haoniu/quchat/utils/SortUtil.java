@@ -1,7 +1,6 @@
 package com.haoniu.quchat.utils;
 
 import com.haoniu.quchat.entity.GroupDetailInfo;
-import com.haoniu.quchat.operate.GroupOperateManager;
 import com.haoniu.quchat.operate.UserOperateManager;
 import com.hyphenate.util.HanziToPinyin;
 

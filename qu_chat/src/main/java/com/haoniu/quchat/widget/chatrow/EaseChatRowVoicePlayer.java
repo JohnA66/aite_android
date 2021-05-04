@@ -4,9 +4,9 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 
+import com.haoniu.quchat.base.EaseUI;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMVoiceMessageBody;
-import com.haoniu.quchat.base.EaseUI;
 
 import java.io.IOException;
 

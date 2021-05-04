@@ -7,9 +7,9 @@ import android.widget.TextView;
 
 import com.aite.chat.R;
 import com.haoniu.quchat.base.Constant;
+import com.haoniu.quchat.operate.UserOperateManager;
 import com.haoniu.quchat.utils.EaseCommonUtils;
 import com.haoniu.quchat.utils.StringUtil;
-import com.haoniu.quchat.operate.UserOperateManager;
 import com.haoniu.quchat.widget.chatrow.EaseChatRow;
 import com.hyphenate.chat.EMMessage;
 

@@ -4,13 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.BaseAdapter;
 
+import com.haoniu.quchat.activity.EaseShowVideoActivity;
+import com.haoniu.quchat.widget.chatrow.EaseChatRow;
+import com.haoniu.quchat.widget.chatrow.EaseChatRowVideo;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMFileMessageBody;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMVideoMessageBody;
-import com.haoniu.quchat.activity.EaseShowVideoActivity;
-import com.haoniu.quchat.widget.chatrow.EaseChatRow;
-import com.haoniu.quchat.widget.chatrow.EaseChatRowVideo;
 import com.hyphenate.util.EMLog;
 
 /**

@@ -13,8 +13,8 @@
  */
 package com.haoniu.quchat.domain;
 
-import com.hyphenate.chat.EMContact;
 import com.haoniu.quchat.utils.EaseCommonUtils;
+import com.hyphenate.chat.EMContact;
 
 public class EaseUser extends EMContact {
 

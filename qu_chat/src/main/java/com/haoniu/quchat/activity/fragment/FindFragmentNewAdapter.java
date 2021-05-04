@@ -8,8 +8,6 @@ import android.view.View;
 import com.aite.chat.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.haoniu.quchat.activity.FindDetailActivity;
-import com.haoniu.quchat.entity.FindInfo;
 import com.haoniu.quchat.entity.NewFindInfo;
 import com.zds.base.ImageLoad.GlideUtils;
 

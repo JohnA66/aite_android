@@ -12,36 +12,24 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.autonavi.base.amap.mapcore.tools.GLConvertUtil;
+import com.aite.chat.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
-import com.haoniu.quchat.utils.ResourUtil;
+import com.haoniu.quchat.model.EaseImageCache;
+import com.haoniu.quchat.utils.AsyncTaskCompat;
+import com.haoniu.quchat.utils.EaseImageUtils;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMFileMessageBody;
 import com.hyphenate.chat.EMImageMessageBody;
 import com.hyphenate.chat.EMMessage;
-import com.aite.chat.R;
-import com.haoniu.quchat.model.EaseImageCache;
-import com.haoniu.quchat.utils.AsyncTaskCompat;
-import com.haoniu.quchat.utils.EaseImageUtils;
 import com.luck.picture.lib.tools.ScreenUtils;
 import com.zds.base.ImageLoad.GlideUtils;
 
 import java.io.File;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-
-import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.Scheduler;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
 
 public class EaseChatRowImage extends EaseChatRowFile {
 

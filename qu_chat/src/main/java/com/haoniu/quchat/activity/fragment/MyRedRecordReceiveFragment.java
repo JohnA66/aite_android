@@ -10,11 +10,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.aite.chat.R;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.haoniu.quchat.activity.RedPacketDetailActivity;
 import com.haoniu.quchat.adapter.MyRedAdapter;
-import com.haoniu.quchat.base.MyApplication;
 import com.haoniu.quchat.base.MyBaseFragment;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.global.UserComm;

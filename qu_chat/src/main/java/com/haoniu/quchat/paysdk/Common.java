@@ -1,7 +1,6 @@
 package com.haoniu.quchat.paysdk;
 
 
-import com.haoniu.quchat.base.MyApplication;
 import com.haoniu.quchat.global.UserComm;
 
 /**

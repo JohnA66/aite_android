@@ -1,7 +1,6 @@
 package com.haoniu.quchat.activity;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
@@ -9,16 +8,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.haoniu.quchat.entity.LoginInfo;
-import com.haoniu.quchat.global.UserComm;
-import com.haoniu.quchat.http.ApiClient;
-import com.haoniu.quchat.http.AppConfig;
-import com.haoniu.quchat.http.ResultListener;
 import com.aite.chat.R;
 import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.base.MyApplication;
 import com.haoniu.quchat.base.MyHelper;
 import com.haoniu.quchat.entity.EventCenter;
+import com.haoniu.quchat.entity.LoginInfo;
+import com.haoniu.quchat.global.UserComm;
+import com.haoniu.quchat.http.ApiClient;
+import com.haoniu.quchat.http.AppConfig;
+import com.haoniu.quchat.http.ResultListener;
 import com.haoniu.quchat.login.LoginNewActivity;
 import com.hyphenate.EMCallBack;
 

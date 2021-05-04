@@ -21,8 +21,8 @@ import com.zds.base.code.EncodeHintType;
 import com.zds.base.code.Writer;
 import com.zds.base.code.WriterException;
 import com.zds.base.code.common.BitMatrix;
-import com.zds.base.code.qrcode.encoder.ByteMatrix;
 import com.zds.base.code.qrcode.decoder.ErrorCorrectionLevel;
+import com.zds.base.code.qrcode.encoder.ByteMatrix;
 import com.zds.base.code.qrcode.encoder.Encoder;
 import com.zds.base.code.qrcode.encoder.QRCode;
 

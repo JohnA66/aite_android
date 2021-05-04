@@ -26,7 +26,6 @@ import com.github.dfqin.grantor.PermissionListener;
 import com.github.dfqin.grantor.PermissionsUtil;
 import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.base.BaseAndroidJs;
-import com.haoniu.quchat.base.Storage;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.global.UserComm;
 import com.haoniu.quchat.utils.BitmapUtil;

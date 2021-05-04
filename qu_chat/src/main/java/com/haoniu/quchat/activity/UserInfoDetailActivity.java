@@ -3,17 +3,15 @@ package com.haoniu.quchat.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.aite.chat.R;
 import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.base.Constant;
@@ -30,7 +28,6 @@ import com.haoniu.quchat.operate.UserOperateManager;
 import com.haoniu.quchat.utils.EventUtil;
 import com.haoniu.quchat.utils.ProjectUtil;
 import com.haoniu.quchat.utils.hxSetMessageFree.EaseSharedUtils;
-import com.haoniu.quchat.view.MyDialog;
 import com.hyphenate.EMValueCallBack;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMCmdMessageBody;
@@ -40,13 +37,14 @@ import com.hyphenate.exceptions.HyphenateException;
 import com.zds.base.ImageLoad.GlideUtils;
 import com.zds.base.Toast.ToastUtil;
 import com.zds.base.json.FastJsonUtil;
-
 import com.zds.base.log.XLog;
-import com.zds.base.util.StringUtil;
 import com.zds.base.util.Utils;
+
 import org.greenrobot.eventbus.EventBus;
+
 import java.util.HashMap;
 import java.util.Map;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 

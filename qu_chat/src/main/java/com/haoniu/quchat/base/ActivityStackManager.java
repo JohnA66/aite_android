@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Process;
 
-
 import com.zds.base.log.XLog;
 
 import java.lang.ref.WeakReference;

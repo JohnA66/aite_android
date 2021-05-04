@@ -11,8 +11,6 @@ import android.support.v4.content.FileProvider;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
-import com.luck.picture.lib.tools.Constant;
-import com.zds.base.R;
 
 import java.io.File;
 

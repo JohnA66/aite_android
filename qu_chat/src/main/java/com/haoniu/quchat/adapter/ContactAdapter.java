@@ -8,10 +8,10 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 
+import com.aite.chat.R;
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.aite.chat.R;
 import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.model.ContactListInfo;
 import com.zds.base.ImageLoad.GlideUtils;

@@ -52,7 +52,6 @@ import com.hyphenate.exceptions.HyphenateException;
 import com.hyphenate.media.EMCallSurfaceView;
 import com.hyphenate.util.EMLog;
 import com.superrtc.sdk.VideoView;
-import com.zds.base.ImageLoad.GlideUtils;
 
 import java.io.File;
 import java.util.Date;

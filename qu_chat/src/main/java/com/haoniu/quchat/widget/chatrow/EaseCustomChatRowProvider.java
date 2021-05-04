@@ -2,8 +2,8 @@ package com.haoniu.quchat.widget.chatrow;
 
 import android.widget.BaseAdapter;
 
-import com.hyphenate.chat.EMMessage;
 import com.haoniu.quchat.widget.presenter.EaseChatRowPresenter;
+import com.hyphenate.chat.EMMessage;
 
 /**
  * 自定义chat row提供者

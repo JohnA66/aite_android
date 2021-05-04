@@ -11,13 +11,13 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.aite.chat.R;
 import com.haoniu.quchat.base.EaseBaseActivity;
 import com.haoniu.quchat.entity.EventCenter;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMVideoMessageBody;
-import com.aite.chat.R;
 import com.hyphenate.util.EMLog;
 
 import java.io.File;

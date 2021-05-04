@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.widget.BaseAdapter;
 
 import com.haoniu.quchat.activity.HxMapActivity;
-import com.haoniu.quchat.activity.UserInfoDetailActivity;
 import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.widget.chatrow.EaseChatRow;
 import com.haoniu.quchat.widget.chatrow.EaseChatRowLocationPacket;

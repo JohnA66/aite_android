@@ -5,11 +5,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.hyphenate.chat.EMMessage;
-import com.haoniu.quchat.base.EaseConstant;
 import com.aite.chat.R;
+import com.haoniu.quchat.base.EaseConstant;
 import com.haoniu.quchat.base.EaseUI;
 import com.haoniu.quchat.domain.EaseEmojicon;
+import com.hyphenate.chat.EMMessage;
 import com.zds.base.ImageLoad.GlideUtils;
 
 /**

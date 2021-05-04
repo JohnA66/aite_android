@@ -2,7 +2,6 @@ package com.haoniu.quchat.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -21,9 +20,7 @@ import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.http.ResultListener;
 import com.haoniu.quchat.operate.GroupOperateManager;
 import com.haoniu.quchat.utils.EventUtil;
-import com.haoniu.quchat.utils.SortUtil;
 import com.haoniu.quchat.view.CommonConfirmDialog;
-import com.haoniu.quchat.view.SlideRecyclerView;
 import com.haoniu.quchat.widget.SearchBar;
 import com.zds.base.json.FastJsonUtil;
 

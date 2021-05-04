@@ -5,8 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.widget.TextView;
 
-import com.androidkun.xtablayout.XTabLayout;
 import com.aite.chat.R;
+import com.androidkun.xtablayout.XTabLayout;
 import com.haoniu.quchat.activity.fragment.MyRedFragment;
 import com.haoniu.quchat.adapter.FragmentAdapter;
 import com.haoniu.quchat.base.BaseActivity;

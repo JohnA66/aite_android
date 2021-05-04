@@ -4,8 +4,8 @@ import android.content.Context;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.haoniu.quchat.base.Constant;
 import com.aite.chat.R;
+import com.haoniu.quchat.base.Constant;
 import com.haoniu.quchat.widget.chatrow.EaseChatRow;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMTextMessageBody;

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
 import com.aite.chat.R;
 import com.haoniu.quchat.activity.PayPasswordActivity;
 import com.haoniu.quchat.activity.RedPacketDetailActivity;

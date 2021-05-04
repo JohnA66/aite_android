@@ -10,12 +10,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.aite.chat.R;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.haoniu.quchat.adapter.GroupUserListAdapter;
 import com.haoniu.quchat.base.BaseActivity;
 import com.haoniu.quchat.base.Constant;
-import com.haoniu.quchat.base.MyHelper;
 import com.haoniu.quchat.entity.EventCenter;
 import com.haoniu.quchat.entity.GroupDetailInfo;
 import com.haoniu.quchat.global.UserComm;
@@ -25,7 +24,6 @@ import com.haoniu.quchat.http.AppConfig;
 import com.haoniu.quchat.http.ResultListener;
 import com.haoniu.quchat.operate.GroupOperateManager;
 import com.haoniu.quchat.utils.EventUtil;
-import com.haoniu.quchat.utils.SortUtil;
 import com.zds.base.Toast.ToastUtil;
 import com.zds.base.json.FastJsonUtil;
 

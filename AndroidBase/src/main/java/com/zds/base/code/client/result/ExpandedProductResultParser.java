@@ -26,11 +26,11 @@
 
 package com.zds.base.code.client.result;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.zds.base.code.BarcodeFormat;
 import com.zds.base.code.Result;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Parses strings of digits that represent a RSS Extended code.

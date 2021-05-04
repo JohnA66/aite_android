@@ -9,18 +9,16 @@ import android.widget.BaseAdapter;
 import com.haoniu.quchat.EaseShowBigImageNewItem;
 import com.haoniu.quchat.activity.EaseShowBigImageNewActivity;
 import com.haoniu.quchat.adapter.EaseMessageAdapter;
+import com.haoniu.quchat.widget.chatrow.EaseChatRow;
+import com.haoniu.quchat.widget.chatrow.EaseChatRowImage;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMFileMessageBody;
 import com.hyphenate.chat.EMImageMessageBody;
 import com.hyphenate.chat.EMMessage;
-import com.haoniu.quchat.activity.EaseShowBigImageActivity;
-import com.haoniu.quchat.widget.chatrow.EaseChatRow;
-import com.haoniu.quchat.widget.chatrow.EaseChatRowImage;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by zhangsong on 17-10-12.

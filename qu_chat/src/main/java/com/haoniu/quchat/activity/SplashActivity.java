@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 import com.aite.chat.R;
 import com.gyf.immersionbar.ImmersionBar;
@@ -20,11 +18,9 @@ import com.haoniu.quchat.view.UserProtocolDialog;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
 import com.zds.base.global.BaseConstant;
-import com.zds.base.util.BarUtils;
 import com.zds.base.util.Preference;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * 作   者：赵大帅

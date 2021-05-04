@@ -16,10 +16,8 @@ import android.widget.SectionIndexer;
 import android.widget.TextView;
 
 import com.aite.chat.R;
-import com.haoniu.quchat.base.MyApplication;
 import com.haoniu.quchat.domain.EaseUser;
 import com.haoniu.quchat.operate.UserOperateManager;
-import com.haoniu.quchat.utils.EaseUserUtils;
 import com.haoniu.quchat.utils.ImageUtil;
 import com.haoniu.quchat.widget.EaseImageView;
 import com.hyphenate.util.EMLog;

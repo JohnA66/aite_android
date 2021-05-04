@@ -1,8 +1,5 @@
 package com.haoniu.quchat.widget.emojicon;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -19,6 +16,9 @@ import com.haoniu.quchat.domain.EaseEmojicon;
 import com.haoniu.quchat.domain.EaseEmojicon.Type;
 import com.haoniu.quchat.domain.EaseEmojiconGroupEntity;
 import com.haoniu.quchat.utils.EaseSmileUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class EaseEmojiconPagerView extends ViewPager{
 

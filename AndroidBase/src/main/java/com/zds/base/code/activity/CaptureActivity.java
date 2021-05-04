@@ -35,6 +35,7 @@ import com.zds.base.code.decoding.InactivityTimer;
 import com.zds.base.code.view.ViewfinderView;
 import com.zds.base.util.QRCodeParseUtils;
 import com.zds.base.util.SelectFileUtil;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

@@ -4,13 +4,13 @@ import android.os.Bundle;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.aite.chat.R;
 import com.haoniu.quchat.base.EaseBaseActivity;
 import com.haoniu.quchat.entity.EventCenter;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMFileMessageBody;
 import com.hyphenate.chat.EMMessage;
-import com.aite.chat.R;
 import com.hyphenate.util.FileUtils;
 
 import java.io.File;

@@ -1,7 +1,6 @@
 package com.haoniu.quchat.activity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
