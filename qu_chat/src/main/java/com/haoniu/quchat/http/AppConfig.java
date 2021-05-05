@@ -1129,6 +1129,7 @@ public class AppConfig {
         } else {
             Map<String, Object> map = new HashMap<>();
             map.put("type", "Android");
+            map.put("version", SystemUtil.getAppVersionName());
             ApiClient.requestNetHandle(context, checkVersion, "正在检测...", map, new ResultListener() {
                 @Override
                 public void onSuccess(String json, String msg) {

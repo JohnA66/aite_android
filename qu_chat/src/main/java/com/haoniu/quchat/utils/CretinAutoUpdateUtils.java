@@ -214,7 +214,7 @@ public class CretinAutoUpdateUtils {
 
             @Override
             public void onFailure(String msg) {
-                ToastUtil.toast(msg);
+//                ToastUtil.toast(msg);
             }
         });
     }
