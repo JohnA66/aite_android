@@ -9,6 +9,7 @@ import com.haoniu.quchat.http.AppConfig
 import com.haoniu.quchat.http.ResultListener
 import kotlinx.android.synthetic.main.activity_transfer_detail.*
 import kotlinx.android.synthetic.main.toolbar_layout.*
+import java.util.*
 
 /**
  *@创建者 Mr.zou
@@ -46,29 +47,38 @@ class TransferDetailActivity : BaseActivity() {
         tv_money.text = if (money.isNullOrEmpty()) "￥ 0.00" else "￥ $money"
         viewUI()
         tv_collection.setOnClickListener {
-            confirmMoney()
+            checkTransfer()
         }
     }
 
     private fun viewUI() {
-        tv_status.text = if (status == "0") "待确认收款" else "已确认收款"
-        tv_collection.setBackgroundResource(if (status == "0" && isSelf ==
-            false) R.drawable.group_search else R.drawable.group_search_gray)
-        tv_collection.isEnabled = status == "0" && isSelf == false
-        img_status.setImageResource(if (status != "0") R.drawable
-                .yx else R.drawable.daiqueren)
+        when (status) {
+            "0" -> {
+                tv_status.text="待确认收款"
+                tv_collection.setBackgroundResource(if (isSelf == false) R.drawable.group_search else R.drawable.group_search_gray)
+                tv_collection.isEnabled = isSelf == false
+                img_status.setImageResource(R.drawable.daiqueren)
+            }
+            "1" -> {
+                tv_status.text="已确认收款"
+                tv_collection.setBackgroundResource(R.drawable.group_search_gray)
+                tv_collection.isEnabled = isSelf == false
+                img_status.setImageResource(R.drawable.yx)
+            }
+            "2" -> {
+                tv_status.text="已退回"
+                tv_collection.setBackgroundResource(R.drawable.group_search_gray)
+                tv_collection.isEnabled = isSelf == false
+                img_status.setImageResource(R.drawable.yx)
+            }
+        }
     }
 
     private fun confirmMoney() {
         val map = mapOf("transferId" to turnId)
-        ApiClient.requestNetHandle(this
-                , AppConfig.CONFIRM
-                , "请稍后..."
-                , map
-                , object : ResultListener() {
+        ApiClient.requestNetHandle(this, AppConfig.CONFIRM, "请稍后...", map, object : ResultListener() {
             override fun onSuccess(json: String?, msg: String?) {
                 status = "1"
-
                 viewUI()
             }
 
@@ -78,23 +88,40 @@ class TransferDetailActivity : BaseActivity() {
         })
     }
 
-    /*private fun confirmMoney() {
-        val map = mapOf("transferId" to turnId,"serialNumber" to serialNumber,"requestId" to requestId)
-        ApiClient.requestNetHandle(this
-                , AppConfig.walletTransferConfirm
-                , "请稍后..."
-                , map
-                , object : ResultListener() {
-            override fun onSuccess(json: String?, msg: String?) {
-                status = "1"
+    /**
+     * 检测转账
+     *
+     * @param message
+     */
+    private fun checkTransfer() {
+        val map = mapOf("transferId" to turnId)
+        ApiClient.requestNetHandle(this@TransferDetailActivity, AppConfig.TRANSFER_STATUS, "", map, object : ResultListener() {
+            override fun onSuccess(json: String, msg: String) {
+                val j = json.replace(".0", "")
+                status = j
+                when (j) {
+                    "0" -> {
+                        confirmMoney()
+                    }
+                    "1" -> {
+//                        toast("已领取")
+                        viewUI()
+                        return
+                    }
+                    "2" -> {
+//                        toast("金额已退回")
+                        viewUI()
+                        return
+                    }
 
-                viewUI()
+                }
             }
 
-            override fun onFailure(msg: String?) {
+            override fun onFailure(msg: String) {
                 toast(msg)
             }
         })
-    }*/
+    }
+
 
 }

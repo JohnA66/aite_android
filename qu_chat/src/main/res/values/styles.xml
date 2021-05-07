@@ -22,9 +22,11 @@
 
     <!--启动页面主题-->
     <style name="SplashTheme" parent="AppTheme">
-        <item name="android:windowAnimationStyle">@style/NoAnimation</item>
+        <!--        <item name="android:windowAnimationStyle">@style/NoAnimation</item>-->
         <item name="android:windowBackground">@mipmap/splash_bg</item>
         <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>  
     </style>
 
     <!--没有跳转动画效果-->
@@ -288,7 +290,6 @@
         <item name="android:windowEnterAnimation">@anim/push_in</item>
         <item name="android:windowExitAnimation">@anim/push_out</item>
     </style>
-
 
 
     <style name="ZxTheme" parent="Theme.AppCompat.Light.NoActionBar">

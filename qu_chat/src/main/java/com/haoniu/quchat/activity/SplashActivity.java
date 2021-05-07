@@ -42,10 +42,10 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected void initContentView(Bundle bundle) {
-//        setContentView(R.layout.activity_splash);
-//        isTransparency(false);
-//        initImmersionBar(true);
-//        ImmersionBar.setStatusBarView(this,view_status_bar_bg);
+        setContentView(R.layout.activity_splash);
+        isTransparency(false);
+        initImmersionBar(true);
+        ImmersionBar.setStatusBarView(this, view_status_bar_bg);
         //ButterKnife.bind(this);
     }
 
@@ -95,10 +95,10 @@ public class SplashActivity extends BaseActivity {
     protected void onStart() {
         super.onStart();
         //1.用户协议弹窗
-        if(Preference.getBoolPreferences(SplashActivity.this, BaseConstant.SP.KEY_IS_AGREE_USER_PROTOCOL,false)){
+        if (Preference.getBoolPreferences(SplashActivity.this, BaseConstant.SP.KEY_IS_AGREE_USER_PROTOCOL, false)) {
             //已同意
             toApp();
-        }else {
+        } else {
             //未同意
             showUserProtocolDialog();
         }
@@ -156,8 +156,7 @@ public class SplashActivity extends BaseActivity {
                     start = System.currentTimeMillis();
                     EMClient.getInstance().chatManager().loadAllConversations();
                     EMClient.getInstance().groupManager().loadAllGroups();
-                    startActivity(MainActivity.class);
-                    finish();
+                    handler.sendEmptyMessageDelayed(1, sleepTime);
                 } else {
                     handler.sendEmptyMessageDelayed(0, sleepTime);
                 }
@@ -169,22 +168,29 @@ public class SplashActivity extends BaseActivity {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            EMClient.getInstance().logout(true);
-            startActivity(/*AuthenticationActivity.class*/LoginNewActivity.class);
-            finish();
+            if (msg.what == 0) {
+                EMClient.getInstance().logout(true);
+                startActivity(/*AuthenticationActivity.class*/LoginNewActivity.class);
+                finish();
+            } else {
+                startActivity(MainActivity.class);
+                finish();
+            }
+
         }
     };
 
 
     private UserProtocolDialog mUserProtocolDialog;
-    private void showUserProtocolDialog(){
-        if(mUserProtocolDialog == null){
+
+    private void showUserProtocolDialog() {
+        if (mUserProtocolDialog == null) {
             mUserProtocolDialog = new UserProtocolDialog(this);
 
             mUserProtocolDialog.setOnAgreeClickListener(new UserProtocolDialog.OnAgreeClickListener() {
                 @Override
                 public void onAgreeClick() {
-                    Preference.saveBoolPreferences(SplashActivity.this, BaseConstant.SP.KEY_IS_AGREE_USER_PROTOCOL,true);
+                    Preference.saveBoolPreferences(SplashActivity.this, BaseConstant.SP.KEY_IS_AGREE_USER_PROTOCOL, true);
                     toApp();
                 }
             });
@@ -201,8 +207,9 @@ public class SplashActivity extends BaseActivity {
     }
 
     private CommonConfirmDialog mCommonConfirmDialog;
+
     private void showCommonConfirmDialog() {
-        if(mCommonConfirmDialog == null){
+        if (mCommonConfirmDialog == null) {
             mCommonConfirmDialog = new CommonConfirmDialog(this);
 
             mCommonConfirmDialog.setOnConfirmClickListener(new CommonConfirmDialog.OnConfirmClickListener() {
@@ -227,7 +234,7 @@ public class SplashActivity extends BaseActivity {
 
         mCommonConfirmDialog.setTitle("您需要同意本隐私协议才能继续使用艾特");
         mCommonConfirmDialog.setContent("若您不同意本隐私协议，很遗憾我们将无法为您提供服务");
-        mCommonConfirmDialog.setButtonText("仍不同意","查看协议");
+        mCommonConfirmDialog.setButtonText("仍不同意", "查看协议");
     }
 
 
