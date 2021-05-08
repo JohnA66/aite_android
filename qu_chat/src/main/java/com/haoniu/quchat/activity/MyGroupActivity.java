@@ -54,6 +54,7 @@ public class MyGroupActivity extends BaseActivity {
         if (isFirstStart) {
             isFirstStart = false;
         } else {
+            page = 0;
             groupList();
         }
     }
@@ -83,7 +84,7 @@ public class MyGroupActivity extends BaseActivity {
     @Override
     protected void onEventComing(EventCenter center) {
         if (center.getEventCode() == EventUtil.CREATE_GROUP_SUCCESS || center.getEventCode() == EventUtil.DEL_EXIT_GROUP) {
-            page = 1;
+            page=0;
             groupList();
         }
     }
@@ -108,7 +109,7 @@ public class MyGroupActivity extends BaseActivity {
             public void onSuccess(String json, String msg) {
                 MyGroupInfoList myGroupInfo = FastJsonUtil.getObject(json, MyGroupInfoList.class);
                 if (myGroupInfo.getData() != null && myGroupInfo.getData().size() > 0) {
-                    if (page == 1 && mGroupInfoList.size() > 0) {
+                    if (page == 0 && mGroupInfoList.size() > 0) {
                         mGroupInfoList.clear();
                     }
                     mGroupInfoList.addAll(myGroupInfo.getData());

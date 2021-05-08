@@ -1327,7 +1327,7 @@ public class BaseChatFragment extends EaseBaseFragment implements EMMessageListe
     }
 
     protected void sendImageMessage(String imagePath) {
-        EMMessage message = EMMessage.createImageSendMessage(imagePath, true
+        EMMessage message = EMMessage.createImageSendMessage(imagePath, false
                 , emChatId);
         sendMessage(message);
     }
